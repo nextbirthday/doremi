@@ -1,0 +1,35 @@
+<!-- border와 outline의 차이점 -->
+<!-- box-sizing 에는 content-box, border-box -->
+<!-- width와 height를 사용해서 너비와 높이를 지정한 경우에 기본적으로는 content-box로 행동 -->
+<!-- content의 사이즈를 100x100으로 지정하는것과 동일 padding이나 border를 지정하면 content 사이즈는 100X100을 유지해야함으로
+바깥쪽에 padding과 border가 생긴다. 문서 전체의 flow가 변경된다.  -->
+<!-- padding과 border까지 합한 사이즈를 100x100으로 유지 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border and Outline</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        background-color: chocolate;
+        box-sizing: border-box;
+      }
+      .box1 {
+        border: 5px solid cyan;
+      }
+      .box3 {
+        outline: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>

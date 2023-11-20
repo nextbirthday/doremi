@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: grey;
+      }
+
+      .inner {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+        /* 기존의 자리를 유지 relative */
+        position: relative;
+        /* 기존에 있는 곳에서 top과 left를 50% 지정, 부모 너비의 50% 기준 만큼 왼쪽에서 이동, 부모 기준의 높이에서 50%만큼 아래로 이동*/
+        /* 부모의 50% */
+        top: 50%;
+        left: 50%;
+        /* 자기요소 위치를 움직이는 transform에서 사용된 50%는 현재 나의 요소의 크기의 50% */
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>translate(50%, 50%)</h1>
+    <div class="box">
+      <div class="inner"></div>
+    </div>
+  </body>
+</html>

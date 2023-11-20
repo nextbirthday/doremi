@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position: Absolute</title>
+    <style>
+      .outer {
+        width: 400px;
+        height: 400px;
+        margin: 50px;
+        background-color: darkslategray;
+      }
+      .box {
+        /* 부모의 position을 별도로 명시하지 않으면 static으로 지정 */
+        /* position: static; */
+
+        /*  아래 코드를 통해 inner2의 부모는 box로 지정됨 */
+        /* position: relative; */
+        width: 80%;
+        height: 80%;
+        padding: 20px;
+        background-color: royalblue;
+      }
+      .inner {
+        width: 100%;
+        height: 30%;
+      }
+      .inner1 {
+        background-color: palevioletred;
+      }
+      .inner2 {
+        background-color: palegoldenrod;
+        /* 기존에 있던 문서 flow에서 빠져나옴, 그래서 inner3이 inner1 다음에 배치 */
+        /* 그럼 inner2의 부모는 누구? absolute는 문서에서 빠져 나오기 때문에 body가 부모, body를 기준으로 위에서 80 좌에서 100 떨어짐 */
+        position: absolute;
+        top: 80px;
+        left: 80px;
+      }
+      .inner3 {
+        background-color: darkseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <div class="outer">
+        <div class="box">
+          <div class="inner inner1">inner1</div>
+          <div class="inner inner2">inner2</div>
+          <div class="inner inner3">inner3</div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>

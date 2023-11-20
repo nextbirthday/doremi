@@ -1,3 +1,10 @@
-export default function Home() {
-  return <>NEXT JS 14, HELLO!</>
+const Home = () => {
+  return (
+    <>
+      <h2>Welcome</h2>
+      Hello, Web Page!
+    </>
+  )
 }
+
+export default Home
