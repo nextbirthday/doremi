@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Javascript -->
@@ -25,21 +26,22 @@
   </head>
   <body>
     <!-- Heaher -->
-    <header>
-      <div>
-        <img src="images/blueAcrhive/schale_black_crop.png" alt="샬레" style="width: 100px; height: 100px" />
-        <h1>
+    <header class="header">
+      <div class="header__logo">
+        <img class="header__logo__image" src="images/blueAcrhive/schale_black_crop.png" alt="샬레" />
+        <h1 class="header__logo__title">
           <a href="#">S.C.H.A.L.E</a>
         </h1>
       </div>
       <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#career">Career</a></li>
-          <li><a href="#tesitmonial">Tesitmonial</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="header__menu">
+          <!-- 2개의 클래스 header__menu__item, active -->
+          <li><a href="#home" class="header__menu__item active">Home</a></li>
+          <li><a href="#about" class="header__menu__item">About</a></li>
+          <li><a href="#skills" class="header__menu__item">Skills</a></li>
+          <li><a href="#career" class="header__menu__item">Career</a></li>
+          <li><a href="#tesitmonial" class="header__menu__item">Tesitmonial</a></li>
+          <li><a href="#contact" class="header__menu__item">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -47,10 +49,13 @@
     <main>
       <!-- HOME -->
       <section id="home">
-        <img src="images/blueAcrhive/blue_archive_open_d6.jpg" alt="open d-6" />
-        <h2>Blue Archive 한국서버</h2>
-        <p>불루아카이브 한국서버 오픈 D-6</p>
-        <a href="#contact">Nexon Community</a>
+        <img class="home__avatar" src="images/blue_archive_cutscene/BG_CS_PV4_053.jpg" alt="open d-6" />
+        <h2 class="home_title">
+          NEXON GAMES, NEXON MX <br />
+          <strong class="home__title--strong">Blue Archive</strong>
+        </h2>
+        <p class="home__description">불루아카이브 한국서버 오픈</p>
+        <a href="#contact" class="home__contact">Blue Archive Community</a>
       </section>
       <!-- About -->
       <section id="about">
@@ -101,17 +106,224 @@
         </ul>
       </section>
       <!-- Skills -->
-      <section id="skills"></section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <p>Skills & Attributes</p>
+        <p>社長の威厳 - Increase Critical Damage by 14~26.6%.</p>
+
+        <div>
+          <section>
+            <h3>Coding Skills</h3>
+            <ul>
+              <li>
+                <div><span>HTML</span><span>97%</span></div>
+                <div><div style="width: 97%"></div></div>
+              </li>
+              <li>
+                <div><span>CSS</span><span>30%</span></div>
+                <div><div style="width: 30%"></div></div>
+              </li>
+              <li>
+                <div><span>Javascript</span><span>70%</span></div>
+                <div><div style="width: 70%"></div></div>
+              </li>
+              <li>
+                <div><span>Typescript</span><span>66%</span></div>
+                <div><div style="width: 66%"></div></div>
+              </li>
+              <li>
+                <div><span>React</span><span>80%</span></div>
+                <div><div style="width: 80%"></div></div>
+              </li>
+              <li>
+                <div><span>Nextjs</span><span>40%</span></div>
+                <div><div style="width: 40%"></div></div>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Tools</h3>
+            <ul>
+              <li>IntelliJ</li>
+              <li>Web Storm</li>
+              <li>Spring Boot</li>
+              <li>DBeaver</li>
+              <li>Visual Studio Code</li>
+            </ul>
+          </section>
+          <section>
+            <h3>ETC</h3>
+            <ul>
+              <li>Git</li>
+              <li>Scrum Master</li>
+              <li>Trinity</li>
+            </ul>
+          </section>
+        </div>
+      </section>
       <!-- Career -->
-      <section id="career"></section>
+      <section id="career">
+        <h2>Career</h2>
+        <p>Projects</p>
+        <ul>
+          <li>
+            <button>All <span>8</span></button>
+          </li>
+          <li>
+            <button>Front-End <span>3</span></button>
+          </li>
+          <li>
+            <button>Back-End <span>3</span></button>
+          </li>
+          <li>
+            <button>Mobile <span>2</span></button>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#" target="_blank">
+              <img src="images/projects/project1.webp" alt="project1" />
+              <div>
+                <h3>Project #1</h3>
+                <p>Clone coding with HTML, CSS, Javsscript</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="images/blue_archive_cutscene/BG_CS_Arona2_03.jpg" alt="project2" style="width: 400px; height: 300px" />
+              <div>
+                <h3>Project #2</h3>
+                <p>Clone coding with HTML, CSS, Javsscript</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_cutscene/BG_CS_Trinity_19_2.jpg" alt="project3" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #3</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_background/BG_GameDevRoom_Night.jpg" alt="project4" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #4</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_cutscene/BG_CS_Gehenna_03.png" alt="project5" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #5</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_cutscene/BG_CS_Trinity_03.jpg" alt="project6" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #6</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_cutscene/BG_CS_PV2_30.jpg" alt="project7" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #7</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#" target="_blank">
+                <img src="images/blue_archive_cutscene/BG_CS_Arius_08.jpg" alt="project8" style="width: 400px; height: 300px" />
+                <div>
+                  <h3>Project #8</h3>
+                  <p>Clone coding with HTML, CSS, Javsscript</p>
+                </div>
+              </a></a
+            >
+          </li>
+        </ul>
+      </section>
       <!-- Testimonials -->
-      <section id="tesitmonial"></section>
+      <section id="tesitmonial">
+        <h2>Testimonials</h2>
+        <p>See what they say about me</p>
+        <ul>
+          BG_CS_Arona2_04
+          <li>
+            <img src="images/blue_archive_cutscene/BG_CS_Arona2_04.jpg" alt="people1" style="width: 400px; height: 300px" />
+            <div>
+              <p>
+                ノワールシュート - Every 25 seconds, deal 152~290% damage to one enemy. 50% chance to deal an additional 251~476% damage to enemies in a circular area around the
+                targeted enemy.
+              </p>
+              <p><a href="#">Arona</a> Gehenna</p>
+            </div>
+          </li>
+          <li>
+            <img src="images/blue_archive_cutscene/BG_CS_Event_06.jpg" alt="people2" style="width: 400px; height: 300px" />
+            <div>
+              <p>ハードボイルドショット - Deal 274~521% damage to one enemy. Deal an additional 292~554% damage to enemies in circular area around the targeted enemy.</p>
+              <p><a href="#">Wakamo</a> Prison</p>
+            </div>
+          </li>
+          <li>
+            <img src="images/blue_archive_cutscene/BG_CS_S1Final_27_2.jpg" alt="people3" style="width: 400px; height: 300px" />
+            <div>
+              <p>アウトローの流儀 - Increase Critical Rate of EX skill by 20.1~38.3%.</p>
+              <p><a href="#">Arisu</a> Millenium</p>
+            </div>
+          </li>
+        </ul>
+      </section>
       <!-- Contact -->
       <section id="contact"></section>
       <!-- Arrow Aside -->
-      <aside></aside>
+      <aside>
+        <a href="#home" title="go to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </aside>
     </main>
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+      <h2>Blue&#39;s Archive</h2>
+      <p></p>
+      <ul>
+        <li>
+          <a href="https://github.com/orgs/plani-dev-team/dashboard" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://bluearchive.nexon.com/events/2023/10/2nd">
+            <i class="fa-solid fa-gamepad"></i>
+          </a>
+        </li>
+      </ul>
+      <p>©️Blue Archive - All rights reserved</p>
+    </footer>
   </body>
 </html>

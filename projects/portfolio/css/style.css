@@ -1,4 +1,159 @@
-/* h1 {
+/* BEM */
+/* BLOCK */
+/* Element */
+/* Modifier */
+/* block__element--modifier */
+/* ex) .card__img, card--dark, card__button--blue */
+
+/* Global */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* App Colors */
+  --color-primary: var(--color-black);
+  --color-primary-variant: var(--color-grey);
+  --color-accent: var(--color-blue);
+  --color-accent-variant: var(--color-orange);
+  --color-text: var(--color-white);
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #050a13;
+  --color-blue: #03e8f9;
+  --color-orange: #fd6413;
+  --color-grey: #1b1e26;
+  --color-lightpink: #ffb6c1;
+}
+
+body {
+  font-family: 'Noto Sans kr', 'Jetbrains Mono NL', sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+button {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+button:focus {
+  outline: 1px solid var(--color-accent);
+}
+
+.header {
+  background-color: var(--color-black);
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo__image {
+  margin-top: 5px;
+  width: 36px;
+  height: 36px;
+}
+
+.header__logo__title {
+  font-size: 1.8rem;
+}
+
+.header__menu {
+  display: flex;
+  gap: 4px;
+}
+
+.header__menu__item {
+  padding: 8px 16px 8px 16px;
+  /*  padding: 8px 16px; */
+}
+
+.header__menu__item:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.header__menu__item.active {
+  border: 1px solid var(--color-accent);
+  border-radius: 3px;
+}
+
+/* HOME */
+#home {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 5rem 1rem;
+  padding-top: 7rem;
   text-align: center;
 }
- */
+
+.home__avatar {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid red;
+  border-radius: 100%;
+}
+
+.home__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home__title--strong {
+  color: var(--color-accent);
+}
+
+.home__description {
+  font-size: 1.2rem;
+}
+
+/* hover 될 때 모든 태그의 박스 사이징을 border-box로 지정했지만 컨택이라는 요소에 width나 height를 지정하지 않았다
+기본적으로는  컨텐츠가 있고 그 안에 보더가 생기면서 밀려난다.
+높이를 100px로 고정하면 보더가 안쪽에 들어가지만, 너비와 높이를 지정하지 않았기 때문에 border가 생기면서 밀려난다.   */
+.home__contact {
+  display: inline-block;
+  background-color: var(--color-accent);
+  margin: 0.5rem;
+  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+  font-weight: bold;
+  color: var(--color-black);
+  border-radius: 4px;
+}
+
+.home__contact:hover {
+  background-color: transparent;
+  /* border: 2px solid var(--color-accent); */
+  outline: 2px solid var(--color-accent);
+  color: var(--color-text);
+}
