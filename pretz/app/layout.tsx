@@ -1,5 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import { FaGamepad, FaGithub } from 'react-icons/fa'
+import styles from './layout.module.css'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Next js 14, PRETZ',
@@ -9,30 +14,62 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
-      <body>
-        <h1>
-          <Link href="/">WEB</Link>
-        </h1>
-        <ol>
-          <li>
-            <Link href="/read/html">html</Link>
-          </li>
-          <li>
-            <Link href="/read/css">css</Link>
-          </li>
-        </ol>
-        {children}
-        <ul>
-          <li>
-            <Link href="/create">CREATE</Link>
-          </li>
-          <li>
-            <Link href="/update/1">UPDATE</Link>
-          </li>
-          <li>
-            <input type="button" value="DELETE"></input>
-          </li>
-        </ul>
+      <body className={styles.layout__body}>
+        <header className={styles.layout__header}>
+          <div className={styles.header__logo}>
+            <Image className={styles.header__logo__image} src="/images/blueAcrhive/schale_black_crop.png" alt="샬레" width={42} height={40} />
+            <h1 className={styles.header__logo__title}>
+              <Link href="#">S.C.H.A.L.E.</Link>
+            </h1>
+          </div>
+          <ol className={styles.header__menu}>
+            <li className={styles.header__menu__item}>
+              <Link href="/">WEB</Link>
+            </li>
+            <li className={styles.header__menu__item}>
+              <Link href="/read/html">html</Link>
+            </li>
+            <li className={styles.header__menu__item}>
+              <Link href="/read/css">css</Link>
+            </li>
+          </ol>
+        </header>
+
+        <main>
+          {children}
+          <ul>
+            <li>
+              <Link href="/create">CREATE</Link>
+            </li>
+            <li>
+              <Link href="/update/1">UPDATE</Link>
+            </li>
+            <li>
+              <input type="button" value="DELETE"></input>
+            </li>
+          </ul>
+        </main>
+
+        <footer id="footer" className={styles.layout__footer}>
+          <div className={styles.layout__max__container}>
+            <h2>Blue Archive</h2>
+            <p />
+            <ul className={styles.footer__contact__links}>
+              <li>
+                <Link className={styles.footer__contact__link} href="https://github.com/orgs/plani-dev-team/dashboard" passHref>
+                  <FaGithub />
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.footer__contact__link} href="https://bluearchive.nexon.com/events/2023/10/2nd" passHref>
+                  <FaGamepad />
+                </Link>
+              </li>
+            </ul>
+            <p>이용약관 | 개인정보처리방침</p>
+            <p>© NEXON Korea Corp. All Right Reserved.</p>
+          </div>
+        </footer>
       </body>
     </html>
   )

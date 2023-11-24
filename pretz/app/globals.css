@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans kr', 'Jetbrains Mono NL', sans-serif;
+}
+:root {
+  /* App Colors */
+  --color-primary: var(--color-black);
+  --color-primary-variant: var(--color-grey);
+  --color-accent: var(--color-blue);
+  --color-accent-variant: var(--color-orange);
+  --color-text: var(--color-white);
+
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #050a13;
+  --color-blue: #03e8f9;
+  --color-orange: #fd6413;
+  --color-grey: #1b1e26;
+  --color-lightpink: #ffb6c1;
+
+  /* Size */
+  --size-max-width: 1300px;
+  --size-layout-body: 1300px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ol {
+  list-style: none;
+}
+button {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO: Search Engine Optimization -->
-    <title>Red&#39;s Archive</title>
+    <!-- &#39;s 뭐였지 아스키코드 같은 거였는데 아니 왜 주석 다나오는데 밑에서 ㅋㅋ;;-->
+    <title>Blue Archive</title>
     <meta name="description" content="Archive for red winter" />
     <meta name="author" content="doremi" />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/blue_archive_others/ClanChat_Emoji_14_Jp.png" type="image/x-icon" />
     <!-- Open Graph Data -->
     <meta property="og:title" content="Red Archive" />
     <meta property="og:type" content="Website" />
@@ -21,309 +22,326 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Javascript -->
-    <script src="./src/main.js" defer></script>
+    <script type="module" src="./src/main.js" defer></script>
+    <script type="module" src="./src/projects.js" defer></script>
+    <script type="module" src="./src/active_menu.js" defer></script>
     <script src="https://kit.fontawesome.com/c59bdf0cb0.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Heaher -->
-    <header class="header">
+    <header id="header" class="header">
       <div class="header__logo">
         <img class="header__logo__image" src="images/blueAcrhive/schale_black_crop.png" alt="샬레" />
         <h1 class="header__logo__title">
-          <a href="#">S.C.H.A.L.E</a>
+          <a href="#">S.C.H.A.L.E.</a>
         </h1>
       </div>
-      <nav>
+      <nav class="header__nav">
         <ul class="header__menu">
           <!-- 2개의 클래스 header__menu__item, active -->
           <li><a href="#home" class="header__menu__item active">Home</a></li>
           <li><a href="#about" class="header__menu__item">About</a></li>
           <li><a href="#skills" class="header__menu__item">Skills</a></li>
           <li><a href="#career" class="header__menu__item">Career</a></li>
-          <li><a href="#tesitmonial" class="header__menu__item">Tesitmonial</a></li>
+          <li><a href="#testimonial" class="header__menu__item">Tesitmonial</a></li>
           <li><a href="#contact" class="header__menu__item">Contact</a></li>
         </ul>
       </nav>
+      <button class="header__toggle" aria-label="navigation menu toggle"><i class="fa-solid fa-bars"></i></button>
     </header>
     <!-- Main -->
     <main>
       <!-- HOME -->
       <section id="home">
-        <img class="home__avatar" src="images/blue_archive_cutscene/BG_CS_PV4_053.jpg" alt="open d-6" />
-        <h2 class="home_title">
-          NEXON GAMES, NEXON MX <br />
-          <strong class="home__title--strong">Blue Archive</strong>
-        </h2>
-        <p class="home__description">불루아카이브 한국서버 오픈</p>
-        <a href="#contact" class="home__contact">Blue Archive Community</a>
+        <div class="home__container">
+          <img class="home__avatar" src="images/blue_archive_cutscene/BG_CS_PV2_58.jpg" alt="open d-6" />
+          <h2 class="home__title">
+            NEXON GAMES, NEXON MX <br />
+            <strong class="home__title--strong">Blue Archive</strong>
+          </h2>
+          <p class="home__description">블루아카이브 한국서버 오픈</p>
+          <a href="#contact" class="home__contact">Blue Archive Community</a>
+        </div>
+        <!--   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" ></path> </svg> -->
       </section>
+
       <!-- About -->
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          선생님, 카카오톡에 블루 아카이브가 찾아왔어요~✨ 많은 선생님께서 애정하시는 블루 아카이브의 카카오톡 이모티콘은 물론, 그리고 선물하기에서 진행되는 특별 기획전의 준비가
-          모두 완료되었답니다.
+      <section id="about" class="section max-container">
+        <h2 class="title">About Me</h2>
+        <p class="description">
+          선생님, 카카오톡에 블루 아카이브가 찾아왔어요~✨ <br />많은 선생님께서 애정하시는 블루 아카이브의 카카오톡 이모티콘은 물론, 그리고 선물하기에서 진행되는 특별 기획전의
+          준비가 모두 완료되었답니다.
         </p>
-        <ul>
-          <li>
-            <i class="fa-brands fa-html5"></i>
-            <p>Front-End</p>
+        <ul class="majors">
+          <li class="major">
+            <i class="fa-brands fa-html5 major__icon"></i>
+            <p class="major__title">Front-End</p>
             <p>HTML, CSS, JavaScript, TypeScript, React, Vue, Web APIs, Next js</p>
           </li>
-          <li>
-            <i class="fa-brands fa-python"></i>
-            <p>Back-End</p>
+          <li class="major">
+            <i class="fa-brands fa-python major__icon"></i>
+            <p class="major__title">Back-End</p>
             <p>Java, JavaScript, NodeJs, REST APIs, GraphQL, Python, Express, Nest JS</p>
           </li>
-          <li>
-            <i class="fa-solid fa-mobile"></i>
-            <p>Mobile</p>
+          <li class="major">
+            <i class="fa-solid fa-mobile major__icon"></i>
+            <p class="major__title">Mobile</p>
             <p>Android, ios, React Native, Flutter, Swift, Kotlin</p>
           </li>
         </ul>
-        <ul>
-          <li>
+        <ul class="jobs">
+          <li class="job">
             <img src="./images/jobs/google.png" alt="구글로고" />
             <div>
-              <p>Google as Junior Software engineer</p>
-              <p>2020 July - Until Now</p>
+              <p class="job__name">Google as Junior Software engineer</p>
+              <p class="job__period">2020 July - Until Now</p>
             </div>
           </li>
-          <li>
+          <li class="job">
             <img src="./images/jobs/samsung.png" alt="삼성로고" />
             <div>
-              <p>Sansung as Software engineer</p>
-              <p>2017 July - 2020 May</p>
+              <p class="job__name">Sansung as Software engineer</p>
+              <p class="job__period">2017 July - 2020 May</p>
             </div>
           </li>
-          <li>
+          <li class="job">
             <img src="./images/jobs/nexon.svg" style="width: 65px; height: 24px" alt="넥슨로고" />
             <div>
-              <p>NEXON GAMES as Story CM</p>
-              <p>2015 June - 2017 May</p>
+              <p class="job__name">NEXON GAMES as Story CM</p>
+              <p class="job__period">2015 June - 2017 May</p>
             </div>
           </li>
         </ul>
       </section>
       <!-- Skills -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <p>Skills & Attributes</p>
-        <p>社長の威厳 - Increase Critical Damage by 14~26.6%.</p>
-
-        <div>
-          <section>
-            <h3>Coding Skills</h3>
-            <ul>
-              <li>
-                <div><span>HTML</span><span>97%</span></div>
-                <div><div style="width: 97%"></div></div>
-              </li>
-              <li>
-                <div><span>CSS</span><span>30%</span></div>
-                <div><div style="width: 30%"></div></div>
-              </li>
-              <li>
-                <div><span>Javascript</span><span>70%</span></div>
-                <div><div style="width: 70%"></div></div>
-              </li>
-              <li>
-                <div><span>Typescript</span><span>66%</span></div>
-                <div><div style="width: 66%"></div></div>
-              </li>
-              <li>
-                <div><span>React</span><span>80%</span></div>
-                <div><div style="width: 80%"></div></div>
-              </li>
-              <li>
-                <div><span>Nextjs</span><span>40%</span></div>
-                <div><div style="width: 40%"></div></div>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h3>Tools</h3>
-            <ul>
-              <li>IntelliJ</li>
-              <li>Web Storm</li>
-              <li>Spring Boot</li>
-              <li>DBeaver</li>
-              <li>Visual Studio Code</li>
-            </ul>
-          </section>
-          <section>
-            <h3>ETC</h3>
-            <ul>
-              <li>Git</li>
-              <li>Scrum Master</li>
-              <li>Trinity</li>
-            </ul>
-          </section>
+      <section id="skills" class="section">
+        <div class="max-container">
+          <h2 class="title">Skills</h2>
+          <p class="description">Skills & Attributes</p>
+          <p>社長の威厳 - Increase Critical Damage by 14~26.6%.</p>
+          <div class="skills">
+            <sectio class="skills__coding">
+              <h3 class="skills__title">Coding Skills</h3>
+              <ul>
+                <li class="bar">
+                  <div class="bar__metadata"><span>HTML</span><span>97%</span></div>
+                  <div class="bar__background"><div style="width: 97%" class="bar__value"></div></div>
+                </li>
+                <li class="bar">
+                  <div class="bar__metadata"><span>CSS</span><span>30%</span></div>
+                  <div class="bar__background"><div style="width: 30%" class="bar__value"></div></div>
+                </li>
+                <li class="bar">
+                  <div class="bar__metadata"><span>Javascript</span><span>70%</span></div>
+                  <div class="bar__background"><div style="width: 70%" class="bar__value"></div></div>
+                </li>
+                <li class="bar">
+                  <div class="bar__metadata"><span>Typescript</span><span>66%</span></div>
+                  <div class="bar__background"><div style="width: 66%" class="bar__value"></div></div>
+                </li>
+                <li class="bar">
+                  <div class="bar__metadata"><span>React</span><span>80%</span></div>
+                  <div class="bar__background"><div style="width: 80%" class="bar__value"></div></div>
+                </li>
+                <li class="bar">
+                  <div class="bar__metadata"><span>Nextjs</span><span>40%</span></div>
+                  <div class="bar__background"><div style="width: 40%" class="bar__value"></div></div>
+                </li>
+              </ul>
+            </sectio>
+            <section class="skills__tools">
+              <h3 class="skills__title">Tools</h3>
+              <ul>
+                <li>IntelliJ</li>
+                <li>Web Storm</li>
+                <li>Spring Boot</li>
+                <li>DBeaver</li>
+                <li>Visual Studio Code</li>
+              </ul>
+            </section>
+            <section class="skills__etc">
+              <h3 class="skills__title">ETC</h3>
+              <ul>
+                <li>Git</li>
+                <li>Scrum Master</li>
+                <li>Trinity</li>
+              </ul>
+            </section>
+          </div>
         </div>
+        <!--  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" ></path> <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" ></path> <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" ></path> </svg> -->
       </section>
       <!-- Career -->
-      <section id="career">
-        <h2>Career</h2>
-        <p>Projects</p>
-        <ul>
-          <li>
-            <button>All <span>8</span></button>
-          </li>
-          <li>
-            <button>Front-End <span>3</span></button>
-          </li>
-          <li>
-            <button>Back-End <span>3</span></button>
-          </li>
-          <li>
-            <button>Mobile <span>2</span></button>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#" target="_blank">
-              <img src="images/projects/project1.webp" alt="project1" />
-              <div>
-                <h3>Project #1</h3>
-                <p>Clone coding with HTML, CSS, Javsscript</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
-              <img src="images/blue_archive_cutscene/BG_CS_Arona2_03.jpg" alt="project2" style="width: 400px; height: 300px" />
-              <div>
-                <h3>Project #2</h3>
-                <p>Clone coding with HTML, CSS, Javsscript</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank">
+      <section id="career" class="section">
+        <div class="max-container">
+          <h2 class="title">Career</h2>
+          <p class="description">Projects</p>
+          <ul class="categories">
+            <li>
+              <button class="category category--selected" data-filter="all">All<!-- <span class="category__count">8</span> --></button>
+            </li>
+            <li>
+              <button class="category" data-filter="front-end">Front-End<!-- <span class="category__count">2</span> --></button>
+            </li>
+            <li>
+              <button class="category" data-filter="back-end">Back-End<!-- <span class="category__count">3</span> --></button>
+            </li>
+            <li>
+              <button class="category" data-filter="mobile">Mobile<!-- <span class="category__count">3</span> --></button>
+            </li>
+          </ul>
+          <ul class="projects">
+            <li class="project" data-type="front-end">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_cutscene/BG_CS_Trinity_19_2.jpg" alt="project3" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #3</h3>
+                <img src="images/blue_archive_cutscene/BG_CS_PV2_34.jpg" alt="project1" class="project__image" />
+                <div class="project__metadata">
+                  <h3 class="project__title">Front-End</h3>
                   <p>Clone coding with HTML, CSS, Javsscript</p>
                 </div>
-              </a></a
-            >
-          </li>
-          <li>
-            <a href="#" target="_blank">
+              </a>
+            </li>
+            <li class="project" data-type="back-end">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_background/BG_GameDevRoom_Night.jpg" alt="project4" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #4</h3>
+                <img src="images/blue_archive_cutscene/BG_CS_Arona2_03.jpg" alt="project2" class="project__image" />
+                <div class="project__metadata">
+                  <h3 class="project__title">Back-End</h3>
                   <p>Clone coding with HTML, CSS, Javsscript</p>
                 </div>
-              </a></a
-            >
-          </li>
-          <li>
-            <a href="#" target="_blank">
+              </a>
+            </li>
+            <li class="project" data-type="back-end">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_cutscene/BG_CS_Gehenna_03.png" alt="project5" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #5</h3>
-                  <p>Clone coding with HTML, CSS, Javsscript</p>
-                </div>
-              </a></a
-            >
-          </li>
-          <li>
-            <a href="#" target="_blank">
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_cutscene/BG_CS_Trinity_19_2.jpg" alt="project3" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Back-End</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+            <li class="project" data-type="mobile">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_cutscene/BG_CS_Trinity_03.jpg" alt="project6" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #6</h3>
-                  <p>Clone coding with HTML, CSS, Javsscript</p>
-                </div>
-              </a></a
-            >
-          </li>
-          <li>
-            <a href="#" target="_blank">
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_background/BG_GameDevRoom_Night.jpg" alt="project4" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Mobile</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+            <li class="project" data-type="front-end">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_cutscene/BG_CS_PV2_30.jpg" alt="project7" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #7</h3>
-                  <p>Clone coding with HTML, CSS, Javsscript</p>
-                </div>
-              </a></a
-            >
-          </li>
-          <li>
-            <a href="#" target="_blank">
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_cutscene/BG_CS_Gehenna_03.png" alt="project5" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Front-End</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+            <li class="project" data-type="mobile">
               <a href="#" target="_blank">
-                <img src="images/blue_archive_cutscene/BG_CS_Arius_08.jpg" alt="project8" style="width: 400px; height: 300px" />
-                <div>
-                  <h3>Project #8</h3>
-                  <p>Clone coding with HTML, CSS, Javsscript</p>
-                </div>
-              </a></a
-            >
-          </li>
-        </ul>
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_cutscene/BG_CS_Trinity_03.jpg" alt="project6" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Mobile</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+            <li class="project" data-type="mobile">
+              <a href="#" target="_blank">
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_cutscene/BG_CS_PV2_30.jpg" alt="project7" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Mobile</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+            <li class="project" data-type="back-end">
+              <a href="#" target="_blank">
+                <a href="#" target="_blank">
+                  <img src="images/blue_archive_cutscene/BG_CS_Arius_08.jpg" alt="project8" class="project__image" />
+                  <div class="project__metadata">
+                    <h3 class="project__title">Back-End</h3>
+                    <p>Clone coding with HTML, CSS, Javsscript</p>
+                  </div>
+                </a></a
+              >
+            </li>
+          </ul>
+        </div>
       </section>
       <!-- Testimonials -->
-      <section id="tesitmonial">
-        <h2>Testimonials</h2>
-        <p>See what they say about me</p>
-        <ul>
-          BG_CS_Arona2_04
-          <li>
-            <img src="images/blue_archive_cutscene/BG_CS_Arona2_04.jpg" alt="people1" style="width: 400px; height: 300px" />
-            <div>
+      <section id="testimonial" class="section max-container">
+        <h2 class="title">Testimonials</h2>
+        <p class="description">See what they say about me</p>
+        <ul class="testimonials">
+          <li class="testimonial">
+            <img src="images/blue_archive_cutscene/BG_CS_PR_08.jpg" alt="people1" class="testimonial__image" />
+            <div class="testimonial__bubble">
               <p>
-                ノワールシュート - Every 25 seconds, deal 152~290% damage to one enemy. 50% chance to deal an additional 251~476% damage to enemies in a circular area around the
-                targeted enemy.
+                ノワールシュート <br />
+                Every 25 seconds, deal 152~290% damage to one enemy. 50% chance to deal an additional 251~476% damage to enemies in a circular area around the targeted enemy.
               </p>
-              <p><a href="#">Arona</a> Gehenna</p>
+              <p><a href="#" class="testimonial__bubble__name">Shiroko</a> Abydos</p>
             </div>
           </li>
-          <li>
-            <img src="images/blue_archive_cutscene/BG_CS_Event_06.jpg" alt="people2" style="width: 400px; height: 300px" />
-            <div>
-              <p>ハードボイルドショット - Deal 274~521% damage to one enemy. Deal an additional 292~554% damage to enemies in circular area around the targeted enemy.</p>
-              <p><a href="#">Wakamo</a> Prison</p>
+          <li class="testimonial">
+            <img src="images/blue_archive_cutscene/BG_CS_PV4_075.jpg" alt="people2" class="testimonial__image" />
+            <div class="testimonial__bubble">
+              <p>
+                ハードボイルドショット <br />
+                Deal 274~521% damage to one enemy. Deal an additional 292~554% damage to enemies in circular area around the targeted enemy.
+              </p>
+              <p><a href="#" class="testimonial__bubble__name">A.R.O.N.A</a> SCHALE</p>
             </div>
           </li>
-          <li>
-            <img src="images/blue_archive_cutscene/BG_CS_S1Final_27_2.jpg" alt="people3" style="width: 400px; height: 300px" />
-            <div>
-              <p>アウトローの流儀 - Increase Critical Rate of EX skill by 20.1~38.3%.</p>
-              <p><a href="#">Arisu</a> Millenium</p>
+          <li class="testimonial">
+            <img src="images/blue_archive_cutscene/BG_CS_S1Final_27_2.jpg" alt="people3" class="testimonial__image" />
+            <div class="testimonial__bubble">
+              <p>
+                アウトローの流儀 <br />
+                Increase Critical Rate of EX skill by 20.1~38.3%.
+              </p>
+              <p><a href="#" class="testimonial__bubble__name">Arisu</a> Millenium</p>
             </div>
           </li>
         </ul>
       </section>
-      <!-- Contact -->
-      <section id="contact"></section>
       <!-- Arrow Aside -->
       <aside>
-        <a href="#home" title="go to top">
+        <a href="#home" title="go to top" class="arrow-up">
           <i class="fa-solid fa-arrow-up"></i>
         </a>
       </aside>
     </main>
     <!-- Footer -->
-    <footer>
-      <h2>Blue&#39;s Archive</h2>
-      <p></p>
-      <ul>
-        <li>
-          <a href="https://github.com/orgs/plani-dev-team/dashboard" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://bluearchive.nexon.com/events/2023/10/2nd">
-            <i class="fa-solid fa-gamepad"></i>
-          </a>
-        </li>
-      </ul>
-      <p>©️Blue Archive - All rights reserved</p>
+    <footer id="contact" class="section">
+      <div class="max-container">
+        <h2>Blue Archive</h2>
+        <p></p>
+        <ul class="contact__links">
+          <li>
+            <a class="contact__link" href="https://github.com/orgs/plani-dev-team/dashboard" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a class="contact__link" href="https://bluearchive.nexon.com/events/2023/10/2nd">
+              <i class="fa-solid fa-gamepad"></i>
+            </a>
+          </li>
+        </ul>
+        <p>이용약관 | 개인정보처리방침</p>
+        <p>© NEXON Korea Corp. All Right Reserved.</p>
+      </div>
     </footer>
   </body>
 </html>
