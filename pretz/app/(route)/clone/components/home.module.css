@@ -1,0 +1,47 @@
+.home {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 5rem 1rem;
+  padding-top: 6rem;
+  text-align: center;
+} /* css에 의해서 추가 */
+.home::after {
+  content: '';
+}
+.home__avatar {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid red;
+  border-radius: 100%;
+}
+.home__title {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.home__title--strong {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+.home__description {
+  margin: 1rem 0px 1rem 0px;
+  font-size: 2rem;
+}
+.home__contact {
+  font-size: 1.5rem;
+  display: inline-block;
+  background-color: var(--color-accent);
+  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+  font-weight: bold;
+  color: var(--color-black);
+  border-radius: 4px;
+}
+.home__contact:hover {
+  background-color: transparent;
+  /* border: 2px solid var(--color-accent); */
+  outline: 2px solid var(--color-accent);
+  color: var(--color-text);
+}

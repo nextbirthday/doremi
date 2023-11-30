@@ -1,0 +1,66 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "html",
+      "body": "html is..."
+    },
+    {
+      "id": 2,
+      "title": "css",
+      "body": "css is..."
+    },
+    {
+      "title": "javascript",
+      "body": "javascript...body",
+      "id": 3
+    },
+    {
+      "title": "next_js",
+      "body": "next_js_body",
+      "id": 4
+    },
+    {
+      "title": "react",
+      "body": "react_body",
+      "id": 5
+    },
+    {
+      "title": "six",
+      "body": "six",
+      "id": 6
+    },
+    {
+      "title": "seven",
+      "body": "seven",
+      "id": 7
+    },
+    {
+      "title": "eight",
+      "body": "eight",
+      "id": 8
+    },
+    {
+      "title": "nine",
+      "body": "nine",
+      "id": 9
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
