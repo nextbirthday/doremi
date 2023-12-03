@@ -1,10 +1,9 @@
-import DeptSelect from '@/components/settings/deptSelect'
-import { Input, Space } from 'antd'
+import ManagerInfo from '@/components/settings/managerInformation'
+import SiteInformation from '@/components/settings/siteInformation'
 import Footer from '../clone/footer'
 import Header from '../clone/header'
-import ManagerInfo from '@/components/settings/managerInfo'
 
-const Form = () => {
+const Settings = () => {
   return (
     <>
       <Header />
@@ -16,11 +15,7 @@ const Form = () => {
               <p>사이트 로고</p>
               <input type="file" id="fileUpload" />
             </div>
-            <div className="w-80 border-solid border-2 border-red-500 p-2">
-              <p>사이트 명</p>
-              <p>사이트 설명</p>
-              <input></input>
-            </div>
+            <SiteInformation />
             <ManagerInfo />
           </div>
         </section>
@@ -48,4 +43,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default Settings
