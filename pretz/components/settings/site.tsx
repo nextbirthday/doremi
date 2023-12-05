@@ -7,8 +7,9 @@ type Inputs = {
   name: string
   description: string
 }
+
+export const dividerMargin = '0.3rem 0 0.3rem 0'
 const SiteInformation = () => {
-  const dividerMargin = '0.3rem 0 0.3rem 0'
   const {
     control,
     handleSubmit,
@@ -19,8 +20,9 @@ const SiteInformation = () => {
   return (
     <div className="w-80 border-solid border-2 border-red-500 p-2">
       <form onSubmit={handleSubmit(submitAction)}>
-        <p style={{ textAlign: 'center' }}>사이트 정보</p>
+        <p style={{ textAlign: 'center' }}>Site Information</p>
         <Space direction="vertical" className="p-2" style={{ width: '300px' }}>
+          <Divider style={{ margin: dividerMargin }} />
           <Row style={{ justifyContent: 'space-between' }}>
             <Col span={4} style={{ paddingTop: '4px' }}>
               <span>E-mail:</span>
@@ -32,7 +34,7 @@ const SiteInformation = () => {
             </Col>
           </Row>
           <Divider style={{ margin: dividerMargin }} />
-          <Row align={'middle'}>
+          <Row align={'middle'} style={{ justifyContent: 'space-between' }}>
             <Col span={4}>
               <span>Desc:</span>
             </Col>
@@ -41,11 +43,11 @@ const SiteInformation = () => {
                 control={control}
                 name={'description'}
                 rules={{ required: 'Required!' }}
-                render={({ field }) => <Input.TextArea {...field} showCount rows={3} placeholder={`Enter Description.`} style={{ resize: 'none' }} />}
+                render={({ field }) => <Input.TextArea {...field} showCount={false} rows={3} placeholder={`Enter Description.`} style={{ resize: 'none' }} />}
               />
               {errors.description?.message && <FormMessage msg={errors.description.message} />}
             </Col>
-          </Row>{' '}
+          </Row>
           <Divider style={{ margin: dividerMargin }} />
           <Row justify={'end'} gutter={20}>
             <Col>

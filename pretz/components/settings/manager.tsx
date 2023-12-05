@@ -3,6 +3,7 @@ import FormMessage from '@/common/components/settings/formMessage'
 import { Button, Col, Divider, Input, Row, Select, Space } from 'antd'
 import { useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { dividerMargin } from './site'
 
 type Inputs = {
   email: string
@@ -33,9 +34,9 @@ const deptOptions = [
     label: '지란지교모빌리티',
   },
 ]
+
 const ManagerInfo = () => {
   const paddingTop = '4px'
-  const dividerMargin = '0rem 0 0.5rem 0'
   const {
     control,
     handleSubmit,
@@ -47,7 +48,7 @@ const ManagerInfo = () => {
   return (
     <div className="w-80 border-solid border-2 border-red-500 p-2 ">
       <form onSubmit={handleSubmit(submitAction)}>
-        <p style={{ textAlign: 'center' }}> 책임자 정보</p>
+        <p style={{ textAlign: 'center' }}>Manager Information</p>
         <Space direction="vertical" className="p-2" style={{ width: '300px' }}>
           <Divider style={{ margin: dividerMargin }} />
           <Row style={{ justifyContent: 'space-between' }}>

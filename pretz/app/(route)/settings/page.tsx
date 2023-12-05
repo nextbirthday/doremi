@@ -1,5 +1,6 @@
-import ManagerInfo from '@/components/settings/managerInformation'
-import SiteInformation from '@/components/settings/siteInformation'
+import Logo from '@/components/settings/logo'
+import Site from '@/components/settings/site'
+import Manager from '@/components/settings/manager'
 import Footer from '../clone/footer'
 import Header from '../clone/header'
 
@@ -11,12 +12,9 @@ const Settings = () => {
         <h2 className="text-2xl font-bold p-2 ">사이트 설정</h2>
         <section className="p-2">
           <div className="flex justify-between" style={{ minHeight: '250px' }}>
-            <div className="border-solid border-2 border-red-500 p-2" style={{ width: '600px' }}>
-              <p>사이트 로고</p>
-              <input type="file" id="fileUpload" />
-            </div>
-            <SiteInformation />
-            <ManagerInfo />
+            <Logo />
+            <Site />
+            <Manager />
           </div>
         </section>
         <div className="divide-y-2 divide-blue-300"></div>
