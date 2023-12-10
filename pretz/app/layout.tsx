@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 const RootLayout = async ({ children }: React.PropsWithChildren) => (
   <html>
-    <body className={styles.layout__body}>
+    <body className={styles.wrap}>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
     </body>
   </html>
