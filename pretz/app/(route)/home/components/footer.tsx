@@ -1,8 +1,9 @@
-import React from 'react'
-import styles from './footer.module.css'
-import { FaGamepad, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
 import { GoArrowRight } from 'react-icons/go'
+import styles from './footer.module.css'
+import { Button } from 'antd'
+import { FaYoutube } from 'react-icons/fa'
+import YoutubeOutlined from '@ant-design/icons'
 const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
@@ -11,14 +12,35 @@ const Footer = () => {
           <p className={styles.info__title}>고객센터 1000-1000</p>
           <p className={styles.info__description}>운영시간 : 평일 09:00 - 17:00 (점심시간: 12:00-13:00 제외)</p>
         </div>
-        <div className={styles.cs__button__box}>
+      </div>
+      <div className={styles.cs__button__box}>
+        <div style={{ display: 'flex' }}>
           <Link href="https://www.29cm.co.kr/mypage/cscenter/faq-cs/faq-list" className={styles.button__faq}>
-            FAQ <GoArrowRight />
+            FAQ
+            <span className={styles.button__faq__arrow}>
+              <GoArrowRight />
+            </span>
           </Link>
           <Link href="https://www.29cm.co.kr/mypage/cscenter/qna/qna-mantoman-detail" className={styles.button__qna}>
-            1:1문의 <GoArrowRight />
+            1:1문의
+            <span className={styles.button__qna__arrow}>
+              <GoArrowRight />
+            </span>
           </Link>
-          <div className={styles.footer__sns__app}>asfasf</div>
+        </div>
+        <div className={styles.footer__sns__app}>
+          <Button shape="circle">
+            <FaYoutube />
+          </Button>
+          <Button type="primary" shape="circle">
+            B
+          </Button>
+          <Button type="primary" shape="circle">
+            C
+          </Button>
+          <Button type="primary" shape="circle">
+            D
+          </Button>
         </div>
       </div>
       <div className={styles.footer__half}>

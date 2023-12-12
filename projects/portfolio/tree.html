@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script defer>
+      const subject = {
+        kor: 89,
+        eng: 82,
+        math: 100,
+
+        second: {
+          kor2: 70,
+          eng2: 98,
+          math2: 72,
+        },
+      }
+
+      const array = [
+        {
+          subject: {
+            kor: 89,
+            eng: 82,
+            math: 100,
+
+            second: {
+              kor2: 70,
+              eng2: 98,
+              math2: 72,
+            },
+          },
+        },
+      ]
+      const notice = { id: 1, title: 'hello' }
+      //console.log('notice ===>', notice)
+      const print = () => {
+        let x
+        let y
+
+        x = prompt('x 값을 입력하세요', 0)
+        y = prompt('y 값을 입력하세요', 0)
+        const add = parseInt(x) + parseInt(y)
+
+        x = parseInt(x)
+        y = parseInt(y)
+        alert(x + y)
+      }
+
+      const init = () => {
+        btn_print.onclick = print
+      }
+
+      window.onload = init
+    </script>
+    <input type="button" value="click" onclick="alert('hello!')" />
+    <input type="button" value="print" id="btn_print" />
+    <br />
+    <span onclick="alert('span!')">span</span>
+  </body>
+</html>
+
+<!-- prototype 자바스크립트 객체지향 -->

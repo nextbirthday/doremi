@@ -3,6 +3,7 @@ import Site from '@/components/settings/site'
 import Manager from '@/components/settings/manager'
 import Footer from '../clone/footer'
 import Header from '../clone/header'
+import Blacklist from '@/components/settings/blacklist'
 
 const Settings = () => {
   return (
@@ -20,10 +21,7 @@ const Settings = () => {
         <div className="divide-y-2 divide-blue-300"></div>
         <section className="p-2">
           <div className="flex justify-between" style={{ minHeight: '250px' }}>
-            <div className=" border-solid border-2 border-indigo-500 p-2 w-80">
-              <p>블랙리스트</p>
-              <input></input>
-            </div>
+            <Blacklist />
             <div className=" border-solid border-2 border-indigo-500 p-2 w-80">
               <p>화이트리스트</p>
               <input></input>

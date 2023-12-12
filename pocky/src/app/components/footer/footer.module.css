@@ -1,0 +1,129 @@
+.footer {
+  padding: var(--footer--padding--size);
+}
+/* footer 상단부 */
+.cs__section {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.info__description {
+  color: #5d5d5d;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.32px;
+}
+.info__title {
+  color: #000;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.5px;
+}
+.cs__button__box {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button__faq {
+  position: relative;
+  padding: 0.4rem 0 0 1rem;
+  border-radius: 2px;
+  background: #303033;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 30px;
+  width: 120px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+}
+.button__faq__arrow {
+  position: absolute;
+  top: 30%;
+  right: 20px;
+  width: 4px;
+}
+.button__qna {
+  position: relative;
+  padding: 0.4rem 0 0 1rem;
+  border-radius: 2px;
+  background: #303033;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 30px;
+  width: 120px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+  margin-left: 4px;
+}
+.button__qna__arrow {
+  position: absolute;
+  top: 30%;
+  right: 20px;
+  width: 4px;
+}
+.sns__app__icon {
+  border-radius: 100%;
+  border: 2px solid red;
+}
+
+.footer__half {
+  min-height: 160px;
+  padding: 0.5rem 0 0.5rem 0;
+  border-top: 1px solid #e4e4e4;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.notice__section {
+  width: 60%;
+  padding: 0 20px 0 0;
+}
+.notice__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.menu__section {
+  width: 40%;
+}
+
+.menu__list {
+  margin: 0;
+  display: flex;
+}
+
+.menu__item {
+}
+.menu__title {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 0.5rem 0 0.5rem;
+}
+.footer__info {
+  padding-top: 0.5rem;
+  padding-right: 200px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.documentation__privacy {
+  padding-right: 5px;
+  font-weight: bold;
+}
+.documentation__terms {
+  border-left: 2px solid lightgray;
+  padding-left: 5px;
+}
+
+.footer__corp {
+  padding: 0.5rem 0 0 0;
+}

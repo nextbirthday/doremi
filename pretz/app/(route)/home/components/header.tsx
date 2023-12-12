@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <header id="header" role="banner" className={styles.header}>
         <div className={styles.header__logo}>
-          <Image src="/images/blueArchive/schale_black_crop.png" alt="샬레" width={42} height={40} />
+          <Image src="/images/blueArchive/schale_black_crop.png" alt="헤더아이콘" width={42} height={40} />
           <h1 className={styles.header__logo__title}>
             <Link href="/clone" className={`${styles.header__logo__title}`}>
               PRETZ
@@ -17,34 +17,34 @@ const Header = () => {
         <nav className={styles.header__nav}>
           <ul className={styles.header__menu}>
             <li>
-              <a href="#profile" className={styles.header__menu__item}>
+              <Link href="#profile" className={`${styles.header__menu__item} `}>
                 Profile
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className={styles.header__menu__item}>
-                About
-              </a>
+              <Link href="/blog" className={styles.header__menu__item}>
+                Blog
+              </Link>
             </li>
             <li>
-              <a href="#skills" className={styles.header__menu__item}>
-                Skills
-              </a>
+              <Link href="/products" className={styles.header__menu__item}>
+                Products
+              </Link>
             </li>
             <li>
-              <a href="#career" className={styles.header__menu__item}>
-                Career
-              </a>
+              <Link href="/account" className={styles.header__menu__item}>
+                My Account
+              </Link>
             </li>
             <li>
-              <a href="#testimonial" className={styles.header__menu__item}>
+              <Link href="#testimonial" className={styles.header__menu__item}>
                 Tesitmonials
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#footer" className={styles.header__menu__item}>
-                Contact
-              </a>
+              <Link href="/signin" className={styles.header__menu__item}>
+                Login
+              </Link>
             </li>
           </ul>
         </nav>
