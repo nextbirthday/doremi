@@ -36,6 +36,3 @@ yarn-error.log*
 next-env.d.ts
 
 #image
-/public/blue_archive_background
-/public/blue_archive_cutscene
-/public/blue_archive_others
