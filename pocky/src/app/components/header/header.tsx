@@ -17,7 +17,7 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="header__menu">
             <li>
-              <Link href="#profile" className="header__menu__item">
+              <Link href="/profile" className="header__menu__item">
                 Profile
               </Link>
             </li>
@@ -32,12 +32,17 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="#testimonial" className="header__menu__item">
+              <Link href="/testimonial" className="header__menu__item">
                 Tesitmonials
               </Link>
             </li>
             <li>
-              <Link href="/account" className="header__menu__item">
+              <Link href="/youtube" className="header__menu__item">
+                Youtube
+              </Link>
+            </li>
+            <li>
+              <Link href="/user" className="header__menu__item">
                 My Account
               </Link>
             </li>

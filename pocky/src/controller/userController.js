@@ -1,9 +1,18 @@
 import * as userRepository from '@/repository/userRepo';
 
 export const getUserInfo = async (id) => {
+
   const dbResult = await userRepository.findById(id);
   return dbResult;
 };
+
+export const userInsert = async (submitData) => {
+  console.log('userController userInsert submitData ===>', submitData);
+
+  const result = await userRepository.create(submitData)
+  return result
+}
+
 
 // export const getUsers = async ({ where }, pageInfo) => {
 //   const getSearchParam = {

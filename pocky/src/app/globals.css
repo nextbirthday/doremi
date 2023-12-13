@@ -4,6 +4,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 :root {
@@ -15,7 +16,6 @@
 
 body {
   margin: 0;
-  font-family: 'Noto Sans kr', 'Jetbrains Mono NL', sans-serif;
 }
 
 h1,

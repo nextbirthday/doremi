@@ -1,32 +1,32 @@
 'use client'
 /* eslint-disable @next/next/no-img-element */
-import Footer from '@/app/components/footer/footer'
+import Link from 'next/link'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Checkbox, Switch, Tabs } from 'antd'
 import { CheckboxChangeEvent } from 'antd/es/checkbox'
-import Link from 'next/link'
-import { useForm } from 'react-hook-form'
 import { FaRegUser } from 'react-icons/fa'
 import { RiLockPasswordLine } from 'react-icons/ri'
-import './page.css'
-import { useState } from 'react'
+import Footer from '@/app/components/footer/footer'
 import FormMessage from '@/app/components/form/formMessage'
+import './page.css'
 const Signin = () => {
   const { register, handleSubmit, watch } = useForm()
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     if (!watch('userid').trim()) {
       setIdMessage(true)
-      return // Stop the login process
+      return
     }
     if (!watch('password').trim()) {
       setPwMessage(true)
-      return // Stop the login process
+      return
     }
 
     if (!data) {
       return
     }
-    console.log(data)
+    console.log('signin data ===>', data)
   }
   const onIpChange = (checked: boolean) => {
     console.log(`switch to ${checked}`)

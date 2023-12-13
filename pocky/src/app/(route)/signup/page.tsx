@@ -11,6 +11,7 @@ import { RiLockPasswordLine } from 'react-icons/ri'
 import './page.css'
 import { useState } from 'react'
 import FormMessage from '@/app/components/form/formMessage'
+import { userInsert } from '@/controller/userController'
 
 const Signup = () => {
   const {
@@ -19,8 +20,18 @@ const Signup = () => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     console.log('data ===>', data)
+
+    const submitData = {
+      userid: data.userid,
+      password: data.password,
+      email: data.email,
+      name: data.name,
+    }
+    console.log('submitData ===>', submitData)
+    const insert_result = await userInsert(submitData)
+    console.log('insert_result', insert_result)
   }
 
   const handleCheck = () => {
