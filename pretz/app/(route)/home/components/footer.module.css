@@ -1,18 +1,15 @@
 .footer {
   padding: 0 50px 0 50px;
 }
-
+/* footer 상단부 */
 .cs__section {
+  margin: auto;
   display: flex;
-  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
   box-sizing: border-box;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.cs__info {
-  display: block;
+  padding-bottom: 8px;
 }
 
 .info__description {
@@ -37,39 +34,50 @@
 }
 
 .button__faq {
-  padding: 0 0 0 14px;
+  position: relative;
+  padding: 0.4rem 0 0 1rem;
   border-radius: 2px;
   background: #303033;
-  font-size: 15px;
+  font-size: 1rem;
   color: #fff;
   line-height: 30px;
   width: 120px;
+  height: 40px;
   box-sizing: border-box;
   border: none;
 }
-
-.button__qna {
-  padding: 0 0 0 14px;
-  border-radius: 2px;
-  background: #303033;
-  font-size: 15px;
-  color: #fff;
-  line-height: 30px;
-  width: 120px;
-  box-sizing: border-box;
-  margin-left: 4px;
-  border: none;
-}
-
-.button__ico {
-  /*   position: absolute;
-  top: 50%;
-  right: 10px;
+.button__faq__arrow {
+  position: absolute;
+  top: 30%;
+  right: 20px;
   width: 4px;
-  height: 8px;
-  margin-top: -4px;
-  line-height: 0; */
 }
+.button__qna {
+  position: relative;
+  padding: 0.4rem 0 0 1rem;
+  border-radius: 2px;
+  background: #303033;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 30px;
+  width: 120px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+  margin-left: 4px;
+}
+.button__qna__arrow {
+  position: absolute;
+  top: 30%;
+  right: 20px;
+  width: 4px;
+}
+.sns__app__icon {
+  border-radius: 100%;
+  border: 2px solid red;
+}
+
+
 .footer__half {
   min-height: 160px;
   padding: 0.5rem 0 0.5rem 0;

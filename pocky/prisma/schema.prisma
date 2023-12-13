@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(cuid())
+  name          String?
+  userid        String?     @unique
+  password      String?
+  email         String?     @unique
+  emailVerified DateTime?
+  image         String?
+  grade         Int         @default(1)
+  isDelete      ActiveState @default(No)
+  Logs          Log[]
+  createAt      DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model Log {
+  id       String   @id @default(cuid())
+  type     LogType  @default(User)
+  info     String
+  User     User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String?
+  createAt DateTime @default(now())
+}
+
+enum ActiveState {
+  Yes
+  No
+}
+
+enum LogType {
+  User
+  Board
+  File
+}
+
+model Product {
+  code          String      @id @default(cuid())
+  name          String?
+  price         String?     @unique
+  stock         String?     @unique
+  image         String?
+  isDelete      ActiveState @default(No)
+  createAt      DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}

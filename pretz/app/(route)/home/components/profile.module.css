@@ -20,12 +20,6 @@
   font-size: 2rem;
   font-weight: bold;
 }
-.profile__title--strong {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--color-accent);
-}
 .profile__description {
   padding: 1rem 0px 1rem 0px;
   font-size: 2rem;
