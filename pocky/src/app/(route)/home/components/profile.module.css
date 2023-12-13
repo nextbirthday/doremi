@@ -37,9 +37,11 @@
   font-weight: bold;
   color: var(--color-black);
   border-radius: 4px;
+  transition: all 300ms ease;
 }
 .profile__contact:hover {
   background-color: transparent;
   outline: 2px solid var(--color-accent);
   color: var(--color-text);
+  transform: scale(1.3);
 }

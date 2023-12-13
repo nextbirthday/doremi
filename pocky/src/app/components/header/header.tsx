@@ -27,7 +27,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/products" className="header__menu__item">
+              <Link href="/product" className="header__menu__item">
                 Products
               </Link>
             </li>

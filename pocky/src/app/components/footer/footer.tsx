@@ -1,50 +1,59 @@
-import { Button } from 'antd'
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-import { FaYoutube } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
-import styles from './footer.module.css'
+import './footer.css'
 const Footer = () => {
   return (
-    <footer id="footer" className={styles.footer}>
-      <div className={styles.cs__section}>
-        <div className={styles.cs__info}>
-          <p className={styles.info__title}>고객센터 1000-1000</p>
-          <p className={styles.info__description}>운영시간 : 평일 09:00 - 17:00 (점심시간: 12:00-13:00 제외)</p>
+    <footer id="footer" className="footer">
+      <div className="cs_section">
+        <div className="cs_info">
+          <p className="info_title">고객센터 1000-1000</p>
+          <p className="info_description">운영시간 : 평일 09:00 - 17:00 (점심시간: 12:00-13:00 제외)</p>
         </div>
       </div>
-      <div className={styles.cs__button__box}>
+      <div className="cs_button_box">
         <div style={{ display: 'flex' }}>
-          <Link href="https://www.29cm.co.kr/mypage/cscenter/faq-cs/faq-list" className={styles.button__faq}>
+          <Link href="/faq" className="button_faq">
             FAQ
-            <span className={styles.button__faq__arrow}>
+            <span className="button_faq_arrow">
               <GoArrowRight />
             </span>
           </Link>
-          <Link href="https://www.29cm.co.kr/mypage/cscenter/qna/qna-mantoman-detail" className={styles.button__qna}>
+          <Link href="/mypage/cscenter" className="button_qna">
             1:1문의
-            <span className={styles.button__qna__arrow}>
+            <span className="button_qna_arrow">
               <GoArrowRight />
             </span>
           </Link>
         </div>
-        <div className={styles.footer__sns__app}>
-          <Button shape="circle">
-            <FaYoutube />
-          </Button>
-          <Button type="primary" shape="circle">
-            B
-          </Button>
-          <Button type="primary" shape="circle">
-            C
-          </Button>
-          <Button type="primary" shape="circle">
-            D
-          </Button>
+        <div>
+          <ul className="footer_social_list">
+            <li className="footer_social_item instagram">
+              <button>
+                <img src="/social/google/google_circle.png" alt="인스타그램앱" className="social_image" />
+              </button>
+            </li>
+            <li className="footer_social_item youtube">
+              <button>
+                <img src="/social/naver/btnG_icon_circle.png" alt="회사유튜브" className="social_image" />
+              </button>
+            </li>
+            <li className="footer_social_item apple">
+              <button>
+                <img src="/social/kakao/kakao_circle.png" alt="애플스토어" className="social_image" />
+              </button>
+            </li>
+            <li className="footer_social_item playstore">
+              <button>
+                <img src="/social/kakao/kakao_circle.png" alt="구글플레이스토어" className="social_image" />
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className={styles.footer__half}>
-        <div className={styles.notice__section}>
-          <h2 className={styles.notice__title}>NOTICE</h2>
+      <div className="footer_half">
+        <div className="notice_section">
+          <h2 className="notice_title">NOTICE</h2>
           <ul>
             <li></li>
             <li></li>
@@ -53,34 +62,34 @@ const Footer = () => {
             <li></li>
           </ul>
         </div>
-        <div className={styles.menu__section}>
-          <ul className={styles.menu__list}>
-            <li className={styles.menu__item}>
-              <h2 className={styles.menu__title}>ABOUT US</h2>
+        <div className="menu_section">
+          <ul className="menu_list">
+            <li className="menu_item">
+              <h2 className="menu_title">ABOUT US</h2>
             </li>
             <li>
-              <h2 className={styles.menu__title}>MY ORDER</h2>
+              <h2 className="menu_title">MY ORDER</h2>
             </li>
             <li>
-              <h2 className={styles.menu__title}>MY ACCOUNT</h2>
+              <h2 className="menu_title">MY ACCOUNT</h2>
             </li>
             <li>
-              <h2 className={styles.menu__title}>HELP</h2>
+              <h2 className="menu_title">HELP</h2>
             </li>
           </ul>
         </div>
       </div>
-      <div className={styles.footer__info}>
-        <div className={styles.footer__documentation}>
-          <Link href="https://www.29cm.co.kr/home/agreement" className={styles.documentation__privacy}>
+      <div className="footer_info">
+        <div className="footer_documentation">
+          <Link href="https://www.29cm.co.kr/home/agreement" className="documentation_privacy">
             개인정보처리방침
           </Link>
-          <Link href="https://www.29cm.co.kr/home/private" className={styles.documentation__terms}>
+          <Link href="https://www.29cm.co.kr/home/private" className="documentation_terms">
             이용약관
           </Link>
         </div>
 
-        <div className={styles.footer__corp}>
+        <div className="footer_corp">
           <p>
             <span style={{ padding: '0 0.5rem 0 0' }}>상호명:주식회사 플랜아이 (PLANI Co., Ltd.)</span>
             <span style={{ padding: '0 0.5rem 0 0' }}>사업장소재지:대전 유성구 문지로 282-10 (문지동 659-1)</span>

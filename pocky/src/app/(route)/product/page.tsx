@@ -9,8 +9,8 @@ const Product = async () => {
 
   return (
     <>
-        <h1>Product List</h1>
-        <ProductList productList={productList} />
+      <h1>Product List</h1>
+      <ProductList productList={productList} />
     </>
   )
 }

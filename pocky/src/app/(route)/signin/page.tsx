@@ -57,6 +57,18 @@ const Signin = () => {
       setPwMessage(false)
     }
   }
+
+  const onGoogleSignin = () => {
+    console.log('onGoogleSignin')
+  }
+
+  const onNaverSignin = () => {
+    console.log('onNaverSignin')
+  }
+
+  const onKakaoSignin = () => {
+    console.log('onKakaoSignin')
+  }
   return (
     <>
       <div className="signin__body">
@@ -189,13 +201,19 @@ const Signin = () => {
 
         <ul className="signin_social_menu">
           <li className="signin_social_button google">
-            <button>구글</button>
+            <button onClick={onGoogleSignin}>
+              <img src="/social/google/google_circle.png" alt="구글로그인" style={{ width: '4rem', height: '4rem' }} />
+            </button>
           </li>
           <li className="signin_social_button naver">
-            <button>네이버</button>
+            <button onClick={onNaverSignin}>
+              <img src="/social/naver/btnG_icon_circle.png" alt="네이버로그인" style={{ width: '4rem', height: '4rem' }} />
+            </button>
           </li>
           <li className="signin_social_button kakao">
-            <button>카카오</button>
+            <button onClick={onKakaoSignin}>
+              <img src="/social/kakao/kakao_circle.png" alt="카카오로그인" style={{ width: '4rem', height: '4rem' }} />
+            </button>
           </li>
         </ul>
         <div style={{ padding: '0 0 1rem 0' }}></div>

@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <>
       <Header />
-      {/* main */}
       <div style={{ padding: '2rem 3rem 2rem 3rem' }}>
         <Profile />
         <About />
