@@ -1,4 +1,4 @@
 # doremi
 
-#pocky 
+# pocky 
 Next JS 14, PostgreSQL, prisma 
