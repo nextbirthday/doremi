@@ -31,16 +31,16 @@
   -webkit-box-shadow: -5px 5px 5px 0px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: -5px 5px 5px 0px rgba(0, 0, 0, 0.6);
 }
-.major__icon {
+.major_icon {
   font-size: 4rem;
   margin: 0rem 0 0.5rem 0;
   color: var(--color-accent);
   transition: all 300ms ease;
 }
-.major:hover .major__icon {
+.major:hover .major_icon {
   transform: rotate(-10deg) scale(1.2);
 }
-.major__title {
+.major_title {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.5rem 0 0.5rem 0;
@@ -54,12 +54,12 @@
   gap: 20px;
   margin-bottom: 0.8rem;
 }
-.job__name {
+.job_name {
   margin: 0;
   color: lightcoral;
 }
 
-.job__period {
+.job_period {
   margin: 0;
   font-size: 0.8rem;
   color: gold;

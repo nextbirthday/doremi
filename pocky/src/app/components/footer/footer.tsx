@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { GoArrowRight } from 'react-icons/go'
+import { FaInstagram } from 'react-icons/fa'
 import './footer.css'
 const Footer = () => {
   return (
@@ -30,22 +31,22 @@ const Footer = () => {
           <ul className="footer_social_list">
             <li className="footer_social_item instagram">
               <button>
-                <img src="/social/google/google_circle.png" alt="인스타그램앱" className="social_image" />
+                <img src="/footer/social/instagram.png" alt="인스타그램앱" className="social_image" />
               </button>
             </li>
             <li className="footer_social_item youtube">
               <button>
-                <img src="/social/naver/btnG_icon_circle.png" alt="회사유튜브" className="social_image" />
+                <img src="/footer/social/youtube.png" alt="회사유튜브" className="social_image" />
               </button>
             </li>
             <li className="footer_social_item apple">
               <button>
-                <img src="/social/kakao/kakao_circle.png" alt="애플스토어" className="social_image" />
+                <img src="/footer/social/apple.png" alt="애플스토어" className="social_image" />
               </button>
             </li>
             <li className="footer_social_item playstore">
               <button>
-                <img src="/social/kakao/kakao_circle.png" alt="구글플레이스토어" className="social_image" />
+                <img src="/footer/social/playstore.png" alt="구글플레이스토어" className="social_image" />
               </button>
             </li>
           </ul>
@@ -67,13 +68,13 @@ const Footer = () => {
             <li className="menu_item">
               <h2 className="menu_title">ABOUT US</h2>
             </li>
-            <li>
+            <li className="menu_item">
               <h2 className="menu_title">MY ORDER</h2>
             </li>
-            <li>
+            <li className="menu_item">
               <h2 className="menu_title">MY ACCOUNT</h2>
             </li>
-            <li>
+            <li className="menu_item">
               <h2 className="menu_title">HELP</h2>
             </li>
           </ul>

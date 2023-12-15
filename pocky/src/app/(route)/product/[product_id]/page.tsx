@@ -6,6 +6,7 @@ const ProductDetail = async ({ params }: { params: { product_id: string } }) => 
   console.log('productList', productList)
 
   if (!productList) {
+    alert('없는 품목')
     return
   }
   return (

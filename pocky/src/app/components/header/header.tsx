@@ -42,7 +42,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/user" className="header__menu__item">
+              <Link href="/mypage" className="header__menu__item">
                 My Account
               </Link>
             </li>

@@ -9,27 +9,27 @@
   content: '';
 }
 
-.profile__image {
+.profile_image {
   width: 100%;
   max-height: 600px;
   align-items: center;
   object-fit: cover;
 }
-.profile__title {
+.profile_title {
   padding: 1rem 0 0 0;
   font-size: 2rem;
   font-weight: bold;
 }
-.profile__description {
+.profile_description {
   padding: 1rem 0px 1rem 0px;
   font-size: 2rem;
   font-weight: bold;
 }
-.profile__github {
+.profile_github {
   font-size: 3rem;
   font-weight: bold;
 }
-.profile__contact {
+.profile_contact {
   font-size: 1.5rem;
   display: inline-block;
   background-color: var(--color-accent);
@@ -39,7 +39,7 @@
   border-radius: 4px;
   transition: all 300ms ease;
 }
-.profile__contact:hover {
+.profile_contact:hover {
   background-color: transparent;
   outline: 2px solid var(--color-accent);
   color: var(--color-text);

@@ -44,11 +44,8 @@ const Career = () => {
             .filter((project) => selectedCategory === 'All' || project.category === selectedCategory)
             .map((project) => (
               <li key={project.id} className={`${styles.project} ${styles[project.category.toLowerCase()]}`}>
-                  <img src={project.image} alt="project" className={styles.project__image} />
-                  <div className={styles.project__metadata}>
-                    <h3 className={styles.project__title}>{project.category}</h3>
-                    <p className={styles.project__description}>{project.description}</p>
-                  </div>
+                <img src={project.image} alt="project" className={styles.project__image} />
+                <div className={styles.project__metadata}></div>
               </li>
             ))}
         </ul>

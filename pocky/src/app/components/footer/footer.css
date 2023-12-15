@@ -86,7 +86,7 @@
   padding: 0 20px 0 0;
 }
 .notice_title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .menu_section {
@@ -99,6 +99,7 @@
 }
 
 .menu_item {
+  padding: 0 2rem 0 0;
 }
 .menu_title {
   font-size: 1rem;
@@ -137,6 +138,7 @@
   padding-right: 1rem;
 }
 .social_image {
+  object-fit: fill;
   width: 2rem;
   height: 2rem;
 }
