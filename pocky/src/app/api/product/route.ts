@@ -11,16 +11,15 @@ export const GET = async (request: NextRequest) => {
     const code = searchParams.get("code");
     if (code) {
         const productList = await getProduct(code)
-        
+
         try {
             return NextResponse.json({ ...productList }, { status: 200 });
         } catch (error) {
             return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
         }
     }
-    
-    const productList = await getAllProduct()
 
+    const productList = await getAllProduct()
     try {
         return NextResponse.json({ ...productList }, { status: 200 });
     } catch (error) {

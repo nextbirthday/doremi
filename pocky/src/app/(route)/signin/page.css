@@ -41,6 +41,9 @@
   padding: 1rem 1rem 1rem 1rem;
 }
 
+.id_pw_wrap {
+  height:115px;
+}
 .signin_item {
   border: 1px solid lightgray;
   border-radius: 4px;
@@ -52,10 +55,11 @@
   padding: 0 0 0 0;
 }
 
+.id {
+  margin-bottom: 5px;
+}
 .signin_item:focus-within {
-  border: none;
-
-  border: 2px solid green;
+  border: 1.5px solid green;
   border-radius: 4px;
 }
 .signin_input:focus {
@@ -72,6 +76,7 @@
 }
 .signin_input {
   width: 350px;
+  height: 30px;
   &:hover {
     cursor: pointer;
   }

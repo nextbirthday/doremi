@@ -14,13 +14,13 @@ const Footer = () => {
       </div>
       <div className="cs_button_box">
         <div style={{ display: 'flex' }}>
-          <Link href="/faq" className="button_faq">
+          <Link href="/mypage/cscenter/faq" className="button_faq">
             FAQ
             <span className="button_faq_arrow">
               <GoArrowRight />
             </span>
           </Link>
-          <Link href="/mypage/cscenter" className="button_qna">
+          <Link href="/mypage/cscenter/qna" className="button_qna">
             1:1문의
             <span className="button_qna_arrow">
               <GoArrowRight />

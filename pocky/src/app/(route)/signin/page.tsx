@@ -9,9 +9,15 @@ import { FaRegUser } from 'react-icons/fa'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import Footer from '@/app/components/footer/footer'
 import FormMessage from '@/app/components/form/formMessage'
+import axios from 'axios'
 import './page.css'
 const Signin = () => {
-  const { register, handleSubmit, watch } = useForm()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
 
   const onSubmit = async (data: any) => {
     if (!watch('userid').trim()) {
@@ -22,11 +28,22 @@ const Signin = () => {
       setPwMessage(true)
       return
     }
-
     if (!data) {
       return
     }
-    console.log('signin data ===>', data)
+    try {
+      const response = await axios.post('/api/signin', {
+        data: data,
+      })
+      const success = response.data.success
+
+      if (success === true) {
+      } else {
+        alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
   const onIpChange = (checked: boolean) => {
     console.log(`switch to ${checked}`)
@@ -40,7 +57,6 @@ const Signin = () => {
   const [idMessage, setIdMessage] = useState(false)
   const handleId = (e: any) => {
     const id = e.target.value
-    // If the ID is entered, set idMessage to false
     if (id.trim()) {
       setIdMessage(false)
     }
@@ -52,10 +68,11 @@ const Signin = () => {
   const handlePassword = (e: any) => {
     const password = e.target.value
 
-    // If the password is entered, set pwMessage to false
     if (password.trim()) {
       setPwMessage(false)
     }
+
+    console.log('password ===>', password)
   }
 
   const onGoogleSignin = () => {
@@ -69,6 +86,7 @@ const Signin = () => {
   const onKakaoSignin = () => {
     console.log('onKakaoSignin')
   }
+
   return (
     <>
       <div className="signin__body">
@@ -90,8 +108,8 @@ const Signin = () => {
                   key: '1',
                   children: (
                     <>
-                      <form onSubmit={handleSubmit(onSubmit)}>
-                        <ul className="panel_wrap">
+                      <ul className="panel_wrap">
+                        <form onSubmit={handleSubmit(onSubmit)}>
                           <li className="panel_item">
                             <div className="panel_inner id">
                               <div className="id_pw_wrap">
@@ -107,11 +125,10 @@ const Signin = () => {
                                     placeholder="아이디"
                                     maxLength={20}
                                     {...register('userid')}
-                                    onChange={handleId}
                                     required
+                                    onChange={handleId}
                                   />
                                 </div>
-                                <div style={{ padding: '0 0 2px 0' }}></div>
                                 {/* 비밀번호 */}
                                 <div className="signin_item password">
                                   <span className="signin_label">
@@ -122,13 +139,13 @@ const Signin = () => {
                                     id="password"
                                     type="password"
                                     placeholder="비밀번호"
+                                    maxLength={20}
                                     {...register('password')}
-                                    onChange={handlePassword}
                                     required
+                                    onChange={handlePassword}
                                   />
                                 </div>
                               </div>
-                              <div style={{ padding: '0 0 0.5rem 0' }}></div>
                               <div className="login_keep_wrap">
                                 <div className="keep_check">
                                   <Checkbox onChange={onKeepLoginChange}>로그인 상태 유지</Checkbox>
@@ -137,17 +154,17 @@ const Signin = () => {
                                   <Link href="https://nid.naver.com/login/ext/help_ip3.html">IP보안&nbsp;</Link>
                                   <Switch onChange={onIpChange} />
                                 </div>
-                              </div>{' '}
+                              </div>
                               {idMessage && <FormMessage msg={`아이디를 입력해주세요.`} />}
                               {pwMessage && <FormMessage msg={`비밀번호를 입력해주세요.`} />}
                               <div style={{ padding: '0 0 2rem 0' }}></div>
-                              <button onClick={onSubmit} className="signin_button">
+                              <button className="signin_button">
                                 <span className="signin_text">로그인</span>
                               </button>
                             </div>
                           </li>
-                        </ul>
-                      </form>
+                        </form>
+                      </ul>
                     </>
                   ),
                 },

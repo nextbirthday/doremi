@@ -10,3 +10,13 @@ export const getAllProduct = async () => {
     const dbResult = await productRepository.findMany()
     return dbResult
 }
+
+export const createProduct = async (data) => {
+    const dbResult = await productRepository.create(data)
+    return dbResult
+}
+
+export const updateProduct = async (data) => {
+    const dbResult = await productRepository.update(data)
+    return dbResult
+}

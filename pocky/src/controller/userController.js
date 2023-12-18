@@ -6,13 +6,16 @@ export const getUserInfo = async (id) => {
   return dbResult;
 };
 
-export const userInsert = async (submitData) => {
-  console.log('userController userInsert submitData ===>', submitData);
+export const createUser = async (submitData) => {
 
-  const result = await userRepository.create(submitData)
+  const result = await userRepository.createUser(submitData)
   return result
 }
 
+export const signin = async (data) => {
+  const result = await userRepository.signin(data)
+  return result
+}
 
 // export const getUsers = async ({ where }, pageInfo) => {
 //   const getSearchParam = {

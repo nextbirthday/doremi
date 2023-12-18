@@ -2,6 +2,7 @@
 import { MailOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 type MenuItem = Required<MenuProps>['items'][number]
 function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: MenuItem[], type?: 'group'): MenuItem {
@@ -34,21 +35,25 @@ const items: MenuProps['items'] = [
   ),
 
   { type: 'divider' },
-  getItem('ALL', 'sub1', <MailOutlined />, [
-    getItem('Item 1', 'g1', null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
+  getItem('ALL', 'sub_menu', <MailOutlined />, [
+    getItem('상품 관리', 'g1', null, [getItem('상품 등록', 'prd_insert'), getItem('상품 수정', 'prd_update'), getItem('상품 삭제', 'prd_delete')], 'group'),
     getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
   ]),
 ]
 
 const ProductMenu = () => {
-  //const router = useRouter()
+  const router = useRouter()
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e)
+    console.log('click ', e.keyPath)
     console.log('e.key ', e.key)
 
     if (e.key === 'all') {
-      //router.push('/product/111')
+      router.push('/product')
+    }
+    if (e.keyPath[1] === 'sub_menu' && e.key === 'prd_insert') {
+      router.push('/product/insert')
     }
   }
 

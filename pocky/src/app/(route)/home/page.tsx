@@ -18,7 +18,6 @@ const Home = () => {
         <Career />
         <Testimonial />
       </div>
-
       <Footer />
     </>
   )

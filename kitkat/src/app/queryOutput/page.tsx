@@ -31,8 +31,8 @@ const QueryOutput = async ({ searchParams }: any) => {
   // const updateTodoResult = await updateTodo()
   //  console.log('QueryOutput updateTodoResult ===>', updateTodoResult)
 
-  const updateTodosResult = await updateTodos()
-  console.log('QueryOutput updateTodosResult ===>', updateTodosResult)
+  //const updateTodosResult = await updateTodos()
+  //console.log('QueryOutput updateTodosResult ===>', updateTodosResult)
   return <h1>page</h1>
 }
 

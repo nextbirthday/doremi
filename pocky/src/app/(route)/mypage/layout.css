@@ -1,0 +1,9 @@
+.mypage_wrap {
+    display: flex;
+  }
+  
+  .mypage_article_right {
+    width: 80%;
+    border: 2px solid red;
+  }
+  

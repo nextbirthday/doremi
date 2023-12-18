@@ -10,6 +10,20 @@ const Youtube = () => {
   const [videoList, setVideoList] = useState()
   const [selectedVideo, setSelectedVideo] = useState(null)
 
+  //const ykey = process.env.REACT_APP_YOUTUBE_API_KEY
+  //console.log('ykey ===>', ykey)
+
+  // const fetchYoutube = async (keyword?: any) => {
+  //   console.log('fetchYoutube keyword ===>', keyword)
+  //   await axios
+  //     .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${keyword}&key=${process.env.YOUTUBE_API_KEY}`)
+  //     .then((result: { data: { items: any } }) => {
+  //       console.log('result.data.items ===>', result.data.items)
+  //       setVideoList(result.data.items)
+  //     })
+  //     .catch((error: any) => console.log(error))
+  // }
+
   const fetchYoutube = async (keyword?: any) => {
     console.log('fetchYoutube keyword ===>', keyword)
     await axios
@@ -30,7 +44,7 @@ const Youtube = () => {
   }
 
   useEffect(() => {
-    const initial = '아이유'
+    const initial = 'NBA'
     fetchYoutube(initial)
   }, [])
   console.log('selectVideo ===>', selectVideo)

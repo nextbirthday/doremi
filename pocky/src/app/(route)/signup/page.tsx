@@ -1,25 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { Button, Checkbox, Collapse, CollapseProps } from 'antd'
+import FormMessage from '@/app/components/form/formMessage'
+import axios from 'axios'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaRegUser } from 'react-icons/fa'
-import { FiCheckSquare, FiAlertCircle } from 'react-icons/fi'
+import { FiCheckSquare } from 'react-icons/fi'
 import { LiaBirthdayCakeSolid } from 'react-icons/lia'
 import { MdEmail, MdOutlinePhoneIphone } from 'react-icons/md'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import './page.css'
-import { useState } from 'react'
-import FormMessage from '@/app/components/form/formMessage'
-import { userInsert } from '@/controller/userController'
 
 const Signup = () => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
 
+  /* 회원가입 submit */
+  const [checkMessage, setCheckMessage] = useState(false)
   const onSubmit = async (data: any) => {
     console.log('data ===>', data)
 
@@ -28,10 +31,47 @@ const Signup = () => {
       password: data.password,
       email: data.email,
       name: data.name,
+      // image: data.image,
     }
     console.log('submitData ===>', submitData)
-    const insert_result = await userInsert(submitData)
-    console.log('insert_result', insert_result)
+
+    if (Object.values(submitData).some((value) => value == undefined)) {
+      console.log('At least one property is undefined. Returning...')
+      return
+    }
+
+    try {
+      const response = await axios.post('/api/signup', {
+        data: submitData,
+      })
+      console.log('response ===>', response)
+      //response.data.data.message === 'ID중복' ?? alert('중복된 ID입니다.')
+    } catch (error) {
+      console.log(error)
+    }
+
+    // return new Promise((resolve, reject) => {
+    //   try {
+    //     const response = axios({
+    //       method: 'post',
+    //       url: '/api/user',
+    //       data: submitData,
+    //     })
+    //     response.then((data) => {
+    //       /* ID 중복시 처리 코드 작성 */
+    //       if (data.data.message === 'ID중복') {
+    //         alert('중복된 ID입니다.')
+    //       }
+
+    //       /* 회원가입 성공시 처리 코드 작성 */
+    //       //router.push('/signin')
+    //       resolve(data)
+    //     })
+    //     console.log('response ===>', response)
+    //   } catch (error) {
+    //     reject(error)
+    //   }
+    // })
   }
 
   const handleCheck = () => {
@@ -269,7 +309,7 @@ const Signup = () => {
             <div className="form_list"></div>
           </div>
 
-          <button onClick={onSubmit} className="signup_button">
+          <button type="submit" className="signup_button">
             <span className="signup_text">Sign Up</span>
           </button>
         </form>
