@@ -1,10 +1,9 @@
 import ProductMenu from '@/app/components/product/productMenu'
-import { getAllProduct } from '@/controller/product'
+import { getAllProducts } from '@/controller/products'
 import ProductList from './components/productList'
-import axios from 'axios'
 
-const Product = async () => {
-  const productList = await getAllProduct()
+const Products = async () => {
+  const productList = await getAllProducts()
 
   /* 외부 API 연동이 필요할 시 */
   /*   const staticData = await fetch('http://localhost:3000/api/product', {
@@ -26,4 +25,4 @@ const Product = async () => {
   )
 }
 
-export default Product
+export default Products

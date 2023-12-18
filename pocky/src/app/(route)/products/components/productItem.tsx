@@ -13,7 +13,7 @@ const ProductItem = (product: any) => {
     <ul className="product_section">
       <li className="product_detail">
         <div className="product_b">
-          <Link href={`/product/${product.code}`}>
+          <Link href={`/products/${product.code}`}>
             <div className="image_box">
               <div className="product_image">
                 <img src="/blue_archive_cutscene/BG_CS_S1Final_20.jpg" alt="상품이미지" style={{ width: '365.75px', height: '365.75px', objectFit: 'cover' }} />
