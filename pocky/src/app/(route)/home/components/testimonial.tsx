@@ -8,7 +8,7 @@ const Testimonial = () => {
       <p className={styles.description}>See what they say about me</p>
       <ul className={styles.testimonials}>
         <li className={styles.testimonial}>
-          <img src="/blue_archive_cutscene/BG_CS_PR_08.jpg" alt="people1" className={styles.testimonial__image} />
+          <img src="/cutscene/BG_CS_PR_08.jpg" alt="people1" className={styles.testimonial__image} />
           <div className={styles.testimonial__bubble}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur suscipit quia mollitia amet, vero inventore aliquid quaerat similique voluptates ipsam sunt
@@ -21,7 +21,7 @@ const Testimonial = () => {
           </div>
         </li>
         <li className={styles.testimonial}>
-          <img src="/blue_archive_cutscene/BG_CS_PV4_075.jpg" alt="people1" className={styles.testimonial__image} />
+          <img src="/cutscene/BG_CS_PV4_075.jpg" alt="people1" className={styles.testimonial__image} />
           <div className={styles.testimonial__bubble}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur suscipit quia mollitia amet, vero inventore aliquid quaerat similique voluptates ipsam sunt
@@ -34,7 +34,7 @@ const Testimonial = () => {
           </div>
         </li>
         <li className={styles.testimonial}>
-          <img src="/blue_archive_cutscene/BG_CS_S1Final_27_2.jpg" alt="people1" className={styles.testimonial__image} />
+          <img src="/cutscene/BG_CS_S1Final_27_2.jpg" alt="people1" className={styles.testimonial__image} />
           <div className={styles.testimonial__bubble}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatibus maiores corporis reprehenderit ex. Soluta consequuntur, dolores, quibusdam repellat

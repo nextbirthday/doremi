@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaBars } from 'react-icons/fa'
+
 import './header.css'
 const Header = () => {
   return (
     <>
       <header id="header" role="banner" className="header">
         <div className="header__logo">
-          <Image src="/blueArchive/schale_black_crop.png" alt="헤더아이콘" width={42} height={40} />
+          <Image src="/schale/schale_black_crop.png" alt="헤더아이콘" width={48} height={42} />
           <h1 className="header__logo__title">
             <Link href="/" className="header__logo__title">
               POCKY
