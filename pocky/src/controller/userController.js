@@ -17,6 +17,20 @@ export const signin = async (data) => {
   return result
 }
 
+export const changeName = async (data) => {
+  const result = await userRepository.changeName(data)
+  return result
+}
+
+export const changeEmail = async (data) => {
+  const result = await userRepository.changeEmail(data)
+  return result
+}
+
+export const changeMobile = async (data) => {
+  const result = await userRepository.changeMobile(data)
+  return result
+}
 // export const getUsers = async ({ where }, pageInfo) => {
 //   const getSearchParam = {
 //     ...(where && { where: { ...where } }),

@@ -23,8 +23,6 @@ export const findById = async (id: string): Promise<User | null> => {
 /* 회원가입 */
 export const createUser = async (submitData: any) => {
 
-  console.log('userRepo createUser ===>', submitData);
-  //console.log(submitData.data.userid);
   try {
     const result = await dbCon.user.create({
       data: {
@@ -68,3 +66,40 @@ export const getTotalCount = async (getSearchParam: { where: any }) => {
   })
 }
 
+export const changeName = async (data: any) => {
+  const { userid, name } = data.data
+  const result = await dbCon.user.update({
+    where: {
+      userid,
+    },
+    data: {
+      name
+    },
+  })
+  return result
+}
+
+export const changeEmail = async (data: any) => {
+  const { userid, email } = data.data
+  const result = await dbCon.user.update({
+    where: {
+      userid,
+    },
+    data: {
+      email
+    },
+  })
+  return result
+}
+// export const changeMobile = async (data: any) => {
+//   const { userid, mobile } = data.data
+//   const result = await dbCon.user.update({
+//     where: {
+//       userid,
+//     },
+//     data: {
+//       mobile
+//     },
+//   })
+//   return result
+// }

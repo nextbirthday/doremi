@@ -1,15 +1,16 @@
 'use client'
 /* eslint-disable @next/next/no-img-element */
+import axios from 'axios'
 import Link from 'next/link'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { Checkbox, Input, Switch, Tabs } from 'antd'
-import { CheckboxChangeEvent } from 'antd/es/checkbox'
-import { FaRegUser } from 'react-icons/fa'
-import { RiLockPasswordLine } from 'react-icons/ri'
 import Footer from '@/app/components/footer/footer'
 import FormMessage from '@/app/components/form/formMessage'
-import axios from 'axios'
+import { Checkbox, Switch, Tabs } from 'antd'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
+
+import { useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { FaRegUser } from 'react-icons/fa'
+import { RiLockPasswordLine } from 'react-icons/ri'
 import './page.css'
 const Signin = () => {
   const {

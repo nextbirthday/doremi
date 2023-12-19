@@ -18,13 +18,13 @@ const Career = () => {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   const handleProject = (category: any) => {
-    console.log('category ===>', category)
+    // console.log('category ===>', category)
     setSelectedCategory(category)
   }
 
   const filteredProjects = selectedCategory === 'All' ? projects : projects.filter((project) => project.category === selectedCategory)
 
-  console.log('filteredProjects ===>', filteredProjects)
+  //console.log('filteredProjects ===>', filteredProjects)
   return (
     <section id="career" className={styles.section}>
       <div>

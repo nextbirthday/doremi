@@ -17,10 +17,25 @@ model User {
   password      String?
   email         String?     @unique
   emailVerified DateTime?
+  mobile        String?
+  gender        String?    
+  address       String?
   image         String?
   grade         Int         @default(1)
   isDelete      ActiveState @default(No)
+  createAt      DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
   Logs          Log[]
+  posts         Post[]
+  }
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String?
+  content   String?
+  published Boolean @default(false)
+  author    User    @relation(fields: [authorId], references: [userid])
+  authorId  String
   createAt      DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
@@ -55,3 +70,4 @@ model Product {
   createAt      DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
+

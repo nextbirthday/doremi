@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { CloseOutlined } from '@ant-design/icons'
 import React, { useEffect } from 'react'
 import './defaultPopupPanel.css'
 type Props = {
@@ -30,7 +29,6 @@ const DefaultPopupPanel = ({ open = false, children, actionClose }: Props) => {
 
   return (
     <div className="default_popup_wrap">
-      
       <article>{children}</article>
     </div>
   )
