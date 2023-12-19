@@ -10,7 +10,7 @@ const Header = () => {
           <Image src="/blueArchive/schale_black_crop.png" alt="헤더아이콘" width={42} height={40} />
           <h1 className="header__logo__title">
             <Link href="/" className="header__logo__title">
-              PRETZ
+              POCKY
             </Link>
           </h1>
         </div>

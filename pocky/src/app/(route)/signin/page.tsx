@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Checkbox, Switch, Tabs } from 'antd'
+import { Checkbox, Input, Switch, Tabs } from 'antd'
 import { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { FaRegUser } from 'react-icons/fa'
 import { RiLockPasswordLine } from 'react-icons/ri'
@@ -36,7 +36,7 @@ const Signin = () => {
         data: data,
       })
       const success = response.data.success
-
+      console.log('isSignin? ===>', success)
       if (success === true) {
       } else {
         alert('아이디 또는 비밀번호가 일치하지 않습니다.')

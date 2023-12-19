@@ -4,24 +4,36 @@ import Link from 'next/link'
 import { FaRegUser } from 'react-icons/fa'
 import { Divider, Switch } from 'antd'
 import './edituser.css'
+import DefaultLayer from '@/app/components/layer/defaultLayer'
+import DefaultPopupPanel from '@/app/components/panels/dafaultPopupPanel'
+import ChangeName from '@/useClient/mypage/edit/changeName'
+import ChangeMobile from '@/useClient/mypage/edit/changeMobile'
+import ChangeEmail from '@/useClient/mypage/edit/changeEmail'
 const EditUser = () => {
+  const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
+
   const changeName = () => {
-    console.log('changeName')
+    setLayerType('changeName')
+    setLayerPopupOpen(true)
   }
   const changeMobile = () => {
-    console.log('changeMobile')
+    setLayerType('changeMobile')
+    setLayerPopupOpen(true)
   }
   const changeEmail = () => {
-    console.log('changeEmail')
+    setLayerType('changeEmail')
+    setLayerPopupOpen(true)
   }
 
-  const onOverseaChange = () => {
-    console.log('onOverseaChange')
-  }
+  const onOverseaChange = () => {}
 
-  const onLocationChange = () => {
-    console.log('onLocationChange')
+  const onLocationChange = () => {}
+
+  /* 솔루션 INSERT pop-up close */
+  const handlePopupClose = () => {
+    setLayerPopupOpen(false)
+    //location.reload()
   }
   return (
     <>
@@ -195,6 +207,21 @@ const EditUser = () => {
             </li>
           </ul>
         </div>
+        {layerPopupOpen && (
+          <DefaultLayer open={layerPopupOpen}>
+            <DefaultPopupPanel
+              actionClose={() => {
+                setLayerPopupOpen(false)
+              }}
+            >
+              <>
+                {layerType === 'changeName' && <ChangeName handlePopupClose={handlePopupClose} />}
+                {layerType === 'changeMobile' && <ChangeMobile handlePopupClose={handlePopupClose} />}
+                {layerType === 'changeEmail' && <ChangeEmail handlePopupClose={handlePopupClose} />}
+              </>
+            </DefaultPopupPanel>
+          </DefaultLayer>
+        )}
       </section>
     </>
   )

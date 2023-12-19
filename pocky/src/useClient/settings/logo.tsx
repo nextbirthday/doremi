@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client'
 import { Button, Col, Divider, Image, Row, Space, Upload } from 'antd'
 import { useState } from 'react'
-import { dividerMargin } from './site'
+import { settingsDivider } from '@/css/divider'
 
 const Logo = () => {
   const [fileLists, setFileLists] = useState<any[]>([[]])
@@ -59,7 +60,7 @@ const Logo = () => {
   return (
     <div className="border-solid border-2 border-red-500 p-2" style={{ width: '600px' }}>
       <p style={{ textAlign: 'center' }}>Site Logo</p>
-      <Divider style={{ margin: dividerMargin }} />
+      <Divider style={{ margin: settingsDivider }} />
       <div>
         <Col style={{ textAlign: 'end' }}>{renderUpload(0, true)}</Col>
       </div>

@@ -1,7 +1,7 @@
 import Footer from '@/app/components/footer/footer'
 import Header from '@/app/components/header/header'
-import Sidebar from './components/sidebar'
 import './layout.css'
+import Sidebar from '@/app/components/mypage/sidebar'
 export default function MypageLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
@@ -9,7 +9,9 @@ export default function MypageLayout({ children }: { children: React.ReactNode }
         <Header />
         <div style={{ padding: '2rem 3rem 2rem 3rem' }}>
           <div className="mypage_wrap">
-            <Sidebar />
+            <div className="mypage_article_left">
+              <Sidebar />
+            </div>
             <div className="mypage_article_right">{children}</div>
           </div>
         </div>

@@ -1,7 +1,12 @@
+import { Empty } from 'antd'
 import React from 'react'
 
 const Emptydata = () => {
-  return <>There is no data</>
+  return (
+    <>
+      <Empty />
+    </>
+  )
 }
 
 Emptydata

@@ -1,7 +1,7 @@
 'use client'
 import { Button, Col, Divider, Input, Row, Select, Space } from 'antd'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
-import { dividerMargin } from './site'
+import { settingsDivider } from '@/css/divider'
 import FormMessage from '@/app/components/form/formMessage'
 
 type Inputs = {
@@ -49,7 +49,7 @@ const ManagerInfo = () => {
       <form onSubmit={handleSubmit(submitAction)}>
         <p style={{ textAlign: 'center' }}>Manager Information</p>
         <Space direction="vertical" className="p-2" style={{ width: '300px' }}>
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row style={{ justifyContent: 'space-between' }}>
             <Col span={4} style={{ paddingTop: paddingTop }}>
               <span>E-mail:</span>
@@ -60,7 +60,7 @@ const ManagerInfo = () => {
               {errors.email?.message && <FormMessage msg={errors.email.message} />}
             </Col>
           </Row>{' '}
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row style={{ justifyContent: 'space-between' }}>
             <Col span={4} style={{ paddingTop: paddingTop }}>
               <span>Name:</span>
@@ -71,7 +71,7 @@ const ManagerInfo = () => {
               {errors.name?.message && <FormMessage msg={errors.name.message} />}
             </Col>
           </Row>{' '}
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row style={{ justifyContent: 'space-between' }}>
             <Col span={4} style={{ paddingTop: paddingTop }}>
               <span>phone:</span>
@@ -82,7 +82,7 @@ const ManagerInfo = () => {
               {errors.phone?.message && <FormMessage msg={errors.phone.message} />}
             </Col>
           </Row>{' '}
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row>
             <Col span={5} style={{ paddingTop: paddingTop }}>
               <span>Dept:</span>
@@ -108,7 +108,7 @@ const ManagerInfo = () => {
               {errors.department?.message && <FormMessage msg={errors.department.message} />}
             </Col>
           </Row>{' '}
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row style={{ justifyContent: 'space-between' }}>
             <Col span={4} style={{ paddingTop: paddingTop }}>
               <span>Position:</span>
@@ -119,7 +119,7 @@ const ManagerInfo = () => {
               {errors.position?.message && <FormMessage msg={errors.position.message} />}
             </Col>
           </Row>{' '}
-          <Divider style={{ margin: dividerMargin }} />
+          <Divider style={{ margin: settingsDivider }} />
           <Row justify={'end'} gutter={20}>
             <Col>
               <Button type={'primary'} htmlType={'submit'}>

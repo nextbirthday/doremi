@@ -1,17 +1,3 @@
-.mypage_wrap {
-  display: flex;
-}
-
-.mypage_article_left {
-  border: 2px solid blue;
-  width: 15%;
-  padding: 0 50px 0 1rem;
-}
-
-.mypage_article_right {
-  border: 2px solid red;
-}
-
 .mypage_username {
   font-size: 2rem;
   font-weight: 500;

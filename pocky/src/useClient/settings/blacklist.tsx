@@ -3,7 +3,7 @@
 import { Checkbox, Divider, Space } from 'antd'
 import { CheckboxValueType } from 'antd/es/checkbox/Group'
 import React from 'react'
-import { dividerMargin } from './site'
+import { settingsDivider } from '@/css/divider'
 
 const onChange = (checkedValues: CheckboxValueType[]) => {
   console.log('checked = ', checkedValues)
@@ -26,7 +26,7 @@ const Blacklist = () => {
   return (
     <div className=" border-solid border-2 border-indigo-500 p-2 w-80">
       <p style={{ textAlign: 'center' }}>Black List</p>
-      <Divider style={{ margin: dividerMargin }} />
+      <Divider style={{ margin: settingsDivider }} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <span>black</span>
         <Checkbox.Group options={plainOptions} defaultValue={['Apple']} onChange={onChange} />

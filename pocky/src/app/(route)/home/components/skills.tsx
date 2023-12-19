@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './skills.module.css'
-import Skillprogress from '../../../../../useclient/home/skillprogress'
+import Skillprogress from '@/useClient/home/skillprogress'
+
 const Skills = () => {
   return (
     <section id="skills" className={styles.section}>

@@ -1,9 +1,9 @@
 import Header from '@/app/components/header/header'
-import Logo from '../../../../useclient/settings/logo'
-import SiteInformation from '../../../../useclient/settings/site'
-import ManagerInfo from '../../../../useclient/settings/manager'
-import Blacklist from '../../../../useclient/settings/blacklist'
 import Footer from '@/app/components/footer/footer'
+import Logo from '@/useClient/settings/logo'
+import SiteInformation from '@/useClient/settings/site'
+import ManagerInfo from '@/useClient/settings/manager'
+import Blacklist from '@/useClient/settings/blacklist'
 
 const Settings = () => {
   return (
