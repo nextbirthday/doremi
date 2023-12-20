@@ -4,25 +4,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import VideoList from './components/videoList'
 import VideoPlayer from './components/videoPlayer'
-import './page.css'
 import { YoutubeOutlined } from '@ant-design/icons'
+
+import styles from './page.module.css'
 const Youtube = () => {
   const [videoList, setVideoList] = useState()
   const [selectedVideo, setSelectedVideo] = useState(null)
-
-  //const ykey = process.env.REACT_APP_YOUTUBE_API_KEY
-  //console.log('ykey ===>', ykey)
-
-  // const fetchYoutube = async (keyword?: any) => {
-  //   console.log('fetchYoutube keyword ===>', keyword)
-  //   await axios
-  //     .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${keyword}&key=${process.env.YOUTUBE_API_KEY}`)
-  //     .then((result: { data: { items: any } }) => {
-  //       console.log('result.data.items ===>', result.data.items)
-  //       setVideoList(result.data.items)
-  //     })
-  //     .catch((error: any) => console.log(error))
-  // }
 
   const fetchYoutube = async (keyword?: any) => {
     console.log('fetchYoutube keyword ===>', keyword)
@@ -50,14 +37,14 @@ const Youtube = () => {
   console.log('selectVideo ===>', selectVideo)
   return (
     <div>
-      <div className="youtube_header">
+      <div className={styles.youtube_header}>
         <div style={{ marginRight: '440px' }}>
-          <span className="youtube_icon">
+          <span className={styles.youtube_icon}>
             <YoutubeOutlined />
           </span>
-          <span className="youtube_title">Youtube</span>
+          <span className={styles.youtube_title}>Youtube</span>
         </div>
-        <div className="search_input">
+        <div className={styles.search_input}>
           <Search placeholder="검색" onSearch={onSearchYoutube} size="large" allowClear={true} style={{ width: 600 }} />
         </div>
       </div>
