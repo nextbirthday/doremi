@@ -1,0 +1,18 @@
+.visit_bookmark {
+  border: 1px solid red;
+  width: 1300px;
+  min-height: 40px;
+  margin: 0 auto;
+}
+.newvisit_history {
+  padding: 0 0 0 1rem;
+  display: flex;
+}
+.visit_recent {
+  display: flex;
+}
+
+.newvisit_box {
+  border: 1px solid blue;
+  padding: 0 0 0 1rem;
+}

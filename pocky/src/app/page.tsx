@@ -6,9 +6,8 @@ import SignInButton from './components/signInButton'
 const Main = () => {
   return (
     <>
-      <Provider>
-        <Home />
-      </Provider>
+      {/* <SignInButton /> */}
+      <Home />
     </>
   )
 }

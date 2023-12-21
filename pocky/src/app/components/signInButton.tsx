@@ -5,12 +5,11 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 const SignInButton = () => {
   const { data: session } = useSession()
 
-  console.log('SignInButton { data: session } ===>', { data: session })
-
   if (session && session.user) {
+   
     return (
       <button className="px-12 py-4 border rounded-xl bg-red-300" onClick={() => signOut()}>
-        {session.user.name}님 Log Outf
+        {session.user.name}님 Log Out
       </button>
     )
   }

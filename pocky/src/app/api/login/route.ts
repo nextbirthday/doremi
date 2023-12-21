@@ -1,5 +1,8 @@
 import { signJwtAccessToken } from "@/library/jwt";
 import { dbCon } from "@/repository/config";
+import {compare} from 'bcryptjs'
+import { doUserLogin } from "@/controller/userController";
+import { NextResponse } from "next/server";
 
 interface RequestBody {
     email: string;
@@ -9,29 +12,34 @@ interface RequestBody {
 
 export async function POST(request: Request) {
     const body: RequestBody = await request.json();
-    const bcrypt = require('bcrypt');
+    const {userid,password} = body
+    // const bcrypt = require('bcrypt');
 
-    console.log('LOGIN BODY ===>', body);
-    console.log('=====================================');
-    const user = await dbCon.user.findFirst({
-        where: {
-            email: body.email,
-        },
-    })
+    const dbRes = await doUserLogin({userid,pw:password})
 
-    if (user && (await bcrypt.compare(body.password, user.password))) {
-        const { password, ...userWithoutPass } = user
-        console.log('user ===>', user);
-        console.log('=====================================');
-        const accessToken = signJwtAccessToken(userWithoutPass)
+    if (dbRes) {
+        return NextResponse.json({ userInfo: {...dbRes} }, { status: 200 });
+    } else {
+        return NextResponse.json({ message: 'Fuck you~' }, { status: 500 });
+    }
 
-        const result = {
-            ...userWithoutPass,
-            accessToken
-        }
+    // const user = await dbCon.user.findFirst({
+    //     where: {
+    //         userid: body.userid,
+    //     },
+    // })
 
+    // if (user && user.password && (await compare(body.password, user.password))) {
+    //     const { password, ...userWithoutPass } = user
+    //     const accessToken = signJwtAccessToken(userWithoutPass)
+    //     const result = {
+    //         ...userWithoutPass,
+    //         accessToken
+    //     }
 
-
-        return new Response(JSON.stringify(result))
-    } else return new Response(JSON.stringify(null))
+    //     return new Response(JSON.stringify(result))
+    // } else return new Response(JSON.stringify(null))
 }
+
+
+

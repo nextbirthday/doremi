@@ -1,21 +1,37 @@
+/* eslint-disable @next/next/no-async-client-component */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import React, { useState } from 'react'
 import Link from 'next/link'
-import { FaRegUser } from 'react-icons/fa'
-import { Divider, Switch } from 'antd'
+import Image from 'next/image'
 import DefaultLayer from '@/app/components/layer/defaultLayer'
 import DefaultPopupPanel from '@/app/components/panels/dafaultPopupPanel'
-import ChangeName from '@/useClient/mypage/edit/changeName'
-import ChangeMobile from '@/useClient/mypage/edit/changeMobile'
 import ChangeEmail from '@/useClient/mypage/edit/changeEmail'
+import ChangeMobile from '@/useClient/mypage/edit/changeMobile'
+import ChangeName from '@/useClient/mypage/edit/changeName'
+import { Divider, Switch } from 'antd'
+import { useEffect, useState } from 'react'
+import { FaRegUser } from 'react-icons/fa'
 import styles from './edituser.module.css'
-import logo from '@/asset/schale/schale_black_crop.png'
-import Image from 'next/image'
+import axios from 'axios'
 const EditUser = () => {
   const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
 
+  const getUser = async ({ id }: any) => {
+    console.log('getUser {id} ===>', { id })
+    try {
+      const response = await axios.get('/api/user/info', {
+        data: { id },
+      })
+      console.log('response ===>', response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    const id = 'clqbzclff000111iyzv4ag98i'
+    getUser({ id })
+  }, [])
   const changeName = () => {
     setLayerType('changeName')
     setLayerPopupOpen(true)

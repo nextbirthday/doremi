@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import React from 'react'
 import './globals.css'
 import StyledComponentsRegistry from '@/library/AntdRegistry'
+import Provider from './components/provider/provider'
 
 export const metadata: Metadata = {
   title: 'Next js 14, POCKY',
@@ -12,7 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Provider>
+          {children}
+          </Provider>
+          </StyledComponentsRegistry>
+          
       </body>
     </html>
   )

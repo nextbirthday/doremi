@@ -13,6 +13,7 @@ const Products = async () => {
 
   const jsonData = await staticData.json()
   console.log('jsonData ===>', jsonData) */
+  if (!productList || productList.length < 1) return <></>
 
   return (
     <>

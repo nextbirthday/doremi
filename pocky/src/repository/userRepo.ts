@@ -1,5 +1,5 @@
 import { dbCon } from "@/repository/config"
-import { Prisma, User } from "@prisma/client"
+import { User } from "@prisma/client"
 
 export const findByUserid = async (userid: string): Promise<User | null> => {
   return await dbCon.user.findUnique({
@@ -43,21 +43,18 @@ export const createUser = async (submitData: any) => {
 }
 
 /* 로그인 */
-export const signin = async (data: any) => {
+export const signin = async ({ userid }: any) => {
 
-  const { userid } = data.data
-
-  const result = await dbCon.user.findUnique({
-    select: {
-      userid: true,
-      password: true,
-    },
+  const result = await dbCon.user.findFirst({
     where: {
       userid,
     },
   })
+
   return result
 }
+
+
 
 export const getTotalCount = async (getSearchParam: { where: any }) => {
   const { where } = getSearchParam

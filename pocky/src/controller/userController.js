@@ -1,4 +1,5 @@
 import * as userRepository from '@/repository/userRepo';
+import { compare } from 'bcryptjs';
 
 export const getUserInfo = async (id) => {
 
@@ -28,9 +29,24 @@ export const changeEmail = async (data) => {
 }
 
 export const changeMobile = async (data) => {
-  const result = await userRepository.changeMobile(data)
+  // const result = await userRepository.changeMobile(data)
+  const result = []
   return result
 }
+
+export const doUserLogin = async ({ userid, pw }) => {
+
+  const user = await userRepository.signin(userid);
+
+  if (!user || !pw) return null
+
+  const isPwValid = await compare(pw, user.password)
+
+  if (isPwValid) return user
+  else return null
+
+}
+
 // export const getUsers = async ({ where }, pageInfo) => {
 //   const getSearchParam = {
 //     ...(where && { where: { ...where } }),

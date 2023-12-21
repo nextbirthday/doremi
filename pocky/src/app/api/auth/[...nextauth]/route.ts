@@ -1,14 +1,11 @@
-import NextAuth from 'next-auth/next'
-import CredentialsProvider from 'next-auth/providers/credentials'
+import { doUserLogin } from '@/controller/userController';
+import NextAuth from 'next-auth/next';
+import CredentialsProvider from 'next-auth/providers/credentials';
+
 const handler = NextAuth({
     providers: [
         CredentialsProvider({
-            // The name to display on the sign in form (e.g. "Sign in with...")
             name: 'Credentials',
-            // `credentials` is used to generate a form on the sign in page.
-            // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-            // e.g. domain, username, password, 2FA token, etc.
-            // You can pass any HTML attribute to the <input> tag through the object.
             credentials: {
                 userid: {
                     label: "아이디",
@@ -19,25 +16,29 @@ const handler = NextAuth({
             },
             async authorize(credentials, req) {
 
-                const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        userid: credentials?.userid,
-                        password: credentials?.password,
-                    }),
-                })
-                const user = await res.json()
-                console.log('nextauth user ===>', user)
-                if (user) {
-                    // Any object returned will be saved in `user` property of the JWT
-                    return user
-                } else {
-                    // If you return null then an error will be displayed advising the user to check their details.
+                /* 자기 자신과 통신하는 것은 지양 */
+                // const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //     },
+                //     body: JSON.stringify({
+                //         userid: credentials?.userid,
+                //         password: credentials?.password,
+                //     }),
+                // })
+
+                // const user = await res.json()
+
+                if (!credentials) {
                     return null
                 }
+
+                const { userid, password } = credentials
+
+                const user = await doUserLogin({ userid, pw: password })
+                console.log('user', user)
+                return user
             },
         }),
     ],
@@ -55,8 +56,9 @@ const handler = NextAuth({
 
     /* Custom SignIn page */
     pages: {
-        signIn: '/login'
+        signIn: '/signin'
     },
 })
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
+

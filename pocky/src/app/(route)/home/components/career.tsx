@@ -2,6 +2,8 @@
 'use client'
 import React, { useState } from 'react'
 import styles from './career.module.css'
+import { useSession } from 'next-auth/react'
+
 const projects = [
   { id: 1, category: 'Front-End', image: '/projects/project1.webp', description: 'lone coding with HTML, CSS, Javsscript' },
   { id: 2, category: 'Front-End', image: '/projects/project2.webp', description: 'lone coding with HTML, CSS, Javsscript' },
@@ -15,6 +17,7 @@ const projects = [
 const categories = ['All', 'Front-End', 'Back-End', 'Mobile']
 
 const Career = () => {
+
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   const handleProject = (category: any) => {
