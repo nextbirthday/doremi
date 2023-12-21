@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaBars } from 'react-icons/fa'
 
-import './header.css'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import './header.css'
 const Header = () => {
   const { data: session } = useSession()
   /* 로그인 상태 */
@@ -38,20 +38,20 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/products" className="header__menu__item">
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link href="/testimonial" className="header__menu__item">
-                Tesitmonials
-              </Link>
-            </li>
-            <li>
               <Link href="/youtube" className="header__menu__item">
                 Youtube
               </Link>
             </li>
+            <li>
+              <Link href="/products" className="header__menu__item">
+                Products
+              </Link>
+            </li>
+            {/*    <li>
+              <Link href="/testimonials" className="header__menu__item">
+                Tesitmonials
+              </Link>
+            </li> */}
             <li>
               <Link href="/mypage" className="header__menu__item">
                 My Account

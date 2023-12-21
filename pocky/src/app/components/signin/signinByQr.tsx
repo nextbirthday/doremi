@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from './signinByQr.module.css'
+import Image from 'next/image'
 const SigninByQr = () => {
   return (
     <ul className={styles.panel_wrap}>

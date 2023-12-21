@@ -12,7 +12,16 @@ import { LiaBirthdayCakeSolid } from 'react-icons/lia'
 import { MdEmail, MdOutlinePhoneIphone } from 'react-icons/md'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import './page.css'
-
+interface SubmitData {
+  userid: string
+  password: string
+  email: string
+  name: string
+  gender?: string
+  mobile: string
+  birth: string
+  // image?: string;
+}
 const Signup = () => {
   const router = useRouter()
   const {
@@ -26,13 +35,29 @@ const Signup = () => {
   const onSubmit = async (data: any) => {
     console.log('data ===>', data)
 
-    const submitData = {
+    // birth 변환
+    const birthWithoutDash = data.birth.replace(/-/g, '')
+    console.log('변환된 birth:', birthWithoutDash)
+
+    // mobile 변환
+    const mobileWithoutDash = data.mobile.replace(/-/g, '')
+    console.log('변환된 mobile:', mobileWithoutDash)
+
+    const submitData: SubmitData = {
       userid: data.userid,
       password: data.password,
-      email: data.email,
       name: data.name,
+      birth: birthWithoutDash, // 변환된 값을 사용
+      email: data.email,
+      mobile: mobileWithoutDash,
       // image: data.image,
     }
+
+    // gender가 "선택안함"이 아닌 경우에만 추가
+    if (data.gender && data.gender !== '선택안함') {
+      submitData.gender = data.gender
+    }
+
     console.log('submitData ===>', submitData)
 
     if (Object.values(submitData).some((value) => value == undefined)) {
@@ -45,7 +70,18 @@ const Signup = () => {
         data: submitData,
       })
       console.log('response ===>', response)
-      //response.data.data.message === 'ID중복' ?? alert('중복된 ID입니다.')
+      console.log('response.data.message ===>', response.data.message)
+      if (response.data.message === 'ID중복') {
+        alert('중복된 ID입니다.')
+        setCheckMessage(true)
+        return
+      } else {
+        setCheckMessage(false)
+        /* 로그인페이지로 이동... */
+        router.push('/signin')
+      }
+
+      //response.data.message === 'ID중복' ?? alert('중복된 ID입니다.')
     } catch (error) {
       console.log(error)
     }
@@ -306,6 +342,7 @@ const Signup = () => {
             {nameMessage && <FormMessage msg={`이름: 한글, 영문 대/소문자를 사용해 주세요. (특수기호, 공백 사용 불가)`} />}
             {birthMessage && <FormMessage msg={`생년월일: 생년월일이 정확한지 확인해 주세요.`} />}
             {mobileMessage && <FormMessage msg={`휴대전화번호: 휴대전화번호가 정확한지 확인해 주세요.`} />}
+            {checkMessage && <FormMessage msg={`중복된 아이디입니다. 다른 아이디로 회원가입 진행해주세요.`} />}
             <div className="form_list"></div>
           </div>
 

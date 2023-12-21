@@ -17,6 +17,7 @@ model User {
   password      String?
   email         String?     @unique
   emailVerified DateTime?
+  birth         String?
   mobile        String?
   gender        String?    
   address       String?
@@ -70,4 +71,3 @@ model Product {
   createAt      DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
-

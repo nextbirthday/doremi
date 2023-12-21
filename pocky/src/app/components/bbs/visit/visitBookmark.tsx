@@ -1,9 +1,6 @@
-import React from 'react'
-import styles from './visitBookmark.module.css'
-import VisitRecent from './visitRecent'
-import Link from 'next/link'
-import { Space, Tag } from 'antd'
 import NewvisitList from './newvisitList'
+import VisitRecent from './visitRecent'
+import styles from './visitBookmark.module.css'
 
 const VisitBookmark = () => {
   return (

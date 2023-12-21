@@ -1,5 +1,5 @@
-import { dbCon } from "@/repository/config"
-import { User } from "@prisma/client"
+import { dbCon } from '@/repository/config'
+import { User } from '@prisma/client'
 
 export const findByUserid = async (userid: string): Promise<User | null> => {
   return await dbCon.user.findUnique({
@@ -10,8 +10,7 @@ export const findByUserid = async (userid: string): Promise<User | null> => {
 }
 
 export const findById = async (id: string): Promise<User | null> => {
-
-  console.log('user repository findById ===>', id);
+  console.log('user repository findById ===>', id)
 
   return await dbCon.user.findUnique({
     where: {
@@ -20,19 +19,37 @@ export const findById = async (id: string): Promise<User | null> => {
   })
 }
 
-/* 회원가입 */
-export const createUser = async (submitData: any) => {
+export const createUser = async (submitData: {
+  userid: string
+  password: string
+  name: string
+  birth: string
+  email: string
+  mobile: string
+  gender?: string // gender가 선택적(optional)으로 추가됨
+}) => {
+  console.log('submitData', submitData)
 
   try {
+    const userData: any = {
+      name: submitData.name,
+      userid: submitData.userid,
+      password: submitData.password,
+      email: submitData.email,
+      birth: submitData.birth,
+      mobile: submitData.mobile,
+      grade: 1,
+    }
+
+    // gender가 존재할 경우에만 추가
+    if (submitData.gender) {
+      userData.gender = submitData.gender
+    }
+
     const result = await dbCon.user.create({
-      data: {
-        name: submitData.name,
-        userid: submitData.userid,
-        password: submitData.password,
-        email: submitData.email,
-        grade: 1,
-      },
+      data: userData,
     })
+
     return result
   } catch (error: any) {
     if (error.code === 'P2002') {
@@ -44,7 +61,6 @@ export const createUser = async (submitData: any) => {
 
 /* 로그인 */
 export const signin = async ({ userid }: any) => {
-
   const result = await dbCon.user.findFirst({
     where: {
       userid,
@@ -53,8 +69,6 @@ export const signin = async ({ userid }: any) => {
 
   return result
 }
-
-
 
 export const getTotalCount = async (getSearchParam: { where: any }) => {
   const { where } = getSearchParam
@@ -70,7 +84,7 @@ export const changeName = async (data: any) => {
       userid,
     },
     data: {
-      name
+      name,
     },
   })
   return result
@@ -83,7 +97,7 @@ export const changeEmail = async (data: any) => {
       userid,
     },
     data: {
-      email
+      email,
     },
   })
   return result

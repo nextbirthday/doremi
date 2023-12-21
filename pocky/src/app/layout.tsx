@@ -1,8 +1,9 @@
+import StyledComponentsRegistry from '@/library/AntdRegistry'
 import type { Metadata } from 'next'
 import React from 'react'
-import './globals.css'
-import StyledComponentsRegistry from '@/library/AntdRegistry'
 import Provider from './components/provider/provider'
+import './globals.css'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Next js 14, POCKY',
@@ -13,12 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <body>
+        <Script src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_JAVASCRIPT_KEY}&libraries=services,clusterer&autoload=false`} strategy="beforeInteractive" />
         <StyledComponentsRegistry>
-          <Provider>
-          {children}
-          </Provider>
-          </StyledComponentsRegistry>
-          
+          <Provider>{children}</Provider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

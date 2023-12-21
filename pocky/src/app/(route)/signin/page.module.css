@@ -54,8 +54,8 @@
   display: inline-block;
   padding: 0 1rem 0 0;
 }
-.signin_help_item.id,
-.signin_help_item.signup {
+.signin_help_item_id,
+.signin_help_item_signup {
   border-left: medium solid lightgrey;
 }
 .banner_wrap {

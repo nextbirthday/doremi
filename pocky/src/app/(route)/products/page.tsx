@@ -1,9 +1,10 @@
 import ProductMenu from '@/app/components/product/productMenu'
-import { getAllProducts } from '@/controller/products'
 import ProductList from './components/productList'
+import { Empty } from 'antd'
+import { getAllProduct } from '@/controller/product'
 
 const Products = async () => {
-  const productList = await getAllProducts()
+  const productList = await getAllProduct()
 
   /* 외부 API 연동이 필요할 시 */
   /*   const staticData = await fetch('http://localhost:3000/api/product', {
@@ -13,7 +14,16 @@ const Products = async () => {
 
   const jsonData = await staticData.json()
   console.log('jsonData ===>', jsonData) */
-  if (!productList || productList.length < 1) return <></>
+  if (!productList || productList.length < 1) {
+    return (
+      <>
+        <div style={{ display: 'flex' }}>
+          <ProductMenu />
+          <Empty />
+        </div>
+      </>
+    )
+  }
 
   return (
     <>

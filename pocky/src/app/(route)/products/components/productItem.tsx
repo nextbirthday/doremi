@@ -16,7 +16,7 @@ const ProductItem = (product: any) => {
           <Link href={`/products/${product.code}`}>
             <div className="image_box">
               <div className="product_image">
-                <img src="/blue_archive_cutscene/BG_CS_S1Final_20.jpg" alt="상품이미지" style={{ width: '365.75px', height: '365.75px', objectFit: 'cover' }} />
+                <img src="/cutscene/BG_CS_S1Final_20.jpg" alt="상품이미지" style={{ width: '365.75px', height: '365.75px', objectFit: 'cover' }} />
               </div>
             </div>
             <div className="info_box">

@@ -44,7 +44,7 @@ const VisitRecent = () => {
     <Dropdown menu={{ items }}>
       <a onClick={(e) => e.preventDefault()}>
         <Space>
-          <span style={{ fontSize: '1.1rem' }}>최근 방문</span>
+          <span className={styles.recent_text}>최근 방문</span>
           <DownOutlined />
         </Space>
       </a>

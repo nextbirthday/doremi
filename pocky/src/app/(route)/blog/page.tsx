@@ -1,10 +1,10 @@
-import KakaoMap from '@/app/components/blog/kakaomap'
+import Kakaomap from '@/app/components/blog/kakaomap'
 
 const Blog = () => {
   return (
     <>
       <h1>Blog Main</h1>
-      <KakaoMap />
+      <Kakaomap />
     </>
   )
 }

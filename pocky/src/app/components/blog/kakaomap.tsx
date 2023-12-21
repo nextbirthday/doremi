@@ -1,7 +1,6 @@
 'use client'
 
-import Script from 'next/script'
-import { Map } from 'react-kakao-maps-sdk'
+import { Map, MapMarker } from 'react-kakao-maps-sdk'
 
 declare global {
   interface Window {
@@ -10,13 +9,15 @@ declare global {
 }
 
 export default function KakaoMap() {
-  //   const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=db6b154027b600cad6968760f833580a&autoload=false`
-  const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY}&autoload=false`
-  console.log(KAKAO_SDK_URL)
   return (
     <>
-      <Script src={KAKAO_SDK_URL} strategy="beforeInteractive" />
-      <Map center={{ lat: 33.450701, lng: 126.570667 }} style={{ width: '600px', height: '600px' }}></Map>
+      <Map center={{ lat: 37.503579801672366, lng: 127.04164724042336 }} style={{ width: '600px', height: '600px' }}>
+        <MapMarker position={{ lat: 37.503579801672366, lng: 127.04164724042336 }}>
+          <div style={{ color: '#000' }}>
+            <span style={{ textAlign: 'center', margin: '0 auto' }}>AWS</span>
+          </div>
+        </MapMarker>
+      </Map>
     </>
   )
 }

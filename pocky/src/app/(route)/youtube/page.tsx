@@ -10,6 +10,9 @@ import styles from './page.module.css'
 const Youtube = () => {
   const [videoList, setVideoList] = useState()
   const [selectedVideo, setSelectedVideo] = useState(null)
+  const key = process.env.YOUTUBE_API_KEY
+
+  console.log(key)
 
   const fetchYoutube = async (keyword?: any) => {
     console.log('fetchYoutube keyword ===>', keyword)
@@ -34,7 +37,6 @@ const Youtube = () => {
     const initial = 'NBA'
     fetchYoutube(initial)
   }, [])
-  console.log('selectVideo ===>', selectVideo)
   return (
     <div>
       <div className={styles.youtube_header}>
