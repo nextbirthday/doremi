@@ -41,14 +41,9 @@ const items: MenuProps['items'] = [
 ]
 const VisitRecent = () => {
   return (
-    <Dropdown menu={{ items }}>
-      <a onClick={(e) => e.preventDefault()}>
-        <Space>
-          <span className={styles.recent_text}>최근 방문</span>
-          <DownOutlined />
-        </Space>
-      </a>
-    </Dropdown>
+    <Space>
+      <span className={styles.recent_text}>최근 방문 채널</span>
+    </Space>
   )
 }
 

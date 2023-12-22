@@ -9,9 +9,8 @@ export const findByUserid = async (userid: string): Promise<User | null> => {
   })
 }
 
-export const findById = async (id: string): Promise<User | null> => {
-  console.log('user repository findById ===>', id)
-
+export const findById = async (data: any): Promise<User | null> => {
+  const id = data.data
   return await dbCon.user.findUnique({
     where: {
       id: id,
@@ -61,11 +60,13 @@ export const createUser = async (submitData: {
 
 /* 로그인 */
 export const signin = async ({ userid }: any) => {
-  const result = await dbCon.user.findFirst({
+  console.log('signin', userid)
+  const result = await dbCon.user.findUnique({
     where: {
       userid,
     },
   })
+  console.log('signin result', result)
 
   return result
 }

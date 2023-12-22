@@ -1,14 +1,12 @@
-import * as userRepository from '@/repository/userRepo';
-import { compare } from 'bcryptjs';
+import * as userRepository from '@/repository/userRepo'
+import { compare } from 'bcryptjs'
 
-export const getUserInfo = async (id) => {
-
-  const dbResult = await userRepository.findById(id);
-  return dbResult;
-};
+export const getUserInfo = async (data) => {
+  const dbResult = await userRepository.findById(data)
+  return dbResult
+}
 
 export const createUser = async (submitData) => {
-
   const result = await userRepository.createUser(submitData)
   return result
 }
@@ -35,8 +33,7 @@ export const changeMobile = async (data) => {
 }
 
 export const doUserLogin = async ({ userid, pw }) => {
-
-  const user = await userRepository.signin(userid);
+  const user = await userRepository.signin({ userid })
 
   if (!user || !pw) return null
 
@@ -44,7 +41,6 @@ export const doUserLogin = async ({ userid, pw }) => {
 
   if (isPwValid) return user
   else return null
-
 }
 
 // export const getUsers = async ({ where }, pageInfo) => {

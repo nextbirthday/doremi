@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { GoArrowRight } from 'react-icons/go'
-import { FaInstagram } from 'react-icons/fa'
 import './footer.css'
+import { FloatButton } from 'antd'
+import { QuestionCircleOutlined } from '@ant-design/icons'
+import FloatGroup from './floatGroup'
 const Footer = () => {
   return (
     <footer id="footer" className="footer">
@@ -28,7 +30,8 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <ul className="footer_social_list">
+          <FloatGroup />
+          {/* <ul className="footer_social_list">
             <li className="footer_social_item instagram">
               <button>
                 <img src="/footer/social/instagram.png" alt="인스타그램앱" className="social_image" />
@@ -49,7 +52,7 @@ const Footer = () => {
                 <img src="/footer/social/playstore.png" alt="구글플레이스토어" className="social_image" />
               </button>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
       <div className="footer_half">

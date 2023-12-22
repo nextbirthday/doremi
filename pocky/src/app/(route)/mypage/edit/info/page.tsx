@@ -17,11 +17,11 @@ const EditUser = () => {
   const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
 
-  const getUser = async ({ id }: any) => {
-    console.log('getUser {id} ===>', { id })
+  const getUser = async () => {
+    const id = 'clqf5gavc000ix0dqnk2msr3q'
     try {
-      const response = await axios.get('/api/user/info', {
-        data: { id },
+      const response = await axios.post('/api/user/info', {
+        data: id,
       })
       console.log('response ===>', response)
     } catch (error) {
@@ -29,8 +29,7 @@ const EditUser = () => {
     }
   }
   useEffect(() => {
-    const id = 'clqbzclff000111iyzv4ag98i'
-    getUser({ id })
+    getUser()
   }, [])
   const changeName = () => {
     setLayerType('changeName')

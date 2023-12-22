@@ -1,21 +1,21 @@
-import * as productRepository from '@/repository/product'
+import * as productsRepository from '@/repository/products'
 
 export const getProduct = async (code) => {
-  const dbResult = await productRepository.findById(code)
+  const dbResult = await productsRepository.findById(code)
   return dbResult
 }
 
-export const getAllProducts = async () => {
-  const dbResult = await productRepository.findMany()
+export const getAllProduct = async () => {
+  const dbResult = await productsRepository.findMany()
   return dbResult
 }
 
 export const createProduct = async (data) => {
-  const dbResult = await productRepository.create(data)
+  const dbResult = await productsRepository.create(data)
   return dbResult
 }
 
 export const updateProduct = async (data) => {
-  const dbResult = await productRepository.update(data)
+  const dbResult = await productsRepository.update(data)
   return dbResult
 }

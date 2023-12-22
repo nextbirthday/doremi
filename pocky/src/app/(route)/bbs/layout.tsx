@@ -5,7 +5,7 @@ export default function BbsLayout({ children }: { children: React.ReactNode }) {
     <html>
       <body>
         <Header />
-        <div style={{ padding: '2rem 3rem 2rem 3rem' }}>{children}</div>
+        <div style={{ padding: '0rem 3rem 2rem 3rem' }}>{children}</div>
         <Footer />
       </body>
     </html>

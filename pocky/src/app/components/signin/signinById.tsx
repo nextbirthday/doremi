@@ -15,18 +15,14 @@ import styles from './signinById.module.css'
 const SigninById = () => {
   const router = useRouter()
 
-  console.log('router.back', router.back)
-
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
 
   const [checkMessage, setCheckMessage] = useState(false)
   const onSubmit = async (data: any) => {
-    console.log('data ===>', data)
     if (!data) {
       return
     }
@@ -36,12 +32,12 @@ const SigninById = () => {
       redirect: false,
       callbackUrl: '/',
     })
+    /* 로그인 성공 */
     if (result && result.ok === true) {
-      console.log('result true', result)
       router.push('/')
     }
+    /* 로그인 실패 */
     if (result && result.ok === false) {
-      console.log('result false', result)
       setCheckMessage(true)
     }
   }

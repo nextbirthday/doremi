@@ -47,11 +47,6 @@ const Header = () => {
                 Products
               </Link>
             </li>
-            {/*    <li>
-              <Link href="/testimonials" className="header__menu__item">
-                Tesitmonials
-              </Link>
-            </li> */}
             <li>
               <Link href="/mypage" className="header__menu__item">
                 My Account
@@ -103,11 +98,6 @@ const Header = () => {
             <li>
               <Link href="/products" className="header__menu__item">
                 Products
-              </Link>
-            </li>
-            <li>
-              <Link href="/testimonial" className="header__menu__item">
-                Tesitmonials
               </Link>
             </li>
             <li>

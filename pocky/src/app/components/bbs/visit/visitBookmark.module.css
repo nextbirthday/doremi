@@ -1,7 +1,11 @@
 .visit_bookmark {
-  border: 1px solid red;
-  width: 1000px;
-  min-height: 40px;
+  background-color: #eee;
+  padding: 0.3em;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  min-height: 20px;
   margin: 0 auto;
 }
 .newvisit_history {
@@ -13,6 +17,5 @@
 }
 
 .newvisit_box {
-  border: 1px solid blue;
   padding: 0 0 0 1rem;
 }

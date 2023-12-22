@@ -10,11 +10,7 @@ type PropsType = {
 const FormMessage = ({ msg, icon }: PropsType) => {
   return (
     <div className={styles.messageContainer}>
-      {icon && (
-        <span className={styles.icon} >
-          {icon}
-        </span>
-      )}
+      {icon && <span className={styles.icon}>{icon}</span>}
       <small className={styles.alert}>{msg}</small>
     </div>
   )

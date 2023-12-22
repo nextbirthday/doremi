@@ -22,10 +22,12 @@ const Bbs = () => {
                 </Link>
               </div>
             </div>
+            {/* 게시판 목록(채널 리스트) */}
             <BoardList />
           </div>
         </article>
-        <aside className={styles.sidebar_wrapper} >
+        <aside className={styles.sidebar_wrapper}>
+          {/* 인기 검색어 박스 */}
           <PopularBox />
         </aside>
       </div>

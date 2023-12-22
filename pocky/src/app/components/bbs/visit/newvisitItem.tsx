@@ -3,7 +3,7 @@ import React from 'react'
 
 const NewvisitItem = ({ tagName }: any) => {
   return (
-    <Tag bordered={true} closable>
+    <Tag bordered={true} closable style={{ border: 'none' }}>
       {tagName}
     </Tag>
   )
