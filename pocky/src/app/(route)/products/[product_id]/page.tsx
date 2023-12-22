@@ -1,11 +1,11 @@
-import { getProduct } from '@/controller/product'
+import { getProduct } from '@/controller/products'
 import React from 'react'
 
 const ProductDetail = async ({ params }: { params: { product_id: string } }) => {
   const productList = await getProduct(params.product_id)
 
   if (!productList) {
-    return
+    return <></>
   }
   return (
     <>
