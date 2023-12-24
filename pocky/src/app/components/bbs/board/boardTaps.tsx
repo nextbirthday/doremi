@@ -1,8 +1,6 @@
 import { Tabs, TabsProps } from 'antd'
-import React from 'react'
-import BoardTable from './boardTable'
 import { useRouter } from 'next/navigation'
-
+import BoardTable from './boardTable'
 const BoardTaps = () => {
   const router = useRouter()
   const handleTabChange = (key: string) => {

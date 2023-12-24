@@ -1,14 +1,15 @@
 'use client'
+
 import BoardBread from '@/app/components/bbs/board/boardBread'
 import BoardButton from '@/app/components/bbs/board/boardButton'
 import BoardTitle from '@/app/components/bbs/board/boardTitle'
 import PopularBox from '@/app/components/bbs/popular/popularBox'
 import VisitBookmark from '@/app/components/bbs/visit/visitBookmark'
 import styles from './page.module.css'
-import { Tabs } from 'antd'
 import BoardTaps from '@/app/components/bbs/board/boardTaps'
 const Channel = ({ params }: { params: { id: string } }) => {
   const id = params.id
+  console.log(id)
   if (!id) {
     return <></>
   }
@@ -16,7 +17,7 @@ const Channel = ({ params }: { params: { id: string } }) => {
     <div className={styles.bbs_wrapper}>
       <article className={styles.board_wrap}>
         <BoardTitle id={id} />
-        <div className={styles.float_left}>
+        <div className={styles.button_warp}>
           <BoardButton />
         </div>
         <VisitBookmark />

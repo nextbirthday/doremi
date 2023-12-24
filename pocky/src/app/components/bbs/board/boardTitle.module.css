@@ -29,6 +29,12 @@
   margin-right: 0.5rem;
   border: 1px solid #aaa;
 }
+.wiki_button_notification {
+  padding: 0.2rem;
+  height: 2rem;
+  min-width: 2rem;
+  border: 1px solid #aaa;
+}
 .button_text {
   font-size: 0.9rem;
 }

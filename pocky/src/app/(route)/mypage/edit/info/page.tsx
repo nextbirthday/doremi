@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import styles from './edituser.module.css'
 import axios from 'axios'
+import ChangePassword from '@/useClient/mypage/edit/changePassword'
+import ChangePhoto from '@/app/components/mypage/edit/changePhoto'
 const EditUser = () => {
   const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
@@ -43,7 +45,14 @@ const EditUser = () => {
     setLayerType('changeEmail')
     setLayerPopupOpen(true)
   }
-
+  const changePassword = () => {
+    setLayerType('changePassword')
+    setLayerPopupOpen(true)
+  }
+  const changePhoto = () => {
+    setLayerType('changePhoto')
+    setLayerPopupOpen(true)
+  }
   const onOverseaChange = () => {}
 
   const onLocationChange = () => {}
@@ -69,9 +78,12 @@ const EditUser = () => {
         </div>
         <div className={styles.profile_area}>
           <div className={styles.profile_inner}>
-            <Link href="/edit/photo" className={styles.profile_photo}>
+            {/*  <Link href="/edit/photo" className={styles.profile_photo}>
               <img src="https://phinf.pstatic.net/contact/20221004_60/1664848950096SFtsP_JPEG/image.jpg?type=s160" alt="프로필사진" />
-            </Link>
+            </Link> */}
+            <button type="button" className={styles.profile_photo} onClick={changePhoto}>
+              <img src="https://phinf.pstatic.net/contact/20221004_60/1664848950096SFtsP_JPEG/image.jpg?type=s160" alt="프로필사진" />
+            </button>
             <p className={styles.profile_info_id}>dumars</p>
             <p className={styles.profile_info_emial}>doremi@plani.co.kr</p>
           </div>
@@ -163,7 +175,7 @@ const EditUser = () => {
                     </span>
                     비밀번호
                   </span>
-                  <button type="button" className={styles.button_edit} onClick={changeName}>
+                  <button type="button" className={styles.button_edit} onClick={changePassword}>
                     <span className="text">수정</span>
                   </button>
                 </div>
@@ -272,6 +284,8 @@ const EditUser = () => {
               {layerType === 'changeName' && <ChangeName handlePopupClose={handlePopupClose} />}
               {layerType === 'changeMobile' && <ChangeMobile handlePopupClose={handlePopupClose} />}
               {layerType === 'changeEmail' && <ChangeEmail handlePopupClose={handlePopupClose} />}
+              {layerType === 'changePassword' && <ChangePassword handlePopupClose={handlePopupClose} />}
+              {layerType === 'changePhoto' && <ChangePhoto handlePopupClose={handlePopupClose} />}
             </>
           </DefaultPopupPanel>
         </DefaultLayer>

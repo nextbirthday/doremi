@@ -36,6 +36,13 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.channel_name:hover {
+  text-decoration: underline;
+  color: black;
+}
+/* .channel_name:hover {
+  box-shadow: inset 0 -0.1px 0 0 blue;
+} */
 
 .channel_subscribe_button {
   padding: 0.1rem;

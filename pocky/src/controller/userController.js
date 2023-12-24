@@ -15,20 +15,33 @@ export const signin = async (data) => {
   const result = await userRepository.signin(data)
   return result
 }
-
+/* user 이름 변경 */
 export const changeName = async (data) => {
   const result = await userRepository.changeName(data)
   return result
 }
 
+/* user 이메일 변경 */
 export const changeEmail = async (data) => {
   const result = await userRepository.changeEmail(data)
   return result
 }
 
+/* user 전화번호 변경 */
 export const changeMobile = async (data) => {
-  // const result = await userRepository.changeMobile(data)
-  const result = []
+  const result = await userRepository.changeMobile(data)
+  return result
+}
+
+/* user 비밀번호 변경 */
+export const changePassword = async (data) => {
+  const bcrypt = require('bcrypt')
+  //console.log('controller data', data)
+  /* 패스워드 암호화 */
+  const encryptedPW = bcrypt.hashSync(data.data.password, 10)
+  //console.log('controller encryptedPW', encryptedPW)
+  data.data.password = encryptedPW
+  const result = await userRepository.changePassword(data)
   return result
 }
 

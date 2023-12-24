@@ -6,3 +6,9 @@
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.float_left {
+  float: left;
+}
+.float_right {
+  float: right;
+}

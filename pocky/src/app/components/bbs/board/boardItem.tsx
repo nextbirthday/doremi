@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { GoPlus } from 'react-icons/go'
 import { FaCheck } from 'react-icons/fa6'
 const BoardItem = () => {
-  const channel_name = 'genshin'
+  const channel_name = 'bluearchive'
   return (
     <>
       <div className={styles.board_item}>
@@ -17,7 +17,7 @@ const BoardItem = () => {
         </div>
         <div className={styles.right}>
           <div className={styles.head}>
-            <Link href="/bbs" className={styles.channel_name}>
+            <Link href={`/bbs/${channel_name}`} className={styles.channel_name}>
               채널 이름
             </Link>
             {/* 구독 버튼 + / 구독 시 V  */}

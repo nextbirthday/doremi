@@ -11,14 +11,13 @@
   float: right;
   width: 75%;
   min-height: 90vh;
-  border: 2px solid yellow;
 }
 
 .header_wrap {
+  border: 1px solid violet;
   float: left;
   width: 25%;
   min-height: 90vh;
-  border: 3px solid #03c75a;
 }
 
 .logo_area {

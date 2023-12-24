@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './about.module.css'
 import { FaHtml5, FaDatabase } from 'react-icons/fa'
 import { MdOutlinePhoneIphone } from 'react-icons/md'
+import Image from 'next/image'
 const About = () => {
   return (
     <section id="about" className={styles.section}>
@@ -27,40 +28,19 @@ const About = () => {
       </ul>
       <ul className={styles.jobs}>
         <li className={styles.job}>
-          <img src="/jobs/plani.jpg" style={{ width: 65, height: 24 }} alt="에큐온저축은행" />
+          <Image src="/jobs/acuon.png" width={96} height={36} alt="에큐온저축은행로고" />
           <div>
             <p className={styles.job_name}>에큐온저축은행 시스템 Back-End Developer</p>
             <p className={styles.job_period}>2023.05.01 ~ 2023.08.30 </p>
           </div>
         </li>
         <li className={styles.job}>
-          <img src="/jobs/plani.jpg" style={{ width: 65, height: 24 }} alt="플랜아이로고" />
+          <Image src="/jobs/plani.jpg" width={96} height={36} alt="플랜아이로고" />
           <div>
             <p className={styles.job_name}>플랜아이 Full Stack Developer</p>
             <p className={styles.job_period}>2023.10.10 ~ 2024.12.26 </p>
           </div>
         </li>
-        {/* <li className={styles.job}>
-          <img src="/jobs/google.png" alt="구글로고" />
-          <div>
-            <p className={styles.job_name}>Google as Junior Software engineer</p>
-            <p className={styles.job_period}>2020 July - Until Now</p>
-          </div>
-        </li>
-        <li className={styles.job}>
-          <img src="/jobs/samsung.png" alt="삼성로고" />
-          <div>
-            <p className={styles.job_name}>Sansung as Software engineer</p>
-            <p className={styles.job_period}>2017 July - 2020 May</p>
-          </div>
-        </li>
-        <li className={styles.job}>
-          <img src="/jobs/nexon.svg" style={{ width: 65, height: 24 }} alt="넥슨로고" />
-          <div>
-            <p className={styles.job_name}>NEXON GAMES as Story CM</p>
-            <p className={styles.job_period}>2015 June - 2017 May</p>
-          </div>
-        </li> */}
       </ul>
     </section>
   )

@@ -3,7 +3,7 @@ import React from 'react'
 import NewvisitItem from './newvisitItem'
 
 const NewvisitList = () => {
-  const tagNames = ['Tag 112312321321', 'Tag 2421421421421', 'Tag 41242142142143', 'Tag 124214124214']
+  const tagNames = ['adam', 'archive', 'NBA', 'audio']
 
   return (
     <>

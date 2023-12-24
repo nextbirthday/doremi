@@ -1,5 +1,6 @@
 import { changeEmail } from '@/controller/userController';
 import { NextRequest, NextResponse } from 'next/server';
+
 /* 회원정보수정 - 이메일 */
 export const POST = async (request: NextRequest) => {
 

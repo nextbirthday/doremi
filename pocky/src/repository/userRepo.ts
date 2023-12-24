@@ -103,15 +103,29 @@ export const changeEmail = async (data: any) => {
   })
   return result
 }
-// export const changeMobile = async (data: any) => {
-//   const { userid, mobile } = data.data
-//   const result = await dbCon.user.update({
-//     where: {
-//       userid,
-//     },
-//     data: {
-//       mobile
-//     },
-//   })
-//   return result
-// }
+export const changeMobile = async (data: any) => {
+  const { userid, mobile } = data.data
+  const result = await dbCon.user.update({
+    where: {
+      userid,
+    },
+    data: {
+      mobile,
+    },
+  })
+  return result
+}
+
+export const changePassword = async (data: any) => {
+  const { userid, password } = data.data
+  const result = await dbCon.user.update({
+    where: {
+      userid,
+    },
+    data: {
+      password,
+    },
+  })
+
+  return result
+}

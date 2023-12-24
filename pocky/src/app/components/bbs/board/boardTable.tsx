@@ -78,9 +78,37 @@ const BoardTable = () => {
       views: '0',
       recommend: '0',
     },
+    {
+      key: '4',
+      id: 4,
+      title: `New York No. 1 Lake Park`,
+      author: '쿠라에',
+      createdAt: '2023.12.22',
+      views: '0',
+      recommend: '0',
+    },
+    {
+      key: '5',
+      id: 5,
+      title: '222222222 Lake Park',
+      author: '쿠라에',
+      createdAt: '2023.12.22',
+      views: '0',
+      recommend: '0',
+    },
+    {
+      key: '6',
+      id: 6,
+      title: '33333333 Park',
+      author: '쿠라에',
+      createdAt: '2023.12.22',
+      views: '0',
+      recommend: '0',
+    },
   ]
   return (
     <Table
+      style={{ cursor: 'pointer', margin: '-16px 0 0  0' }}
       columns={columns}
       dataSource={data}
       size="small"
@@ -88,10 +116,8 @@ const BoardTable = () => {
         return {
           onClick: (event) => {
             router.push(`/bbs/bluearchive/${record.id}`)
-            console.log('event', event)
-            console.log('record', record)
             console.log('rowIndex', rowIndex)
-          }, // click row
+          },
         }
       }}
     />

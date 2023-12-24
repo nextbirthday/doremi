@@ -24,7 +24,7 @@ const BoardTitle = ({ id }: any) => {
             <Link href={`/bbs/${id}`} className={styles.wiki_button}>
               <span className={styles.button_text}>구독</span>
             </Link>
-            <Link href={`/bbs/${id}`} className={styles.wiki_button}>
+            <Link href={`/bbs/${id}`} className={styles.wiki_button_notification}>
               <span className={styles.button_text}>알림</span>
             </Link>
           </div>

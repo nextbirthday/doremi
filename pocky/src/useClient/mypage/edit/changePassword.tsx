@@ -2,47 +2,59 @@ import { CloseOutlined } from '@ant-design/icons'
 import { Divider, Input, Space } from 'antd'
 import axios from 'axios'
 import { Controller, useForm } from 'react-hook-form'
-import styles from './changeName.module.css'
 import { useState } from 'react'
 import FormMessage from '@/app/components/form/formMessage'
 
-const ChangeName = ({ handlePopupClose }: any) => {
+import styles from './changePassword.module.css'
+import { useRouter } from 'next/navigation'
+const ChangePassword = ({ handlePopupClose }: any) => {
+  const router = useRouter()
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm()
 
-  /* 이름 regex */
-  const [nameMessage, setNameMessage] = useState(false)
-  const handleName = (e: any) => {
-    const name = e.target.value
+  /* 비밀번호 regex */
+  const [pwMessage, setPwMessage] = useState(false)
+  const handlePassword = (e: any) => {
+    const password = e.target.value
 
-    if (!/^[가-힣a-zA-Z]+$/u.test(name)) {
-      setNameMessage(true)
+    if (!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/.test(password)) {
+      setPwMessage(true)
     } else {
-      setNameMessage(false)
+      setPwMessage(false)
     }
   }
   const onSubmit = async (data: any) => {
     console.log('onSubmit data ===>', data)
 
-    if (nameMessage) {
-      alert('제대로 된 이름을 입력해주세요')
+    if (pwMessage) {
+      alert('패스워드 정규화 통고 ㅏ 못함')
       return
     }
-    if (!confirm('확인(예) 또는 취소(아니오)를 선택해주세요.')) {
+    const userData = {
+      userid: 'arisu',
+      password: data.password,
+    }
+
+    if (!confirm('비밀번호를 변경하시겠습니까?')) {
       return
     } else {
       const userData = {
         userid: 'arisu',
-        name: data.name,
+        password: data.password,
       }
       try {
-        const response = await axios.post('/api/edit/changeName', {
+        const response = await axios.post('/api/edit/changePassword', {
           data: userData,
         })
         console.log('response ===>', response)
+        console.log('response status ===>', response.status)
+
+        if (response.status === 200) {
+          router.push('/mypage/edit/info')
+        }
       } catch (error) {
         console.log(error)
       }
@@ -52,20 +64,19 @@ const ChangeName = ({ handlePopupClose }: any) => {
   return (
     <div className={styles.edit_wrap}>
       <CloseOutlined onClick={handlePopupClose} style={{ float: 'right' }} />
-      <h3>회원정보 중 이름 수정</h3>
+      <h3>회원정보 중 비밀번호 수정</h3>
       <Divider style={{ margin: '0.5rem 0 0.5rem 0' }} />
       <div className={styles.form_wrap}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Space direction="vertical" className={styles.space_form}>
             <Space.Compact className={`${styles.form_item} ${styles.form_item_name}`}>
               <Controller
-                name="name"
+                name="password"
                 control={control}
-                render={({ field }) => <Input {...field} placeholder="이름" size="large" allowClear={true} onInput={handleName} required />}
+                render={({ field }) => <Input {...field} type="password" placeholder="비밀번호" size="large" allowClear={true} onInput={handlePassword} required />}
               />
             </Space.Compact>
-            {nameMessage && <FormMessage msg={`이름: 한글, 영문 대/소문자를 사용해 주세요.`} />}
-            {nameMessage && <FormMessage msg={`(특수기호, 공백 사용 불가)`} />}
+            {pwMessage && <FormMessage msg={`8~16자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.`} />}
           </Space>
           <div className={styles.button_wrap}>
             <button type="button" className={styles.cancel_button} onClick={handlePopupClose}>
@@ -81,4 +92,4 @@ const ChangeName = ({ handlePopupClose }: any) => {
   )
 }
 
-export default ChangeName
+export default ChangePassword

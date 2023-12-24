@@ -1,15 +1,15 @@
 import { CloseOutlined } from '@ant-design/icons'
 import { Button, Divider, Input, Space } from 'antd'
 import { Controller, useForm } from 'react-hook-form'
-import './changeEmail.css'
+import styles from './changeEmail.module.css'
 import axios from 'axios'
+import { useState } from 'react'
 const ChangeEmail = ({ handlePopupClose }: any) => {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm()
-
   const onSubmit = async (data: any) => {
     console.log('onSubmit data ===>', data)
 
@@ -30,29 +30,29 @@ const ChangeEmail = ({ handlePopupClose }: any) => {
     console.log('sendEmail')
   }
   return (
-    <div className="edit_wrap">
+    <div className={styles.edit_wrap}>
       <CloseOutlined onClick={handlePopupClose} style={{ float: 'right' }} />
-      <h3>플랜아이님의 회원정보 중 이메일 수정</h3>
-      <Divider style={{ margin: '0.5rem 0 1rem 0' }} />
-      <div className="form_wrap">
+      <h3>회원정보 중 이메일 수정</h3>
+      <Divider style={{ margin: '0.5rem 0 0.5rem 0' }} />
+      <div className={styles.form_wrap}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Space direction="vertical" className="space_form">
-            <Space.Compact className="form_item mobile">
+          <Space direction="vertical" className={styles.space_form}>
+            <Space.Compact className={`${styles.form_item} ${styles.form_item_mobile}`}>
               <Controller name="email" control={control} render={({ field }) => <Input {...field} placeholder="이메일" size="large" allowClear={true} />} />
-              <Button type="primary" className="auth_button" size="large" onClick={sendEmail}>
+              <Button type="primary" className={styles.auth_button} size="large" onClick={sendEmail}>
                 인증
               </Button>
             </Space.Compact>
-            <Space.Compact className="form_item auth_code">
+            <Space.Compact className={`${styles.form_item} ${styles.form_item_auth_code}`}>
               <Controller name="auth_code" control={control} render={({ field }) => <Input {...field} placeholder="인증번호 입력" size="large" allowClear={true} />} />
             </Space.Compact>
           </Space>
-          <div className="button_wrap">
-            <button type="button" className="cancel_button" onClick={handlePopupClose}>
-              <span className="cancel_text">취소</span>
+          <div className={styles.button_wrap}>
+            <button type="button" className={styles.cancel_button} onClick={handlePopupClose}>
+              <span className={styles.cancel_text}>취소</span>
             </button>
-            <button className="change_button" type="submit">
-              <span className="change_text">변경</span>
+            <button className={styles.change_button} type="submit">
+              <span className={styles.change_text}>변경</span>
             </button>
           </div>
         </form>
