@@ -11,6 +11,10 @@
     "dbSetting": "prisma migrate reset && yarn prisma db push"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@ant-design/cssinjs": "^1.18.1",
     "@ant-design/icons": "^5.2.6",
     "@prisma/client": "^5.7.0",
@@ -21,6 +25,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "dayjs": "^1.11.10",
+    "font-awesome": "^4.7.0",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "next": "14.0.4",

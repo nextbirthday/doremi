@@ -1,20 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import './videoItem.css'
+import styles from './videoItem.module.css'
 import Link from 'next/link'
 const VideoItem = (props: any) => {
   const { video, selectVideo } = props
   return (
-    <Link href={`/watch/${video.id.videoId}`}>
-      <div className="video_item" /* onClick={() => selectVideo(video)} */>
+    <Link href={`/watch/${video.id.videoId}`} className={styles.thumbnail_box}>
+      <div className={styles.video_item} /* onClick={() => selectVideo(video)} */>
         <div>
-          <img className="video_thumbnail" src={video.snippet.thumbnails.medium.url} alt="썸네일" />
+          <img className={styles.video_thumbnail} src={video.snippet.thumbnails.medium.url} alt="썸네일" />
         </div>
         <div>
-          <p className="video_title" key={video.id}>
+          <p className={styles.video_title} key={video.id}>
             {video.snippet.title}
           </p>
-          <p className="video_channel">{video.snippet.channelTitle}</p>
+          <p className={styles.video_channel}>{video.snippet.channelTitle}</p>
         </div>
       </div>
     </Link>

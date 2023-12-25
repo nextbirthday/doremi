@@ -1,6 +1,6 @@
 import React from 'react'
 import VideoItem from './videoItem'
-import './videoList.css'
+import styles from './videoList.module.css'
 import { Empty } from 'antd'
 
 const VideoList = (props: any) => {
@@ -8,7 +8,7 @@ const VideoList = (props: any) => {
 
   if (videoList)
     return (
-      <div className="video_grid">
+      <div className={styles.video_grid}>
         {videoList?.length < 1 ? <Empty></Empty> : videoList.map((video: any, index: number) => <VideoItem key={index} video={video} selectVideo={selectVideo} />)}
       </div>
     )

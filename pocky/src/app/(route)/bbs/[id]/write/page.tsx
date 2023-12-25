@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import PopularBox from '@/app/components/bbs/popular/popularBox'
 import BoardTitle from '@/app/components/bbs/board/boardTitle'
 import { useForm } from 'react-hook-form'
+
 const Write = () => {
   const {
     register,
@@ -22,15 +23,15 @@ const Write = () => {
           <div className={styles.sub_row}>
             <span className={styles.bullet_point_text}>글머리</span>
             <span>
-              <input type="radio" id="category-general" name="category" defaultChecked required className={styles.radioInput} />
+              <input type="radio" id="category-general" {...register('category')} defaultChecked required className={styles.radioInput} />
               <label htmlFor="category-general">일반</label>
             </span>
             <span>
-              <input type="radio" id="category-notice" name="category" value="공지" className={styles.radioInput} />
+              <input type="radio" id="category-notice" {...register('category')} value="공지" className={styles.radioInput} />
               <label htmlFor="category-notice">공지</label>
             </span>
             <span>
-              <input type="radio" id="category-channel-notice" name="category" value="채널공지" className={styles.radioInput} />
+              <input type="radio" id="category-channel-notice" {...register('category')} value="채널공지" className={styles.radioInput} />
               <label htmlFor="category-channel-notice">채널공지</label>
             </span>
           </div>
@@ -38,11 +39,12 @@ const Write = () => {
           <div className={styles.title_row}>
             <div className={styles.title_input_group}>
               <span className={styles.title_group_text}>제목</span>
-              <input className={styles.title_input} type="text" name="title" id="input_title" maxLength={256} />
+              <input className={styles.title_input} type="text" {...register('title')} id="input_title" maxLength={256} required />
             </div>
           </div>
 
           <div className={styles.write_body}></div>
+          <button type="submit">submit</button>
         </form>
       </article>
       <aside className={styles.sidebar_wrapper}>
