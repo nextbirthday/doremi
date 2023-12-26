@@ -28,6 +28,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link href="/test" className="header__menu__item">
+                Test
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className="header__menu__item">
                 Blog
               </Link>
@@ -83,6 +88,11 @@ const Header = () => {
             <li>
               <Link href="/profile" className="header__menu__item">
                 Profile
+              </Link>
+            </li>
+            <li>
+              <Link href="/test" className="header__menu__item">
+                Test
               </Link>
             </li>
             <li>
