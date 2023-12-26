@@ -9,6 +9,9 @@ import { typeORMconfig } from './configs/typeorm.config';
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeORMconfig),
-    BoardsModule, AuthModule, UserModule],
+    BoardsModule,
+    AuthModule,
+    UserModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}
