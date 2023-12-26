@@ -2,7 +2,6 @@ import Covid from '@/app/components/collapse/covid'
 import React from 'react'
 
 const Test = async () => {
-
   async function getData() {
     const res = await fetch('http://localhost:9000/boards')
     // The return value is *not* serialized
@@ -16,9 +15,9 @@ const Test = async () => {
     return res.json()
   }
 
-  const data = await getData()
+  // const data = await getData()
 
-  console.log('data', data)
+  // console.log('data', data)
 
   return (
     <>
