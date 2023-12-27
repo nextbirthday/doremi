@@ -1,25 +1,23 @@
 /* eslint-disable @next/next/no-async-client-component */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import Link from 'next/link'
-import Image from 'next/image'
+import DefaultLayer from '@/components/layer/defaultLayer'
+import ChangePhoto from '@/components/mypage/edit/changePhoto'
+import DefaultPopupPanel from '@/components/panels/dafaultPopupPanel'
 import ChangeEmail from '@/useClient/mypage/edit/changeEmail'
 import ChangeMobile from '@/useClient/mypage/edit/changeMobile'
 import ChangeName from '@/useClient/mypage/edit/changeName'
+import ChangePassword from '@/useClient/mypage/edit/changePassword'
 import { Divider, Spin, Switch } from 'antd'
+import { useSession } from 'next-auth/react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import styles from './edituser.module.css'
-import ChangePassword from '@/useClient/mypage/edit/changePassword'
-import { useSession } from 'next-auth/react'
-import DefaultLayer from '@/components/layer/defaultLayer'
-import DefaultPopupPanel from '@/components/panels/dafaultPopupPanel'
-import ChangePhoto from '@/components/mypage/edit/changePhoto'
 const EditUser = () => {
   const { data } = useSession()
-
   console.log('data', data)
-
   const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
 
@@ -134,8 +132,7 @@ const EditUser = () => {
                     <span className={styles.item_icon}>
                       <FaRegUser />
                     </span>
-                    전화번호
-                    {/* {data?.user?.mobile } */}
+                    {data?.user?.mobile}
                   </span>
                   <button type="button" className={styles.button_edit} onClick={changeMobile}>
                     <span className={styles.text}>수정</span>
@@ -149,7 +146,7 @@ const EditUser = () => {
                     <span className={styles.item_icon}>
                       <FaRegUser />
                     </span>
-                    test@naver.com
+                    {data?.user?.email}
                   </span>
                   <button type="button" className={styles.button_edit} onClick={changeEmail}>
                     <span className={styles.text}>수정</span>

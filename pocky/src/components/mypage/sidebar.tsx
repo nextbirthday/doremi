@@ -1,11 +1,16 @@
+'use client'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import './sidebar.css'
 const Sidebar = () => {
+  const { data } = useSession()
+
+  console.log('data', data)
   return (
     <ul className="mypage_list">
       <section className="my_my">
         <div className="my_myin">
-          <h1 className="mypage_username">USER_NAME</h1>
+          <h1 className="mypage_username">{data?.user?.name}</h1>
         </div>
         <ul>
           <li>
