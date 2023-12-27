@@ -1,5 +1,5 @@
 'use client'
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 import { settingsDivider } from '@/css/divider'
 import { Button, Col, Divider, Input, Row, Space } from 'antd'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'

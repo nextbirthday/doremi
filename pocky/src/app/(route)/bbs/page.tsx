@@ -1,10 +1,9 @@
 import React from 'react'
-import VisitBookmark from '@/app/components/bbs/visit/visitBookmark'
-import styles from './page.module.css'
 import Link from 'next/link'
-import SearchChannel from '@/app/components/bbs/search/searchChannel'
-import BoardList from '@/app/components/bbs/board/boardList'
-import PopularBox from '@/app/components/bbs/popular/popularBox'
+import styles from './page.module.css'
+import SearchChannel from '@/components/bbs/search/searchChannel'
+import BoardList from '@/components/bbs/board/boardList'
+import PopularBox from '@/components/bbs/popular/popularBox'
 const Bbs = () => {
   return (
     <>

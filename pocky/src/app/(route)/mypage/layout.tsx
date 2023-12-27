@@ -1,7 +1,7 @@
-import Footer from '@/app/components/footer/footer'
-import Header from '@/app/components/header/header'
+import Footer from '@/components/footer/footer'
+import Header from '@/components/header/header'
+import Sidebar from '@/components/mypage/sidebar'
 import './layout.css'
-import Sidebar from '@/app/components/mypage/sidebar'
 export default function MypageLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>

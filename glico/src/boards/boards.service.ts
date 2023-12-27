@@ -5,13 +5,15 @@ import { BoardRepository } from './board.repository';
 import { CreateBoardDto } from './dto/create-board.dto';
 @Injectable()
 export class BoardsService {
-  constructor(private boardRepository: BoardRepository) {}
+
+  constructor(private boardRepository: BoardRepository) { }
 
   async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
     return this.boardRepository.createBoard(createBoardDto);
   }
 
   async getBoardById(id: number): Promise<Board> {
+
     const found = await this.boardRepository.findOneBy({ id });
 
     if (!found) {

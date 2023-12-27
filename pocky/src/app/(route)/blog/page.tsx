@@ -1,4 +1,4 @@
-import KakaoMap from '@/app/components/kakao/kakaoMap'
+import KakaoMap from '@/components/kakao/kakaoMap'
 
 const Blog = () => {
   return (

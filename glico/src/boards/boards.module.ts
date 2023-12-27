@@ -11,4 +11,4 @@ import { BoardRepository } from './board.repository';
   controllers: [BoardsController],
   providers: [BoardsService, BoardRepository],
 })
-export class BoardsModule {}
+export class BoardsModule { }

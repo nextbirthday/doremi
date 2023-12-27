@@ -1,5 +1,5 @@
-import Footer from '@/app/components/footer/footer'
-import Header from '@/app/components/header/header'
+import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
 import React from 'react'
 import Profile from './components/profile'
 import About from './components/about'

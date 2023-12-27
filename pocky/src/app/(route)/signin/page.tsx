@@ -1,11 +1,11 @@
 'use client'
 /* eslint-disable @next/next/no-img-element */
-import Footer from '@/app/components/footer/footer'
+import Footer from '@/components/footer/footer'
 import { Tabs } from 'antd'
 import Link from 'next/link'
 
-import SigninById from '@/app/components/signin/signinById'
-import SigninByQr from '@/app/components/signin/signinByQr'
+import SigninById from '@/components/signin/signinById'
+import SigninByQr from '@/components/signin/signinByQr'
 import styles from './page.module.css'
 
 const Signin = () => {

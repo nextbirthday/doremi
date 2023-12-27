@@ -1,4 +1,4 @@
-import ProductMenu from '@/app/components/product/productMenu'
+import ProductMenu from '@/components/product/productMenu'
 import ProductList from './components/productList'
 import { Empty } from 'antd'
 import { getAllProduct } from '@/controller/products'

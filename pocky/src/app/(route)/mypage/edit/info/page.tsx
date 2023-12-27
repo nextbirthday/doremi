@@ -3,36 +3,26 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import DefaultLayer from '@/app/components/layer/defaultLayer'
-import DefaultPopupPanel from '@/app/components/panels/dafaultPopupPanel'
 import ChangeEmail from '@/useClient/mypage/edit/changeEmail'
 import ChangeMobile from '@/useClient/mypage/edit/changeMobile'
 import ChangeName from '@/useClient/mypage/edit/changeName'
-import { Divider, Switch } from 'antd'
-import { useEffect, useState } from 'react'
+import { Divider, Spin, Switch } from 'antd'
+import { useState } from 'react'
 import { FaRegUser } from 'react-icons/fa'
 import styles from './edituser.module.css'
-import axios from 'axios'
 import ChangePassword from '@/useClient/mypage/edit/changePassword'
-import ChangePhoto from '@/app/components/mypage/edit/changePhoto'
+import { useSession } from 'next-auth/react'
+import DefaultLayer from '@/components/layer/defaultLayer'
+import DefaultPopupPanel from '@/components/panels/dafaultPopupPanel'
+import ChangePhoto from '@/components/mypage/edit/changePhoto'
 const EditUser = () => {
+  const { data } = useSession()
+
+  console.log('data', data)
+
   const [layerType, setLayerType] = useState('')
   const [layerPopupOpen, setLayerPopupOpen] = useState(false)
 
-  const getUser = async () => {
-    const id = 'clqf5gavc000ix0dqnk2msr3q'
-    try {
-      const response = await axios.post('/api/user/info', {
-        data: id,
-      })
-      console.log('response ===>', response)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  useEffect(() => {
-    getUser()
-  }, [])
   const changeName = () => {
     setLayerType('changeName')
     setLayerPopupOpen(true)
@@ -62,6 +52,14 @@ const EditUser = () => {
     setLayerPopupOpen(false)
     //location.reload()
   }
+  if (!data)
+    return (
+      <>
+        <Spin tip="Loading" size="large">
+          <div className="content" />
+        </Spin>
+      </>
+    )
   return (
     <>
       <section className={styles.edit_header}>
@@ -84,8 +82,8 @@ const EditUser = () => {
             <button type="button" className={styles.profile_photo} onClick={changePhoto}>
               <img src="https://phinf.pstatic.net/contact/20221004_60/1664848950096SFtsP_JPEG/image.jpg?type=s160" alt="프로필사진" />
             </button>
-            <p className={styles.profile_info_id}>dumars</p>
-            <p className={styles.profile_info_emial}>doremi@plani.co.kr</p>
+            <p className={styles.profile_info_id}>{data?.user?.name}</p>
+            <p className={styles.profile_info_emial}>{data?.user?.email}</p>
           </div>
         </div>
         <div className={styles.menu_area}>
@@ -122,7 +120,7 @@ const EditUser = () => {
                     <span className={styles.item_icon}>
                       <FaRegUser />
                     </span>
-                    플랜아이
+                    {data?.user?.name}
                   </span>
                   <button type="button" className={styles.button_edit} onClick={changeName}>
                     <span className={styles.text}>실명수정</span>
@@ -136,7 +134,8 @@ const EditUser = () => {
                     <span className={styles.item_icon}>
                       <FaRegUser />
                     </span>
-                    010-1234-1244
+                    전화번호
+                    {/* {data?.user?.mobile } */}
                   </span>
                   <button type="button" className={styles.button_edit} onClick={changeMobile}>
                     <span className={styles.text}>수정</span>

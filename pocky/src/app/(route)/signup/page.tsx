@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

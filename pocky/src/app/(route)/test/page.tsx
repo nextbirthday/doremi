@@ -1,4 +1,4 @@
-import Covid from '@/app/components/collapse/covid'
+import Covid from '@/components/collapse/covid'
 import React from 'react'
 
 const Test = async () => {

@@ -1,10 +1,15 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './page.module.css'
-import PopularBox from '@/app/components/bbs/popular/popularBox'
-import BoardTitle from '@/app/components/bbs/board/boardTitle'
+import PopularBox from '@/components/bbs/popular/popularBox'
+import BoardTitle from '@/components/bbs/board/boardTitle'
 import { useForm } from 'react-hook-form'
-
+// Toast 에디터
+import { Editor } from '@toast-ui/react-editor'
+import '@toast-ui/editor/dist/toastui-editor.css'
+import 'tui-color-picker/dist/tui-color-picker.css'
+import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css'
+import colorSyntax from '@toast-ui/editor-plugin-color-syntax'
 const Write = () => {
   const {
     register,
@@ -14,6 +19,19 @@ const Write = () => {
   const onSubmit = async (data: any) => {
     console.log('data ===>', data)
   }
+  const editorRef = useRef<Editor>(null)
+  // const handleImage = async (file: File, callback: typeof Function) => {
+  //   const imageUrl = await getImageUrl(file)
+  //   callback(imageUrl)
+  // }
+  const getContents = () => {
+    const markdownContent = editorRef.current?.getInstance().getMarkdown()
+    console.log('markdownContent', markdownContent)
+    const htmlContent = editorRef.current?.getInstance().getHTML()
+    console.log('htmlContent', htmlContent)
+  }
+
+  const toolbarItems = [['heading', 'bold', 'italic', 'strike'], ['hr'], ['ul', 'ol', 'task'], ['link', 'image'], ['scrollSync']]
   return (
     <div className={styles.write_wrapper}>
       <article className={styles.article_write}>
@@ -43,10 +61,27 @@ const Write = () => {
             </div>
           </div>
 
-          <div className={styles.write_body}></div>
-          <button type="submit">submit</button>
+          <div className={styles.write_body}>
+            <Editor
+              initialValue="hello react editor world!"
+              initialEditType="markdown"
+              height="100%"
+              hideModeSwitch={true}
+              usageStatistics={false}
+              toolbarItems={toolbarItems}
+              editorRef={editorRef}
+              plugins={[colorSyntax]}
+            />
+          </div>
+          <button className={styles.submit_button} type="submit">
+            submit
+          </button>
         </form>
+        <button type="button" onClick={getContents}>
+          에디터 내용 출력하기
+        </button>
       </article>
+
       <aside className={styles.sidebar_wrapper}>
         {/* 인기 검색어 박스 */}
         <PopularBox />

@@ -2,7 +2,7 @@
 import { Button, Col, Divider, Input, Row, Select, Space } from 'antd'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { settingsDivider } from '@/css/divider'
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 
 type Inputs = {
   email: string

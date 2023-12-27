@@ -32,7 +32,7 @@ const BoardTitle = ({ id }: any) => {
         <div className={styles.description}>
           <span className={styles.subscriber_count}>구독자 count</span>
           <span className={styles.notification_count}> | 알림수신 count</span>
-          <div className={styles.channel_text}>감우의 생일을 축하합니다! | 모에, 귀여운 미유 복각 픽업! (12.19~12.26)</div>
+          <div className={styles.channel_text}>채널타이틀 (12.19~12.26)</div>
         </div>
       </div>
     </div>

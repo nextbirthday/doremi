@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Controller, useForm } from 'react-hook-form'
 import styles from './changeName.module.css'
 import { useState } from 'react'
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 
 const ChangeName = ({ handlePopupClose }: any) => {
   const {

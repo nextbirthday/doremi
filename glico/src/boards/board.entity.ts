@@ -4,6 +4,7 @@ import { BoardStatus } from './board-status.enum';
 
 @Entity()
 export class Board extends BaseEntity {
+  
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -15,4 +16,5 @@ export class Board extends BaseEntity {
 
   @Column()
   status: BoardStatus;
+
 }

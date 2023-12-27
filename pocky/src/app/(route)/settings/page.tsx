@@ -1,5 +1,5 @@
-import Header from '@/app/components/header/header'
-import Footer from '@/app/components/footer/footer'
+import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
 import Logo from '@/useClient/settings/logo'
 import SiteInformation from '@/useClient/settings/site'
 import ManagerInfo from '@/useClient/settings/manager'

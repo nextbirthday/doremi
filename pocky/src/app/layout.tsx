@@ -1,9 +1,9 @@
 import StyledComponentsRegistry from '@/library/AntdRegistry'
 import type { Metadata } from 'next'
 import React from 'react'
-import Provider from './components/provider/provider'
 import Script from 'next/script'
 import './globals.css'
+import Provider from '@/components/provider/provider'
 
 export const metadata: Metadata = {
   title: 'Next js 14, POCKY',

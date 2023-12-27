@@ -1,12 +1,12 @@
 'use client'
 
-import BoardBread from '@/app/components/bbs/board/boardBread'
-import BoardButton from '@/app/components/bbs/board/boardButton'
-import BoardTitle from '@/app/components/bbs/board/boardTitle'
-import PopularBox from '@/app/components/bbs/popular/popularBox'
-import VisitBookmark from '@/app/components/bbs/visit/visitBookmark'
+import BoardBread from '@/components/bbs/board/boardBread'
+import BoardButton from '@/components/bbs/board/boardButton'
+import BoardTitle from '@/components/bbs/board/boardTitle'
+import PopularBox from '@/components/bbs/popular/popularBox'
+import VisitBookmark from '@/components/bbs/visit/visitBookmark'
 import styles from './page.module.css'
-import BoardTaps from '@/app/components/bbs/board/boardTaps'
+import BoardTaps from '@/components/bbs/board/boardTaps'
 const Channel = ({ params }: { params: { id: string } }) => {
   const id = params.id
   console.log(id)

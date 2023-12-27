@@ -1,6 +1,6 @@
 'use client'
 /* eslint-disable @next/next/no-img-element */
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 import { Checkbox, Switch } from 'antd'
 import Link from 'next/link'
 

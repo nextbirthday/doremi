@@ -3,7 +3,7 @@ import { Divider, Input, Space } from 'antd'
 import axios from 'axios'
 import { Controller, useForm } from 'react-hook-form'
 import { useState } from 'react'
-import FormMessage from '@/app/components/form/formMessage'
+import FormMessage from '@/components/form/formMessage'
 
 import styles from './changePassword.module.css'
 import { useRouter } from 'next/navigation'
