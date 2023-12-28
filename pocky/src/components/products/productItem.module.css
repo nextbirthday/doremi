@@ -1,0 +1,34 @@
+.product_section {
+  display: flex;
+}
+.product_detail {
+  border: 1px solid red;
+  padding: 0 0 40px 20px;
+}
+.product_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info_box {
+  border: 1px solid blue;
+  padding-top: 15px;
+}
+
+.heart_box {
+  display: flex;
+  align-items: center;
+}
+
+.heart_icon {
+  font-size: 1.3rem;
+  padding-right: 0.1rem;
+}
+.heart_count {
+  padding-right: 2rem;
+}
+.review_icon {
+  display: flex;
+  font-size: 1.3rem;
+  padding-right: 0.1rem;
+}

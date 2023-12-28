@@ -1,7 +1,7 @@
 import ProductMenu from '@/components/product/productMenu'
-import ProductList from './components/productList'
 import { Empty } from 'antd'
 import { getAllProduct } from '@/controller/products'
+import ProductList from '@/components/products/productList'
 
 const Products = async () => {
   const productList = await getAllProduct()

@@ -14,6 +14,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaRegUser } from 'react-icons/fa'
+import { CiMobile3, CiViewList, CiLink } from 'react-icons/ci'
+import { MdOutlineEmail } from 'react-icons/md'
+import { RiLockPasswordLine, RiUserLocationLine } from 'react-icons/ri'
+import { SiAuthelia } from 'react-icons/si'
+import { IoIosLogIn } from 'react-icons/io'
+import { IoEarthOutline } from 'react-icons/io5'
 import styles from './edituser.module.css'
 const EditUser = () => {
   const { data } = useSession()
@@ -130,7 +136,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_mobile}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <CiMobile3 />
                     </span>
                     {data?.user?.mobile}
                   </span>
@@ -144,7 +150,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_email}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <MdOutlineEmail />
                     </span>
                     {data?.user?.email}
                   </span>
@@ -167,7 +173,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_name}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <RiLockPasswordLine />
                     </span>
                     비밀번호
                   </span>
@@ -181,7 +187,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_mobile}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <SiAuthelia />
                     </span>
                     2단계 인증
                   </span>
@@ -195,7 +201,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_email}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <IoEarthOutline />
                     </span>
                     타지역 로그인 차단
                   </span>
@@ -207,7 +213,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_email}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <RiUserLocationLine />
                     </span>
                     해외 로그인 차단
                   </span>
@@ -228,7 +234,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_name}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <IoIosLogIn />
                     </span>
                     로그인 목록
                   </span>
@@ -242,7 +248,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_mobile}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <CiViewList />
                     </span>
                     내 활동 기록 보기
                   </span>
@@ -256,7 +262,7 @@ const EditUser = () => {
                 <div className={`${styles.row_item} ${styles.row_item_email}`}>
                   <span className={styles.item_text}>
                     <span className={styles.item_icon}>
-                      <FaRegUser />
+                      <CiLink />
                     </span>
                     연결된 서비스 관리
                   </span>
