@@ -5,6 +5,7 @@ import SearchChannel from '@/components/bbs/search/searchChannel'
 import BoardList from '@/components/bbs/board/boardList'
 import PopularBox from '@/components/bbs/popular/popularBox'
 const Bbs = () => {
+
   return (
     <>
       {/* 최근 방문 리스트 북마크 <VisitBookmark />*/}

@@ -21,6 +21,8 @@ import { SiAuthelia } from 'react-icons/si'
 import { IoIosLogIn } from 'react-icons/io'
 import { IoEarthOutline } from 'react-icons/io5'
 import styles from './edituser.module.css'
+
+/* 회원정보수정 */
 const EditUser = () => {
   const { data } = useSession()
   console.log('data', data)

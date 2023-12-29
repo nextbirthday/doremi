@@ -1,37 +1,50 @@
 'use client'
-import React, { useRef } from 'react'
-import styles from './page.module.css'
-import PopularBox from '@/components/bbs/popular/popularBox'
 import BoardTitle from '@/components/bbs/board/boardTitle'
+import QuillEditor from '@/components/bbs/board/quillEditor'
+import PopularBox from '@/components/bbs/popular/popularBox'
+import { useCallback, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-// Toast 에디터
-import { Editor } from '@toast-ui/react-editor'
-import '@toast-ui/editor/dist/toastui-editor.css'
-import 'tui-color-picker/dist/tui-color-picker.css'
-import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css'
-import colorSyntax from '@toast-ui/editor-plugin-color-syntax'
+import styles from './page.module.css'
+import axios from 'axios'
+
 const Write = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
+
   const onSubmit = async (data: any) => {
     console.log('data ===>', data)
-  }
-  const editorRef = useRef<Editor>(null)
-  // const handleImage = async (file: File, callback: typeof Function) => {
-  //   const imageUrl = await getImageUrl(file)
-  //   callback(imageUrl)
-  // }
-  const getContents = () => {
-    const markdownContent = editorRef.current?.getInstance().getMarkdown()
-    console.log('markdownContent', markdownContent)
-    const htmlContent = editorRef.current?.getInstance().getHTML()
-    console.log('htmlContent', htmlContent)
-  }
+    console.log('content ===>', content)
+    const submitData = {
+      title: data.title,
+      content,
+    }
 
-  const toolbarItems = [['heading', 'bold', 'italic', 'strike'], ['hr'], ['ul', 'ol', 'task'], ['link', 'image'], ['scrollSync']]
+    console.log('submitData ===>', submitData)
+
+    if (Object.values(submitData).some((value) => value == undefined)) {
+      console.log('At least one property is undefined. Returning...')
+      return
+    }
+
+    try {
+      const response = await axios.post('/api/board/createBoard', {
+        data: submitData,
+      })
+      console.log('response ===>', response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const quillRef = useRef()
+  const [content, setContent] = useState('')
+
+  const handleContent = useCallback((event: any) => {
+    setContent(event)
+  }, [])
+
   return (
     <div className={styles.write_wrapper}>
       <article className={styles.article_write}>
@@ -62,24 +75,13 @@ const Write = () => {
           </div>
 
           <div className={styles.write_body}>
-            <Editor
-              initialValue="hello react editor world!"
-              initialEditType="markdown"
-              height="100%"
-              hideModeSwitch={true}
-              usageStatistics={false}
-              toolbarItems={toolbarItems}
-              editorRef={editorRef}
-              plugins={[colorSyntax]}
-            />
+            <QuillEditor quillRef={quillRef} handleContent={handleContent} />
           </div>
+
           <button className={styles.submit_button} type="submit">
             submit
           </button>
         </form>
-        <button type="button" onClick={getContents}>
-          에디터 내용 출력하기
-        </button>
       </article>
 
       <aside className={styles.sidebar_wrapper}>

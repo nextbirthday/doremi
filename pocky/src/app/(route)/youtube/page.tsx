@@ -15,7 +15,7 @@ const Youtube = () => {
   const fetchYoutube = async (keyword?: any) => {
     console.log('fetchYoutube keyword ===>', keyword)
     await axios
-      .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${keyword}&key=AIzaSyDE_7smZNSc-J4c7p44-gnbICMl5wKmI2g`)
+      .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${keyword}&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`)
       .then((result: { data: { items: any } }) => {
         console.log('result.data.items ===>', result.data.items)
         setVideoList(result.data.items)
