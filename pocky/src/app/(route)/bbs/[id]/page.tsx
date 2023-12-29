@@ -27,6 +27,7 @@ const Channel = ({ params }: { params: { id: string } }) => {
             <BoardTaps />
           </div>
         </div>
+        <BoardButton />
       </article>
       <aside className={styles.sidebar_wrapper}>
         <PopularBox />

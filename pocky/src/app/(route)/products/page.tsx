@@ -1,7 +1,7 @@
-import ProductMenu from '@/components/product/productMenu'
 import { Empty } from 'antd'
 import { getAllProduct } from '@/controller/products'
 import ProductList from '@/components/products/productList'
+import ProductMenu from '@/components/products/productMenu'
 
 const Products = async () => {
   const productList = await getAllProduct()
@@ -14,6 +14,7 @@ const Products = async () => {
 
   const jsonData = await staticData.json()
   console.log('jsonData ===>', jsonData) */
+  
   if (!productList || productList.length < 1) {
     return (
       <>

@@ -1,8 +1,11 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import { Button, Flex } from 'antd'
 import styles from './boardButton.module.css'
+import { useSession } from 'next-auth/react'
 const BoardButton = () => {
+  const { data: session, status } = useSession()
   return (
     <>
       <div>
@@ -34,11 +37,13 @@ const BoardButton = () => {
           </Flex>
         </div>
         <div className={styles.float_right}>
-          <Button style={{ borderRadius: '0' }} className={styles.float_right}>
-            <Link href={`/bbs/bluearchive/write`}>
-              <span style={{ fontWeight: '500' }}>글쓰기</span>
-            </Link>
-          </Button>
+          {status === 'authenticated' && (
+            <Button style={{ borderRadius: '0' }} className={styles.float_right}>
+              <Link href={`/bbs/bluearchive/write`}>
+                <span style={{ fontWeight: '500' }}>글쓰기</span>
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
       <div style={{ paddingBottom: '0.05rem' }}></div>

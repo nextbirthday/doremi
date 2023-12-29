@@ -6,26 +6,30 @@ import { useCallback, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styles from './page.module.css'
 import axios from 'axios'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const Write = () => {
+  const { data: user } = useSession()
+  const router = useRouter()
+  const author = user?.user?.userid
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
 
-  const onSubmit = async (data: any) => {
-    console.log('data ===>', data)
-    console.log('content ===>', content)
+  const onSubmit = async (data) => {
     const submitData = {
       title: data.title,
       content,
+      author,
     }
 
     console.log('submitData ===>', submitData)
 
-    if (Object.values(submitData).some((value) => value == undefined)) {
-      console.log('At least one property is undefined. Returning...')
+    if (Object.values(submitData).some((value) => value === undefined || value === '')) {
+      alert('본문을 작성해주세요.')
       return
     }
 
@@ -34,6 +38,10 @@ const Write = () => {
         data: submitData,
       })
       console.log('response ===>', response)
+
+      if (response.data.result.id) {
+        router.push('/bbs/bluearchive')
+      }
     } catch (error) {
       console.log(error)
     }
@@ -41,7 +49,7 @@ const Write = () => {
   const quillRef = useRef()
   const [content, setContent] = useState('')
 
-  const handleContent = useCallback((event: any) => {
+  const handleContent = useCallback((event) => {
     setContent(event)
   }, [])
 

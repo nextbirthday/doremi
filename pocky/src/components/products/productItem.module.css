@@ -2,7 +2,6 @@
   display: flex;
 }
 .product_detail {
-  border: 1px solid red;
   padding: 0 0 40px 20px;
 }
 .product_image {
@@ -11,7 +10,6 @@
   justify-content: center;
 }
 .info_box {
-  border: 1px solid blue;
   padding-top: 15px;
 }
 
