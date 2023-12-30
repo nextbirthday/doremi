@@ -14,9 +14,9 @@ const BoardButton = () => {
             <Button style={{ borderRadius: '0' }}>
               <Link href="/bbs/bluearchive">전체글</Link>
             </Button>
-            <Button style={{ borderRadius: '0' }}>
+            <Button style={{ borderRadius: '0', backgroundColor: 'red' }}>
               <Link href={`/bbs/bluearchive?mode=best`}>
-                <span style={{ color: 'blue', fontWeight: '500' }}>개념글</span>
+                <span style={{ color: 'white', fontWeight: '500' }}>개념글</span>
               </Link>
             </Button>
             <select className={styles.select_list_type} name="sort">
@@ -38,7 +38,7 @@ const BoardButton = () => {
         </div>
         <div className={styles.float_right}>
           {status === 'authenticated' && (
-            <Button style={{ borderRadius: '0' }} className={styles.float_right}>
+            <Button style={{ borderRadius: '0' }} className={styles.write_button}>
               <Link href={`/bbs/bluearchive/write`}>
                 <span style={{ fontWeight: '500' }}>글쓰기</span>
               </Link>

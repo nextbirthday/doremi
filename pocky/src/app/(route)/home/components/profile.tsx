@@ -8,13 +8,11 @@ const Profile = () => {
       <img className={styles.profile_image} src="/cutscene/BG_CS_PV4_072.jpg" alt="샬레" />
       <h2 className={styles.profile_title}>Dumars Yoon, Archive</h2>
       <p className={styles.profile_description}>Portfolio</p>
-      {/* <a href="#footer" className={styles.profile_contact}>
-      </a> */}
       <Link href="https://github.com/nextbirthday/doremi" className={styles.profile_contact}>
-          <span className={styles.profile_github}>
-            <FaGithub />
-          </span>
-        </Link>
+        <span className={styles.profile_github}>
+          <FaGithub />
+        </span>
+      </Link>
     </section>
   )
 }

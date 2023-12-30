@@ -3,8 +3,6 @@ import Covid from '@/components/collapse/covid'
 import React from 'react'
 
 const Test = () => {
-  const temp = `${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`
-  console.log(temp)
   // async function getData() {
   //   const res = await fetch('http://localhost:9000/boards')
   //   // The return value is *not* serialized

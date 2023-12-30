@@ -35,8 +35,15 @@
   min-width: 2rem;
   border: 1px solid #aaa;
 }
+.button_icon {
+  font-size: 1rem;
+  padding: 0 0.1rem;
+}
 .button_text {
+  align-items: center;
+  display: flex;
   font-size: 0.9rem;
+  padding: 0 0.2rem;
 }
 .right {
   display: flex;

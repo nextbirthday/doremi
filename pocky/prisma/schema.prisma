@@ -10,6 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ActiveState {
+  Yes
+  No
+}
+
+enum LogType {
+  User
+  Board
+  File
+}
+
 model User {
   id            String      @id @default(cuid())
   name          String?
@@ -27,62 +38,20 @@ model User {
   createAt      DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
   Logs          Log[]
-  posts         Post[]
- boards        Board[]
- comments      Comment[] 
+  boards        Board[]
+  comments      Comment[] 
   }
-
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String?
-  content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [userid])
-  authorId  String
-  createAt      DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-}
-
-model Log {
-  id       String   @id @default(cuid())
-  type     LogType  @default(User)
-  info     String
-  User     User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId   String?
-  createAt DateTime @default(now())
-}
-
-enum ActiveState {
-  Yes
-  No
-}
-
-enum LogType {
-  User
-  Board
-  File
-}
-
-model Product {
-  code          String      @id @default(cuid())
-  name          String?
-  price         String?     @unique
-  stock         String?     @unique
-  image         String?
-  isDelete      ActiveState @default(No)
-  createAt      DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-}
 
 model Channel {
   id  Int     @id @default(autoincrement())
   name String
-  subscriber Int
+  subscriber Int?
   title String?
   icon String?
   owner String?
   boards Board[]
 }
+
 model Board {
   id         Int     @id @default(autoincrement())
   title      String?
@@ -91,6 +60,7 @@ model Board {
   authorId   String   // Foreign key referencing userid in the User table
   views      Int?
   rate       Int?
+  tag        String?
   isDelete   ActiveState @default(No)
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
@@ -108,5 +78,38 @@ model Comment {
   boardId   Int
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+}
+
+model Log {
+  id       String   @id @default(cuid())
+  type     LogType  @default(User)
+  info     String
+  User     User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String?
+  createAt DateTime @default(now())
+}
+
+model Brand {
+  id Int     @id @default(autoincrement())
+  name String?
+  address String?
+  businessNumber String?
+  products Product[]
+  isDelete   ActiveState @default(No)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  code          String      @id @default(cuid())
+  name          String?
+  price         String?     @unique
+  stock         String?     @unique
+  image         String?
+  isDelete      ActiveState @default(No)
+  createAt      DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  brand     Brand?    @relation(fields: [brandId], references: [id])
+  brandId   Int
 }
 

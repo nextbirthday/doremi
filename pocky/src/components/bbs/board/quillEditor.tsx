@@ -4,8 +4,6 @@ import 'react-quill/dist/quill.snow.css'
 const QuillEditor = ({ handleContent, quillRef }: any) => {
   const formats = ['font', 'header', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'list', 'bullet', 'indent', 'link', 'align', 'color', 'background', 'size', 'h1']
 
-  const imageHandler = () => {}
-
   const modules = useMemo(
     () => ({
       toolbar: {
@@ -17,9 +15,6 @@ const QuillEditor = ({ handleContent, quillRef }: any) => {
           ['link', 'image'],
           ['clean'],
         ],
-        handlers: {
-          image: imageHandler,
-        },
       },
     }),
     []

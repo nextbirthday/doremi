@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="about" className={styles.section}>
       <h2 className={styles.title}>About Me</h2>
-      <p className={styles.description}>Full-Stack Developer</p>{' '}
+      <p className={styles.description}>Full-Stack Developer</p>
       <ul className={styles.majors}>
         <li className={styles.major}>
           <FaHtml5 className={styles.major_icon} />

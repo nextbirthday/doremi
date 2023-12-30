@@ -7,6 +7,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import './header.css'
 const Header = () => {
   const { data: session } = useSession()
+  
   /* 로그인 상태 */
   if (session && session.user) {
     return (

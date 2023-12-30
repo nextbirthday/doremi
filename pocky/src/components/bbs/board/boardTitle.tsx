@@ -2,7 +2,9 @@
 import React from 'react'
 import styles from './boardTitle.module.css'
 import Link from 'next/link'
-
+import { FaBookOpen } from 'react-icons/fa'
+import { CiBellOn } from 'react-icons/ci'
+import { GoPlus } from 'react-icons/go'
 const BoardTitle = ({ id }: any) => {
   return (
     <div className={styles.board_title}>
@@ -19,13 +21,28 @@ const BoardTitle = ({ id }: any) => {
           </Link>
           <div className={styles.buttons}>
             <Link href={`/bbs/${id}`} className={styles.wiki_button}>
-              <span className={styles.button_text}>채널위키</span>
+              <span className={styles.button_text}>
+                <span className={styles.button_icon}>
+                  <FaBookOpen />
+                </span>
+                채널위키
+              </span>
             </Link>
             <Link href={`/bbs/${id}`} className={styles.wiki_button}>
-              <span className={styles.button_text}>구독</span>
+              <span className={styles.button_text}>
+                <span className={styles.button_icon}>
+                  <CiBellOn />
+                </span>
+                구독
+              </span>
             </Link>
             <Link href={`/bbs/${id}`} className={styles.wiki_button_notification}>
-              <span className={styles.button_text}>알림</span>
+              <span className={styles.button_text}>
+                <span className={styles.button_icon}>
+                  <GoPlus />
+                </span>
+                알림
+              </span>
             </Link>
           </div>
         </div>
