@@ -34,7 +34,6 @@ export const POST = async (request: NextRequest) => {
     submitData.gender = data.data.gender
   }
 
-  console.log('submitData before', submitData)
   const result = await createUser(submitData)
 
   try {

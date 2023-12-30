@@ -37,7 +37,7 @@ const ProductItem = (product: any) => {
                 <CiHeart />
               </button>
               <span className={styles.heart_count}>0</span>
-              <Link href={`/product/${product.code}/reviews`} style={{ display: 'flex' }}>
+              <Link href={`/product/${product.code}/reviews`} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={styles.review_icon}>
                   <MdOutlineRateReview />
                 </span>

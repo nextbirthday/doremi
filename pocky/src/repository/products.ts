@@ -13,6 +13,7 @@ export const findById = async (code: string): Promise<Product | null> => {
 export const findMany = async () => {
     return await dbCon.product.findMany()
 }
+
 export const create = async (data: any) => {
     console.log('createProduct data ===>', data);
 

@@ -71,9 +71,9 @@ const Footer = () => {
             <li className="menu_item">
               <h2 className="menu_title">ABOUT US</h2>
             </li>
-            <li className="menu_item">
+            {/* <li className="menu_item">
               <h2 className="menu_title">MY ORDER</h2>
-            </li>
+            </li> */}
             <li className="menu_item">
               <h2 className="menu_title">MY ACCOUNT</h2>
             </li>

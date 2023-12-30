@@ -32,13 +32,12 @@
 .signup__item:focus-within {
   outline: 2px solid green;
 }
-.signup__item.password,
+/* .signup__item.password,
 .signup__item.email,
 .signup__item.birth,
 .signup__item.mobile,
-.signup__item.gender {
+.signup__item.gender {}
   /* border-top: 1px solid lightgray; */
-}
 
 .signup__label {
   display: flex;
@@ -55,9 +54,6 @@
   &:hover {
     cursor: pointer;
   }
-}
-.signup__item.id {
-  /* id 아이템에 대한 추가적인 스타일링 */
 }
 
 .signup_button {

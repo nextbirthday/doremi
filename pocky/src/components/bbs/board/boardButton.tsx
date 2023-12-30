@@ -4,18 +4,21 @@ import Link from 'next/link'
 import { Button, Flex } from 'antd'
 import styles from './boardButton.module.css'
 import { useSession } from 'next-auth/react'
-const BoardButton = () => {
+const BoardButton = ({ channel }: any) => {
   const { data: session, status } = useSession()
+
+  const firstChannel = channel && channel[0]
+
   return (
     <>
       <div>
         <div className={styles.float_left}>
           <Flex gap="small" wrap="wrap">
             <Button style={{ borderRadius: '0' }}>
-              <Link href="/bbs/bluearchive">전체글</Link>
+              <Link href={`/bbs/${firstChannel.name}`}>전체글</Link>
             </Button>
             <Button style={{ borderRadius: '0', backgroundColor: 'red' }}>
-              <Link href={`/bbs/bluearchive?mode=best`}>
+              <Link href={`/bbs/${firstChannel.name}?mode=best`}>
                 <span style={{ color: 'white', fontWeight: '500' }}>개념글</span>
               </Link>
             </Button>
@@ -39,7 +42,7 @@ const BoardButton = () => {
         <div className={styles.float_right}>
           {status === 'authenticated' && (
             <Button style={{ borderRadius: '0' }} className={styles.write_button}>
-              <Link href={`/bbs/bluearchive/write`}>
+              <Link href={`/bbs/${firstChannel.name}/write?id=${firstChannel.name}`}>
                 <span style={{ fontWeight: '500' }}>글쓰기</span>
               </Link>
             </Button>

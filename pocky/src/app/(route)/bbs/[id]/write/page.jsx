@@ -56,7 +56,7 @@ const Write = () => {
   return (
     <div className={styles.write_wrapper}>
       <article className={styles.article_write}>
-        <BoardTitle />
+        {/* <BoardTitle /> */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.write_head}>글쓰기</div>
           <div className={styles.sub_row}>

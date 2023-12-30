@@ -1,29 +1,11 @@
 import React from 'react'
 import styles from './boardList.module.css'
 import BoardItem from './boardItem'
-const BoardList = () => {
+import { Empty } from 'antd'
+const BoardList = ({ channelList }: any) => {
   return (
     <>
-      <div className={styles.board_list}>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-        <BoardItem></BoardItem>
-      </div>
+      <div className={styles.board_list}>{channelList.length < 1 ? <Empty /> : channelList.map((channel: any, index: any) => <BoardItem key={index} {...channel} />)}</div>
     </>
   )
 }

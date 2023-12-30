@@ -4,12 +4,21 @@ import styles from './page.module.css'
 import SearchChannel from '@/components/bbs/search/searchChannel'
 import BoardList from '@/components/bbs/board/boardList'
 import PopularBox from '@/components/bbs/popular/popularBox'
-const Bbs = () => {
+import { getAllChannel } from '@/controller/channel'
+import { Empty } from 'antd'
+const Bbs = async () => {
+  /* await code 누락 주의 */
+  const channelList = await getAllChannel()
 
+  if (!channelList || channelList.length < 1) {
+    return (
+      <>
+        <Empty />
+      </>
+    )
+  }
   return (
     <>
-      {/* 최근 방문 리스트 북마크 <VisitBookmark />*/}
-
       <div className={styles.bbs_wrapper}>
         <article className={styles.board_wrap}>
           <div className={styles.form_group}>
@@ -23,7 +32,7 @@ const Bbs = () => {
               </div>
             </div>
             {/* 게시판 목록(채널 리스트) */}
-            <BoardList />
+            <BoardList channelList={channelList} />
           </div>
         </article>
         <aside className={styles.sidebar_wrapper}>

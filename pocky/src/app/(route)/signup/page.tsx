@@ -85,29 +85,6 @@ const Signup = () => {
     } catch (error) {
       console.log(error)
     }
-
-    // return new Promise((resolve, reject) => {
-    //   try {
-    //     const response = axios({
-    //       method: 'post',
-    //       url: '/api/user',
-    //       data: submitData,
-    //     })
-    //     response.then((data) => {
-    //       /* ID 중복시 처리 코드 작성 */
-    //       if (data.data.message === 'ID중복') {
-    //         alert('중복된 ID입니다.')
-    //       }
-
-    //       /* 회원가입 성공시 처리 코드 작성 */
-    //       //router.push('/signin')
-    //       resolve(data)
-    //     })
-    //     console.log('response ===>', response)
-    //   } catch (error) {
-    //     reject(error)
-    //   }
-    // })
   }
 
   const handleCheck = () => {

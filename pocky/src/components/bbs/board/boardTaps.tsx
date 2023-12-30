@@ -1,11 +1,14 @@
+'use client'
 import { Tabs, TabsProps } from 'antd'
 import { useRouter } from 'next/navigation'
 import BoardTable from './boardTable'
 const BoardTaps = () => {
   const router = useRouter()
+
   const handleTabChange = (key: string) => {
     router.push(`/bbs/bluearchive?category=${key}`)
   }
+
   const items: TabsProps['items'] = [
     {
       label: '전체',

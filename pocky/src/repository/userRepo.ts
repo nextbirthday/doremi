@@ -27,8 +27,6 @@ export const createUser = async (submitData: {
   mobile: string
   gender?: string // gender가 선택적(optional)으로 추가됨
 }) => {
-  console.log('submitData', submitData)
-
   try {
     const userData: any = {
       name: submitData.name,
