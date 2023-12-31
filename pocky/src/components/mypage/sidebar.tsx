@@ -27,7 +27,10 @@ const Sidebar = () => {
             <Link href="/mypage/edit/info">회원정보수정</Link>
           </li>
           <li className="account_menu_item">
-            <Link href="/mypage/channel">채널 관리</Link>
+            <Link href="/channel/settings">채널 관리</Link>
+          </li>
+          <li className="account_menu_item">
+            <Link href="/channel/create">채널 만들기</Link>
           </li>
           <li className="account_menu_item">
             <Link href="/mypage/grade">멤버쉽등급</Link>

@@ -33,6 +33,7 @@ model User {
   gender        String?    
   address       String?
   image         String?
+  point         Int?
   grade         Int         @default(1)
   isDelete      ActiveState @default(No)
   createAt      DateTime    @default(now())
@@ -40,17 +41,21 @@ model User {
   Logs          Log[]
   boards        Board[]
   comments      Comment[] 
+  channels      Channel[]
   }
 
 model Channel {
   id  Int     @id @default(autoincrement())
-  name String @unique
-  name_kor String? @unique
-  subscriber Int?
-  title String?
-  information String?
-  icon String?
-  owner String?
+  name String @unique // slug
+  name_kor String? @unique // 채널 이름(한글)
+  subscriber Int? //구독자 count
+  receiver Int? //알림수신count
+  title String? //채널 타이틀
+  gacha String? //가챠 정보
+  information String? // 채널 정보
+  icon String? // 채널 아이콘
+  owner    User     @relation(fields: [ownerId], references: [userid])
+  ownerId  String
   boards Board[]
 }
 

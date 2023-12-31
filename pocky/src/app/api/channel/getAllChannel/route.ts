@@ -1,6 +1,6 @@
 import { getAllChannel } from '@/controller/channel'
 import { NextRequest, NextResponse } from 'next/server'
-
+/* 채널 가져오기 (All) */
 export const GET = async (request: NextRequest) => {
   const channelList = await getAllChannel()
 

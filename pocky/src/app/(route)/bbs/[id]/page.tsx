@@ -4,7 +4,6 @@ import PopularBox from '@/components/bbs/popular/popularBox'
 import VisitBookmark from '@/components/bbs/visit/visitBookmark'
 import styles from './page.module.css'
 import BoardTaps from '@/components/bbs/board/boardTaps'
-import axios from 'axios'
 import { getChannel } from '@/controller/channel'
 const Channel = async ({ params }: { params: { id: string } }) => {
   const id = params.id

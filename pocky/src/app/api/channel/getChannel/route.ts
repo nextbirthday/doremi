@@ -1,6 +1,6 @@
 import { getChannel } from '@/controller/channel'
 import { NextRequest, NextResponse } from 'next/server'
-
+/* 채널 가져오기 (단건) */
 export const GET = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url)
   const name = searchParams.get('name')
