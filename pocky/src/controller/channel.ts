@@ -4,7 +4,7 @@ export const getAllChannel = async () => {
   const dbResult = await channelRepository.getAllChannel()
   return dbResult
 }
-export const getChannel = async (name: any) => {
-  const dbResult = await channelRepository.getChannel(name)
+export const getChannel = async (slug: any) => {
+  const dbResult = await channelRepository.getChannel(slug)
   return dbResult
 }

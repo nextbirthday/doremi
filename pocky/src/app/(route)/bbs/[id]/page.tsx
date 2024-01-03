@@ -13,8 +13,8 @@ const Channel = async ({ params }: { params: { id: string } }) => {
   }
   console.log('id', id)
 
-  const name = id
-  const channel = await getChannel(name)
+  const slug = id
+  const channel = await getChannel(slug)
 
   if (!channel) {
     return <></>

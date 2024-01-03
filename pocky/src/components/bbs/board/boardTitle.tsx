@@ -11,17 +11,17 @@ const BoardTitle = ({ channel }: any) => {
     <div className={styles.board_title}>
       <div className={styles.left}>
         {/* 채널 아이콘 이미지 */}
-        <Link href={`/bbs/${firstChannel.name}`}>
+        <Link href={`/bbs/${firstChannel.slug}`}>
           <img src="/cutscene/BG_CS_S1Final_14.jpg" alt="채널아이콘" className={styles.channel_icon} />
         </Link>
       </div>
       <div className={styles.right}>
         <div className={styles.head}>
           <Link href="/bbs" className={styles.channel_name}>
-            {firstChannel.name_kor}&nbsp;채널
+            {firstChannel.name}&nbsp;채널
           </Link>
           <div className={styles.buttons}>
-            <Link href={`/bbs/${firstChannel.name}`} className={styles.wiki_button}>
+            <Link href={`/bbs/${firstChannel.slug}`} className={styles.wiki_button}>
               <span className={styles.button_text}>
                 <span className={styles.button_icon}>
                   <FaBookOpen />
@@ -29,7 +29,7 @@ const BoardTitle = ({ channel }: any) => {
                 채널위키
               </span>
             </Link>
-            <Link href={`/bbs/${firstChannel.name}`} className={styles.wiki_button}>
+            <Link href={`/bbs/${firstChannel.slug}`} className={styles.wiki_button}>
               <span className={styles.button_text}>
                 <span className={styles.button_icon}>
                   <CiBellOn />
@@ -37,7 +37,7 @@ const BoardTitle = ({ channel }: any) => {
                 구독
               </span>
             </Link>
-            <Link href={`/bbs/${firstChannel.name}`} className={styles.wiki_button_notification}>
+            <Link href={`/bbs/${firstChannel.slug}`} className={styles.wiki_button_notification}>
               <span className={styles.button_text}>
                 <span className={styles.button_icon}>
                   <GoPlus />
@@ -51,7 +51,8 @@ const BoardTitle = ({ channel }: any) => {
           <span className={styles.subscriber_count}>구독자 {firstChannel.subscriber}명</span>
           <span className={styles.notification_count}> | 알림수신 count</span>
           <div className={styles.channel_text}>
-            {firstChannel.title} {firstChannel.information !== null && `| ${firstChannel.information}`}
+            {firstChannel.title !== null && ` ${firstChannel.title}`} {firstChannel.gacha !== null && `| ${firstChannel.gacha}`}{' '}
+            {firstChannel.information !== null && `| ${firstChannel.information}`}
           </div>
         </div>
       </div>

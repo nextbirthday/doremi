@@ -1,6 +1,6 @@
 import { dbCon } from '@/repository/config'
 export const createBoard = async (data: any) => {
-  const { title, content, author } = data.data
+  const { title, content, author, channelId } = data.data
   console.log('data.data', data.data)
 
   try {
@@ -10,6 +10,9 @@ export const createBoard = async (data: any) => {
         content,
         author: {
           connect: { userid: author },
+        },
+        channel: {
+          connect: { id: channelId },
         },
         views: 0,
         rate: 0,

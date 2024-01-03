@@ -8,7 +8,7 @@ const BoardButton = ({ channel }: any) => {
   const { data: session, status } = useSession()
 
   const firstChannel = channel && channel[0]
-
+  console.log('firstChannel', firstChannel)
   return (
     <>
       <div>
@@ -18,7 +18,7 @@ const BoardButton = ({ channel }: any) => {
               <Link href={`/bbs/${firstChannel.name}`}>전체글</Link>
             </Button>
             <Button style={{ borderRadius: '0', backgroundColor: 'red' }}>
-              <Link href={`/bbs/${firstChannel.name}?mode=best`}>
+              <Link href={`/bbs/${firstChannel.slug}?mode=best`}>
                 <span style={{ color: 'white', fontWeight: '500' }}>개념글</span>
               </Link>
             </Button>
@@ -42,7 +42,15 @@ const BoardButton = ({ channel }: any) => {
         <div className={styles.float_right}>
           {status === 'authenticated' && (
             <Button style={{ borderRadius: '0' }} className={styles.write_button}>
-              <Link href={`/bbs/${firstChannel.name}/write?id=${firstChannel.name}`}>
+              {/* <Link href={`/bbs/${firstChannel.slug}/write?id=${firstChannel.slug}`}>
+                <span style={{ fontWeight: '500' }}>글쓰기</span>
+              </Link> */}
+              <Link
+                href={{
+                  pathname: `/bbs/${firstChannel.slug}/write`,
+                  query: { id: firstChannel.id },
+                }}
+              >
                 <span style={{ fontWeight: '500' }}>글쓰기</span>
               </Link>
             </Button>

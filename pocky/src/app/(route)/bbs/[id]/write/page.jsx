@@ -7,12 +7,16 @@ import { useForm } from 'react-hook-form'
 import styles from './page.module.css'
 import axios from 'axios'
 import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const Write = () => {
   const { data: user } = useSession()
   const router = useRouter()
   const author = user?.user?.userid
+  const params = useSearchParams()
+  const id = params.get('id')
+  const channelId = parseInt(id)
+
   const {
     register,
     handleSubmit,
@@ -24,6 +28,7 @@ const Write = () => {
       title: data.title,
       content,
       author,
+      channelId,
     }
 
     console.log('submitData ===>', submitData)
@@ -40,7 +45,7 @@ const Write = () => {
       console.log('response ===>', response)
 
       if (response.data.result.id) {
-        router.push('/bbs/bluearchive')
+        router.push('/bbs')
       }
     } catch (error) {
       console.log(error)

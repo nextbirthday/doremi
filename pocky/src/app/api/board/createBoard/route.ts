@@ -3,7 +3,6 @@ import { createBoard } from '@/controller/board'
 /* 회원정보수정 - 전화번호 */
 export const POST = async (request: NextRequest) => {
   const data = await request.json()
-
   const result = await createBoard(data)
 
   try {

@@ -68,7 +68,7 @@
 }
 .title_input {
   padding: 0 0 0 0.5rem;
-  width: 95%; /* Ensure the input takes up 100% of the parent width */
+  width: 90%; /* Ensure the input takes up 100% of the parent width */
   border: 1px solid #ced4da;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

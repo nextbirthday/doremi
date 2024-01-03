@@ -46,8 +46,8 @@ model User {
 
 model Channel {
   id  Int     @id @default(autoincrement())
-  name String @unique // slug
-  name_kor String? @unique // 채널 이름(한글)
+  slug String @unique // slug
+  name String? @unique // 채널 이름(한글)
   subscriber Int? //구독자 count
   receiver Int? //알림수신count
   title String? //채널 타이틀
